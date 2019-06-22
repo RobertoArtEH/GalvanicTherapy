@@ -1,0 +1,25 @@
+/* Estilos de header */
+
+.logo {
+  margin: 15px auto;
+}
+
+.nav-link {
+  color: #000;
+}
+
+.cart {
+  margin-right: 20px;
+}
+
+.btn-primary {
+  background-color: #000;
+  border-color: #000; 
+}
+
+/* Banner */
+
+.banner {
+  background-color: #000;
+  height: 450px;
+}
