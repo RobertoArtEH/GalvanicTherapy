@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <!-- Bootstrap CSS -->
@@ -10,62 +10,90 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"/>
     <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="estilo.css" >
+    <link rel="stylesheet" href="estilo.css">
     <title>Galvanic Therapy</title>
   </head>
   <body>
     <!-- Header -->
-    <div class="container">
+    <header class="container header">
       <!-- Logo -->
       <nav class="navbar navbar-expand-lg">
-        <div class="logo mx-auto">
-          <img src="img/logo.svg" height="40px" alt="Search">
-        </div>
+        <a class="navbar-brand mx-lg-auto" href="index.html">
+          <img src="img/logo.svg" height="40px" alt="Search"/>
+        </a>
+        <!-- Carrito y menu -->
+        <ul class="nav">
+          <li class="nav-item d-flex align-items-center">
+            <div class="search d-lg-none">
+              <img src="img/search.svg" height="25px" alt="Search"/>
+            </div>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <!-- Carrito de compras -->
+            <div class="cart d-lg-none">
+              <img src="img/cart.svg" height="25px" alt="Cart"/>
+            </div>
+          </li>
+          <li class="nav-item">
+            <!-- Boton de menu -->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_trg">
+              <img src="img/menu.svg" height="40px" alt="Menu"/>
+            </button>
+          </li>
+        </ul>
       </nav>
-      <nav class="navbar navbar-expand-lg">
+    </header>
+    <!-- Barra de navegacion -->
+    <nav class="navbar container navbar-expand-lg">
+      <!-- Elementos dentro del boton -->
+      <div class="collapse navbar-collapse" id="collapse_trg">
         <!-- Buscar -->
-        <div class="search">
-            <img src="img/search.svg" height="16px" alt="Search">
+        <div class="search d-none d-lg-block">
+          <img src="img/search.svg" height="16px" alt="Search"/>
         </div>
         <!-- Secciones -->
-        <div class="sections mx-auto">
-          <ul class="nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="products.html">Productos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="trends.html">Tendencias</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="new.html">Lo nuevo</a>
-            </li>
-          </ul>
-        </div>
-        <!-- Carrito de compras -->
-        <div class="cart">
-          <img src="img/cart.svg" height="16px" alt="Cart">
+        <ul class="nav sections mx-lg-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="trends.html">Tendencias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="new.html">Lo nuevo</a>
+          </li>
+        </ul>
+        <!-- Carrito de compras lg -->
+        <div class="cart d-none d-lg-block">
+          <img src="img/cart.svg" height="16px" alt="Cart"/>
         </div>
         <!-- Boton de log-in -->
         <div class="login-btn">
-            <a class="btn btn-primary" href="#" role="button">Iniciar sesión</a>
+          <a class="btn btn-dark" href="#" role="button">Iniciar sesión</a>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
     <!-- Banner -->
-    <div class="container-fluid banner">
+    <main class="container-fluid banner-background d-flex align-items-center">
       <div class="container">
-        <div class="row">
+        <div class="row banner-content d-flex align-items-center">
           <!-- Eslogan -->
-          <div class="col">
-            <h1>Galvanic Therapy:<br>Blleza a tu alcance</h1>
-            <h3>Lorem, ipsum dolor sit amet<br>consectetur adipisicing elit.</h2>
-            <button type="button" class="btn btn-light">Registrarse</button>
+          <div class="col-lg-6 col-md-12 text-center text-md-center text-lg-left">
+            <h1 class="banner-title">
+              Galvanic Therapy:<br/>Blleza a tu alcance
+            </h1>
+            <h4 class="banner-subtitle">
+              Lorem, ipsum dolor sit amet<br />consectetur adipisicing elit.
+            </h4>
+            <!-- Call to action -->
+            <button type="button" class="btn btn-light banner-button" href="#">Registrarse</button>
+            <button type="button" class="btn btn-outline-light banner-button" href="products.html">Ver productos</button>
           </div>
           <!-- Slide -->
-          <div class="col">
+          <div class="col-lg-6 col-md-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -74,13 +102,13 @@
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="http://jmd.im/wp-content/uploads/2017/06/blackx_thumbnail.jpg" class="d-block w-100" alt="...">
+                  <img src="http://jmd.im/wp-content/uploads/2017/06/blackx_thumbnail.jpg" class="d-block w-100" alt="..."/>
                 </div>
                 <div class="carousel-item">
-                  <img src="http://jmd.im/wp-content/uploads/2017/06/blackx_thumbnail.jpg" class="d-block w-100" alt="...">
+                  <img src="http://jmd.im/wp-content/uploads/2017/06/blackx_thumbnail.jpg" class="d-block w-100" alt="..."/>
                 </div>
                 <div class="carousel-item">
-                  <img src="http://jmd.im/wp-content/uploads/2017/06/blackx_thumbnail.jpg" class="d-block w-100" alt="...">
+                  <img src="http://jmd.im/wp-content/uploads/2017/06/blackx_thumbnail.jpg" class="d-block w-100" alt="..."/>
                 </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -95,40 +123,55 @@
           </div>
         </div>
       </div>
-    </div>
-    <footer  class="principal">
-        <div class="footer-top jaja">
-    <div class="container uno">
-      <div class="row">
-        <div class="col-md-4 col-sm-6"> 
-          <h4 class="">CONTACTA CON NOSOTROS</h4>
-          <ul class="list-unstyled">
-            <li class="s"><img class="contacto" src="img/facebook-logo.svg"> <p class="info">@galvanicoficial</p></li>
-            <li class="s"><img class="contacto" src="img/instagram.svg"> <p class="info">@galvanicoficial</p> </li>
-            <li class="s"><img class="contacto" src="img/telefono.svg"> <p class="info">871-XXX-XXX</p> </li>
-            <li class="s"><img class="contacto" src="img/mail.svg"> <p class="info">galvanic@outlook.com</p> </li>
-          </ul>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xl-4 ">
-          <img class="mx-auto d-block" src="img/logo.svg">
-          <h4 class="text-center p-2">GALVANIC THERAPY</h4>
-        </div>
-        <div class="col-md-4 col-sm-6">
-          <div class=""></div>
-          <h4 class="">ACERCA DE LA COMPAÑIA</h4>
-          <p class="about">Somos una empresa distribuidora de productos de belleza, abierta para el publico en general.</p>
-          <h4 class="">MÉTODOS DE PAGO</h4>
-          <div>
-            <img class="pagomer" src="img/mercadopago.png">
-            <img class="pagooxxo" src="img/oxxo.png">
+    </main>
+    <footer class="principal">
+      <div class="footer-top jaja">
+        <div class="container uno">
+          <div class="row">
+            <div class="col-md-4 col-sm-6">
+              <h4 class="">CONTACTA CON NOSOTROS</h4>
+              <ul class="list-unstyled">
+                <li class="s">
+                  <img class="contacto" src="img/facebook-logo.svg"/>
+                  <p class="info">@galvanicoficial</p>
+                </li>
+                <li class="s">
+                  <img class="contacto" src="img/instagram.svg"/>
+                  <p class="info">@galvanicoficial</p>
+                </li>
+                <li class="s">
+                  <img class="contacto" src="img/telefono.svg"/>
+                  <p class="info">871-XXX-XXX</p>
+                </li>
+                <li class="s">
+                  <img class="contacto" src="img/mail.svg"/>
+                  <p class="info">galvanic@outlook.com</p>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xl-4 ">
+              <img class="mx-auto d-block" src="img/logo.svg" />
+              <h4 class="text-center p-2">GALVANIC THERAPY</h4>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class=""></div>
+              <h4 class="">ACERCA DE LA COMPAÑIA</h4>
+              <p class="about">
+                Somos una empresa distribuidora de productos de belleza, abierta
+                para el publico en general.
+              </p>
+              <h4 class="">MÉTODOS DE PAGO</h4>
+              <div>
+                <img class="pagomer" src="img/mercadopago.png"/>
+                <img class="pagooxxo" src="img/oxxo.png"/>
+              </div>
+            </div>
           </div>
         </div>
+        <div class="container-fluid segundo p-4">
+          <a><p class="inicio">Inicio de pagina</p></a>
+        </div>
       </div>
-    </div>
-    <div class="container-fluid segundo p-4">
-        <a><p class="inicio">Inicio de pagina</p></a>
-    </div>  
-    </div>
     </footer>
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
