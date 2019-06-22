@@ -1,7 +1,7 @@
 /* Estilos de header */
 
-.logo {
-  margin: 15px auto;
+.header {
+  padding-top: 15px;
 }
 
 .nav-link {
@@ -9,17 +9,32 @@
 }
 
 .cart {
-  margin-right: 20px;
-}
-
-.btn-primary {
-  background-color: #000;
-  border-color: #000; 
+  margin: auto 20px;
 }
 
 /* Banner */
 
-.banner {
+.banner-background {
   background-color: #000;
-  height: 450px;
 }
+
+.banner-content {
+  margin: 60px auto;
+  color: #fff;
+}
+
+.banner-title {
+  line-height: 46px;
+  margin-bottom: 24px;
+}
+
+.banner-subtitle {
+  line-height: 32px;
+  margin-bottom: 24px;
+}
+
+.banner-button {
+  margin-bottom: 16px;
+}
+
+/* Footer */
