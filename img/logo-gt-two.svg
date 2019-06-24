@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="101.546" height="82.667" viewBox="0 0 101.546 82.667">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Trazado_151" data-name="Trazado 151" d="M3151.4,7261.4h94.188v82.667H3151.4Z" transform="translate(-3151.4 -7261.399)" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="Trazado_153" data-name="Trazado 153" d="M4136.42,7649.289h79.75l1.3,78.017h-79.75Z" transform="translate(-4136.42 -7649.289)" clip-rule="evenodd"/>
+    </clipPath>
+  </defs>
+  <g id="Capa_x0020_1" transform="translate(-3151.399 -7261.399)">
+    <g id="_2220587995968" transform="translate(3151.399 7261.399)">
+      <g id="Grupo_14" data-name="Grupo 14">
+        <g id="Grupo_13" data-name="Grupo 13" clip-path="url(#clip-path)">
+          <rect id="Rectángulo_421" data-name="Rectángulo 421" width="94.188" height="82.667" transform="translate(0 0)" fill="none"/>
+        </g>
+      </g>
+      <path id="Trazado_152" data-name="Trazado 152" d="M4738.576,8873.222c20.737,0,37.547-14.248,37.547-31.825s-16.81-31.826-37.547-31.826-37.546,14.249-37.546,31.826S4717.839,8873.222,4738.576,8873.222Zm30.861-31.829c0,16.594-13.817,30.045-30.861,30.045s-30.861-13.451-30.861-30.045,13.817-30.044,30.861-30.044S4769.438,8824.8,4769.438,8841.393Z" transform="translate(-4691.482 -8800.031)" fill="#63bd6a" fill-rule="evenodd"/>
+      <g id="Grupo_16" data-name="Grupo 16" transform="translate(6.069 2.39)">
+        <g id="Grupo_15" data-name="Grupo 15" clip-path="url(#clip-path-2)">
+          <rect id="Rectángulo_422" data-name="Rectángulo 422" width="81.046" height="78.017" transform="translate(0 0)" fill="none"/>
+        </g>
+      </g>
+      <path id="Trazado_154" data-name="Trazado 154" d="M5787.128,9127.914c0-15.68,13.057-28.392,29.163-28.392s29.164,12.712,29.164,28.392-13.058,28.393-29.164,28.393S5787.128,9143.595,5787.128,9127.914Zm29.163-30.045c-17.044,0-30.861,13.452-30.861,30.045s13.817,30.045,30.861,30.045,30.861-13.451,30.861-30.045S5833.335,9097.869,5816.291,9097.869Z" transform="translate(-5769.201 -9086.554)" fill="#127d4a" fill-rule="evenodd"/>
+      <path id="Trazado_155" data-name="Trazado 155" d="M4201.652,7404.1c0,22.165-18.458,40.135-41.225,40.135s-41.226-17.97-41.226-40.135,18.458-40.135,41.226-40.135S4201.652,7381.938,4201.652,7404.1Zm-41.225-34.944c22.768,0,41.225,15.645,41.225,34.944s-18.458,34.943-41.225,34.943S4119.2,7423.4,4119.2,7404.1,4137.659,7369.16,4160.427,7369.16Z" transform="translate(-4113.239 -7363.338)" fill="#63bd6a" fill-rule="evenodd"/>
+    </g>
+    <text id="GALVANIC_THERAPY" data-name="GALVANIC THERAPY" transform="translate(3170.946 7306.811)" fill="#106b43" font-size="14" font-family="Haettenschweiler"><tspan x="0" y="0">GALVANIC THERAPY</tspan></text>
+    <g id="Grupo_17" data-name="Grupo 17" transform="translate(3179.928 7309.145)">
+      <text id="Belleza_a_tu_alcance." data-name="Belleza a tu alcance." transform="translate(0 3)" fill="#106b43" font-size="3" font-family="Candara"><tspan x="0" y="0">Belleza a tu alcance.</tspan></text>
+    </g>
+  </g>
+</svg>
