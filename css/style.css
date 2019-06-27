@@ -102,9 +102,46 @@
 }
 
 /* Footer */
+.container-fluid{
+  background-color: #111111;
+}
+.footer-copyright{
+  background-color: black;
+}
 
 
+/* Login y registro */
+.logo-galvanic-login{
+	padding-top: 25px;
+  margin: -40px;
+}
 
+.formulario-login{
+	background:url(../img/backgrounds/nature-compressor.jpg);
+	background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.logo-galvanic-registro{
+  padding-top: 25px;
+  margin: -40px;
+}
+
+
+.registro{
+  background-image: url(../img/backgrounds/nature-compressor.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 /* Productos */
 
 .products-container {
