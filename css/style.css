@@ -74,6 +74,10 @@
   background-position: center center;
 }
 
+.mini-banner-background {
+  background-color: #000;
+}
+
 .banner-content {
   margin: 60px auto;
   color: #fff;
@@ -81,6 +85,11 @@
 
 .banner-content-secundary {
   margin: 40px auto;
+  color: #fff;
+}
+
+.mini-banner-content {
+  margin: 10px auto;
   color: #fff;
 }
 
@@ -96,34 +105,40 @@
   text-shadow: 0px 0px 12px rgba(17, 0, 0, 0.6);
 }
 
+.mini-title {
+  margin: 0;
+}
+
 .banner-button {
   margin-bottom: 30px;
   text-shadow: 0px 0px 12px rgba(17, 0, 0, 0.6);
 }
 
 /* Footer */
-.container-fluid{
+
+.footer-background {
   background-color: #111111;
 }
-.footer-copyright{
+
+.footer-copyright {
   background-color: black;
 }
 
 
 /* Login y registro */
-.logo-galvanic-login{
+.logo-galvanic-login {
 	padding-top: 25px;
   margin: -40px;
 }
 
-.formulario-login{
+.formulario-login {
 	background:url(../img/backgrounds/nature-compressor.jpg);
 	background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-attachment: scroll;
+  background-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
