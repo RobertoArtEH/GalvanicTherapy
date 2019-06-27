@@ -130,8 +130,19 @@
 	padding-top: 25px;
   margin: -40px;
 }
+<<<<<<< HEAD
 
 .formulario-login {
+=======
+.boton-iniciar:hover{
+  color: white;
+}
+.boton-iniciar{
+  background-color: black;
+  color: white;
+}
+.formulario-login{
+>>>>>>> ed8116c375f672ff7e5fcdd389266ec9f85d5f16
 	background:url(../img/backgrounds/nature-compressor.jpg);
 	background-repeat: no-repeat;
   background-attachment: scroll;
@@ -141,22 +152,20 @@
   justify-content: center;
 }
 
-
+.formulario-registro{
+  background: url(../img/backgrounds/nature-compressor.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: content-box;
+  background-position: center;
+  
+}
 .logo-galvanic-registro{
   padding-top: 25px;
   margin: -40px;
 }
 
 
-.registro{
-  background-image: url(../img/backgrounds/nature-compressor.jpg);
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 /* Productos */
 
 .products-container {
