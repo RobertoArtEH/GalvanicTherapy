@@ -111,6 +111,9 @@
 
 
 /* Login y registro */
+.registrarse-boton:hover{
+background-color: black;
+}
 .logo-galvanic-login{
 	padding-top: 25px;
   margin: -40px;
