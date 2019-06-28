@@ -126,23 +126,13 @@
 
 
 /* Login y registro */
+
 .logo-galvanic-login {
 	padding-top: 25px;
   margin: -40px;
 }
-<<<<<<< HEAD
 
 .formulario-login {
-=======
-.boton-iniciar:hover{
-  color: white;
-}
-.boton-iniciar{
-  background-color: black;
-  color: white;
-}
-.formulario-login{
->>>>>>> ed8116c375f672ff7e5fcdd389266ec9f85d5f16
 	background:url(../img/backgrounds/nature-compressor.jpg);
 	background-repeat: no-repeat;
   background-attachment: scroll;
@@ -160,11 +150,11 @@
   background-position: center;
   
 }
+
 .logo-galvanic-registro{
   padding-top: 25px;
   margin: -40px;
 }
-
 
 /* Productos */
 
@@ -178,4 +168,15 @@
 
 .badge-danger {
   font-size: .7em;
+}
+
+/* Producto */
+
+.product-title {
+  font-size: 28px;
+  color: #000;
+}
+
+.product-text {
+  color: #000;
 }
