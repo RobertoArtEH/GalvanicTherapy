@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <title>Galvanic Therapy</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="container">
+      <nav class="navbar navbar-expand-lg">
+        <!-- Logo -->
+        <a class="navbar-brand mx-lg-auto" href="index.html">
+          <img src="img/brand/logo.svg" height="80px" alt="Logo"/>
+        </a>
+        <!-- Header SM -->
+        <ul class="nav">
+          <li class="nav-item d-flex align-items-center">
+            <!-- Buscar -->
+            <div class="d-lg-none">
+              <img src="img/icons/search.svg" height="25px" alt="Buscar"/>
+            </div>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <!-- Carrito de compras -->
+            <a class="cart d-lg-none" href="cart.html">
+              <img src="img/icons/cart.svg" height="25px" alt="Carrito"/>
+            </a>
+          </li>
+          <li class="nav-item">
+            <!-- Boton de menu -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse_trg">
+              <img src="img/icons/menu.svg" height="40px" alt="Menú"/>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+        <!-- Elementos de menú SM -->
+    <nav class="navbar container navbar-expand-lg">
+      <div class="collapse navbar-collapse" id="collapse_trg">
+        <!-- Buscar -->
+        <div class="search d-none d-lg-block">
+          <img src="img/icons/search.svg" height="16px" alt="Search"/>
+        </div>
+        <!-- Secciones -->
+        <ul class="navbar-nav sections mx-lg-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <!-- Dropdown de Productos -->
+          <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="">Productos</a>
+            <div class="dropdown-menu">
+              <h4 class="dropdown-header">Categorias</h4>
+              <a class="dropdown-item" href="category-cuidadocorp.html">Cuidado corporal</a>
+              <a class="dropdown-item" href="category-cuidadofac.html">Cuidado facial</a>
+              <a class="dropdown-item" href="category-vitaminas.html">Vitaminas</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="trends.html">Tendencias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="new.html">Lo nuevo</a>
+          </li>
+        </ul>
+        <!-- Carrito de compras lg -->
+        <a class="cart d-none d-lg-block" href="cart.html">
+          <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
+        </a>
+        <!-- Boton de log-in -->
+        <a class="btn btn-dark" href="login.html" role="button">Iniciar sesión</a>
+      </div>
+    </nav>
+    <section class="titulos-menu">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                        <div class="col-lg-6 col-md-12 text-lg-center"><a class="text-white text-decoration-none" href="#">Administrar productos</a></div>
+                        <div class="col-lg-6 col-md-12 text-lg-center"><a class="text-white text-decoration-none" href="#">Administrar ventas</a></div>
+                </div>
+                     
+            </div>
+        </section>
+        <br>
+    <div class="container ">
+        <div class="row banner-content d-flex align-items-start">
+            
+            <div class="col-lg-6 col-md-12 text-lg-left">
+                    
+                    <form>
+                            <div class="form-group">
+                              <label class="text-left">Nombre de producto</label>
+                              <input type="text" class="col-lg-8 form-control form-control-sm" id="exampleInputEmail1" placeholder="Ingresa nombre de producto">
+                              
+                            </div>
+                            <div class="form-group">
+                              <label  class="text-left">Descripcion</label>
+                              <textarea class="col-lg-8 form-control" rows="6"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="text-left">Categoria</label>
+                                <select name="" id="" class="form-control col-lg-8">
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="text-left">Precio</label>
+                                <input class="col-lg-8 form-control" type="number" name="" id="">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="">Cantidad</label>
+                                <input class="col-lg-8 form-control" type="number" name="" id="">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="">Cargar imagen</label>
+                                <div class="file-field">
+                                        <input type="file" name="" id="" accept="image/*">
+                                </div>
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary button-block">Agregar producto</button>
+                          </form>
+                    
+            </div>
+            
+            <div class="col-lg-6 col-md-12 text-center text-lg-center">  
+                    <table class="table table-responsive table-striped">
+                            <thead>
+                              <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">PRODUCTO</th>
+                                <th scope="col">PRECIO</th>
+                                <th scope="col">FECHA DE VENTA</th>
+                                <th scope="col">CANTIDAD</th>
+                                <th scope="col">TOTAL</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                              </tr>
+                              <tr>
+                                    <th scope="row">4</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@mdo</td>
+                                    <td>@mdo</td>
+                                  </tr>
+                            </tbody>
+                          </table>      
+            </div>
+        </div>
+    </div>
+</body>
+</html>
