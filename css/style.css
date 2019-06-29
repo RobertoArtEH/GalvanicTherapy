@@ -139,7 +139,7 @@
   background-color: #111111;
 }
 
-.footer-copyright {
+.footer-copyright{
   background-color: black;
 }
 
@@ -148,14 +148,14 @@
 
 .logo-galvanic-login {
 	padding-top: 25px;
-  margin: -40px;
+  
 }
 
 .formulario-login {
 	background:url(../img/backgrounds/background-two.jpg);
 	background-repeat: no-repeat;
   background-attachment: scroll;
-  background-size: 100%;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,8 +170,8 @@
 }
 
 .logo-galvanic-registro{
-  padding-top: 25px;
-  margin: -40px;
+  padding-top: 10px;
+  
 }
 
 /* Productos */
