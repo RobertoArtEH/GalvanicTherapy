@@ -2,6 +2,11 @@
 
 /* Estilos de header */
 
+.logo {
+  height: 80px;
+  width: auto;
+}
+
 .nav-link {
   color: #000;
 }
@@ -148,7 +153,6 @@
 
 .logo-galvanic-login {
 	padding-top: 25px;
-  
 }
 
 .formulario-login {
@@ -171,7 +175,6 @@
 
 .logo-galvanic-registro{
   padding-top: 10px;
-  
 }
 
 /* Productos */
@@ -203,4 +206,10 @@
 .product-link:hover {
   color: #63BD6A;
   text-decoration: none;
+}
+
+/* Ventas */
+
+.total-ventas {
+  
 }
