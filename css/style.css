@@ -16,6 +16,18 @@
   padding: 10px;
 }
 
+@media (min-width: 1200px) {
+  .sections {
+    position: relative;
+    left: 90px;
+  }
+
+  .sections-secundary {
+    position: relative;
+    left: 50px;
+  }
+}
+
 .cart {
   margin: auto 20px;
 }
@@ -27,7 +39,7 @@
 /* Banners */
 
 .banner-background {
-  background-image: url(../img/backgrounds/background-three.jpg);
+  background-image: url(../img/backgrounds/bakcground-three.jpg);
   background-repeat: no-repeat;
   background-origin: content;
   background-size: cover;
@@ -106,7 +118,14 @@
 }
 
 .mini-title {
+  color: #fff;
+  text-decoration: none;
   margin: 0;
+}
+
+.mini-title:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 .banner-button {
@@ -133,7 +152,7 @@
 }
 
 .formulario-login {
-	background:url(../img/backgrounds/nature-compressor.jpg);
+	background:url(../img/backgrounds/background-two.jpg);
 	background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: 100%;
@@ -143,12 +162,11 @@
 }
 
 .formulario-registro{
-  background: url(../img/backgrounds/nature-compressor.jpg);
+  background: url(../img/backgrounds/background-two.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-origin: content-box;
   background-position: center;
-  
 }
 
 .logo-galvanic-registro{
@@ -166,10 +184,6 @@
   margin: 20px;
 }
 
-.badge-danger {
-  font-size: .7em;
-}
-
 /* Producto */
 
 .product-title {
@@ -179,4 +193,14 @@
 
 .product-text {
   color: #000;
+}
+
+.product-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.product-link:hover {
+  color: #63BD6A;
+  text-decoration: none;
 }
