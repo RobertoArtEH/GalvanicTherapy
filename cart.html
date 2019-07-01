@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="resources/bootstrap-4.3.1/css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="">
-    <title>Galvanic Therapy</title>
+    <title>Carrito</title>
   </head>
   <body>
     <!-- Header -->
@@ -25,6 +25,12 @@
             <div class="d-lg-none">
               <img src="img/icons/search.svg" height="25px" alt="Buscar"/>
             </div>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <!-- Carrito de compras -->
+            <a class="cart d-lg-none" href="cart.html">
+              <img src="img/icons/cart.svg" height="25px" alt="Carrito"/>
+            </a>
           </li>
           <li class="nav-item">
             <!-- Boton de menu -->
@@ -64,6 +70,10 @@
             <a class="nav-link product-link" href="catalogo.html">Lo nuevo</a>
           </li>
         </ul>
+        <!-- Carrito de compras lg -->
+        <a class="cart d-none d-lg-block" href="cart.html">
+          <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
+        </a>
         <!-- Perfil LG -->
         <div class="dropdown d-none d-lg-block">
           <a href="" data-toggle="dropdown" style="text-decoration: none;">
@@ -89,66 +99,61 @@
       </div>
     </nav>
     <!-- Mini header -->
-    <main class="container-fluid mini-banner-background d-flex align-items-center">
+    <div class="container-fluid mini-banner-background d-flex align-items-center">
       <div class="container">
         <div class="row mini-banner-content">
-          <section class="col text-center">
-            <a class="nav-item mini-title mx-3" href="admin-productos.html">Administrar producto</a>
-            <a class="nav-item mini-title" href="admin-ventas.html">Administrar ventas</a>
-          </section>
+          <div class="col text-center">
+            <p class="mini-title">¡Envios a todo México!</p>
+          </div>
         </div>
       </div>
-    </main>
-    <!-- Total de ventas -->
+    </div>
     <div class="container content-container">
-      <h4 class="mb-4 text-center">Actividad de ventas</h4>
-      <table class="table table-sm table-hover shadow bg-white rounded text-center">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Total de ventas</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">$ 999</th>
-          </tr>
-        </tbody>
-      </table>
-      <!-- Info de ventas -->
-      <table id="table" class="table table-sm table-striped table-hover shadow bg-white rounded text-center">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Producto</th>
-            <th scope="col">Fecha de venta</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Usuario</th>
-            <th scope="col">Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">kit Spa en Casa / Blanco</th>
-            <th scope="row">30-01-2019</th>
-            <th scope="row">1</th>
-            <th scope="row">@usuario</th>
-            <th scope="row">$ 999</th>
-          </tr>
-          <tr>
-            <th scope="row">kit Spa en Casa / Blanco</th>
-            <th scope="row">30-01-2019</th>
-            <th scope="row">1</th>
-            <th scope="row">@usuario</th>
-            <th scope="row">$ 999</th>
-          </tr>
-          <tr>
-            <th scope="row">kit Spa en Casa / Blanco</th>
-            <th scope="row">30-01-2019</th>
-            <th scope="row">1</th>
-            <th scope="row">@usuario</th>
-            <th scope="row">$ 999</th>
-          </tr>
-        </tbody>
-      </table>
+      <h4 class="mb-4 text-center">Carrito</h4>
+      <!-- Productos en carrito -->
+      <article class="row">
+        <!-- Imagen de producto -->
+        <div class="col-12 col-sm-12 col-md-2">
+          <img src="img/products/kit-spa-en-casa.jpg" alt="Producto" class="img-product img-thumbnail">
+        </div>
+        <!-- Nombre y descripción -->
+        <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6 mb-2">
+          <h4 class="card-title"><strong>Producto</strong></h4>
+          <h4>
+            <small>Descripción</small>
+          </h4>
+        </div>
+        <!-- Info extra - derecha -->
+        <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
+          <!-- Precio -->
+          <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
+            <h6>Precio</h6>
+          </div>
+          <!-- Cantidad -->
+          <div class="col-4 col-sm-4 col-md-4">
+            <form class="form-inline">
+              <label class="product-text mr-2" for="formCantidad">Cantidad:</label>
+              <select class="custom-select w-25" id="formCantidad">
+                <option selected>-</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </form>
+          </div>
+          <!-- Eliminar -->
+          <div class="col-2 col-sm-2 col-md-2 text-right">
+            <button type="button" class="btn btn-danger">Eliminar</button>
+          </div>
+        </div>
+      </article>
     </div>
     <!-- Bootstrap JS -->
     <script src="resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>

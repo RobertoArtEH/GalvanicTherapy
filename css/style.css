@@ -1,5 +1,9 @@
 /* Estilos generales */
 
+.content-container {
+  margin: 20px auto;
+}
+
 /* Estilos de header */
 
 .logo {
@@ -12,7 +16,7 @@
 }
 
 .navbar {
-  font-weight: 600; 
+  font-weight: 600;
   padding-top: 2.5px;
   padding-bottom: 1px;
 }
@@ -124,12 +128,13 @@
 
 .mini-title {
   color: #fff;
+  font-weight: 600;
   text-decoration: none;
   margin: 0;
 }
 
 .mini-title:hover {
-  color: #fff;
+  color: #63BD6A;
   text-decoration: none;
 }
 
@@ -179,10 +184,6 @@
 
 /* Productos */
 
-.products-container {
-  margin: 20px auto;
-}
-
 .product-card {
   margin: 20px;
 }
@@ -210,6 +211,14 @@
 
 /* Ventas */
 
-.total-ventas {
-  
+.table .thead-dark th {
+  background-color: #212529;
+  border-color: #32383e;
+}
+
+/* Cart */
+
+.img-product {
+  height: 120px;
+  width: 120px;
 }
