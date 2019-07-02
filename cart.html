@@ -118,22 +118,20 @@
         </div>
         <!-- Nombre y descripción -->
         <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6 mb-2">
-          <h4 class="card-title"><strong>Producto</strong></h4>
-          <h4>
-            <small>Descripción</small>
-          </h4>
+          <h4 class="card-title">Producto</h4>
+          <p>Descripción</p>
         </div>
         <!-- Info extra - derecha -->
         <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
           <!-- Precio -->
           <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
-            <h6>Precio</h6>
+            <h6>Precio: <span>$999</span></h6>
           </div>
           <!-- Cantidad -->
           <div class="col-4 col-sm-4 col-md-4">
             <form class="form-inline">
-              <label class="product-text mr-2" for="formCantidad">Cantidad:</label>
-              <select class="custom-select w-25" id="formCantidad">
+              <label class="product-text pr-1" for="formCantidad">Cantidad:</label>
+              <select class="custom-select" id="formCantidad">
                 <option selected>-</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -150,7 +148,7 @@
           </div>
           <!-- Eliminar -->
           <div class="col-2 col-sm-2 col-md-2 text-right">
-            <button type="button" class="btn btn-danger">Eliminar</button>
+            <button type="button" class="btn btn-dark"><img src="img/icons/delete.svg" height="16px" alt="Eliminar"></button>
           </div>
         </div>
       </article>
