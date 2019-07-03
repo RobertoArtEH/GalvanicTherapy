@@ -212,8 +212,12 @@
 /* Ventas */
 
 .table .thead-dark th {
-  background-color: #212529;
-  border-color: #32383e;
+  background-color: #272727;
+  border-color: #272727;
+}
+
+.table-sm {
+  box-shadow: 0 3px 6px 0 rgba(17, 0, 0, 0.16);
 }
 
 /* Cart */
