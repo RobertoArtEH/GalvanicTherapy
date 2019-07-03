@@ -111,24 +111,23 @@
     <div class="container content-container">
       <h4 class="mb-4 text-center">Carrito</h4>
       <!-- Productos en carrito -->
-      <article class="row">
+      <article class="cart-product row px-4 py-3">
         <!-- Imagen de producto -->
-        <div class="col-12 col-sm-12 col-md-2">
+        <div class="col-auto col-sm-auto col-md-auto">
           <img src="img/products/kit-spa-en-casa.jpg" alt="Producto" class="img-product img-thumbnail">
         </div>
         <!-- Nombre y descripción -->
-        <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6 mb-2">
+        <div class="col-4 col-sm-4 text-md-left col-md-4 col-lg-5">
           <h4 class="card-title">Producto</h4>
-          <p>Descripción</p>
+          <h6>Precio: <span>$999</span></h6>
         </div>
         <!-- Info extra - derecha -->
-        <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
+        <div class="col-12 col-sm text-sm-center col-md col-lg-auto text-md-right row">
           <!-- Precio -->
-          <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
-            <h6>Precio: <span>$999</span></h6>
-          </div>
+          <!-- <div class="col-3 col-sm-auto col-md-6 col-lg-auto text-md-right" style="padding-top: 5px">
+          </div> -->
           <!-- Cantidad -->
-          <div class="col-4 col-sm-4 col-md-4">
+          <div class="col-4 col-sm-auto col-md-4 col-lg-auto">
             <form class="form-inline">
               <label class="product-text pr-1" for="formCantidad">Cantidad:</label>
               <select class="custom-select" id="formCantidad">
@@ -147,7 +146,7 @@
             </form>
           </div>
           <!-- Eliminar -->
-          <div class="col-2 col-sm-2 col-md-2 text-right">
+          <div class="col-2 col-sm-auto col-md-2 col-lg-auto text-right">
             <button type="button" class="btn btn-dark"><img src="img/icons/delete.svg" height="16px" alt="Eliminar"></button>
           </div>
         </div>

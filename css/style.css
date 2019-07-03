@@ -233,7 +233,15 @@
 
 /* Cart */
 
+.cart-product {
+  box-shadow: 0 3px 6px 0 rgba(17, 0, 0, 0.16);
+}
+
 .img-product {
-  height: 120px;
-  width: 120px;
+  height: 140px;
+  width: 140px;
+}
+
+.price-text {
+  font-weight: 700;
 }
