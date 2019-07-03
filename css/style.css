@@ -143,6 +143,17 @@
   text-shadow: 0px 0px 12px rgba(17, 0, 0, 0.6);
 }
 
+/* Info */
+
+.info-card {
+  width: 13em;
+  margin: 1em 4em;
+}
+
+.info-img {
+  height: 10em;
+}
+
 /* Footer */
 
 .footer-background {
