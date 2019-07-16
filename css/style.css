@@ -1,4 +1,24 @@
 /* Estilos generales */
+html{
+  height: 100%;
+}
+body{
+  margin: 0;
+  display: grid;
+  grid: auto;
+  min-height: 100%;
+}
+footer{
+  background: #212529;
+  color: white;
+  padding: 3em;
+  margin-top: auto;
+}
+.home{
+  background-color: #000;
+  width: 100%;
+}
+
 
 .content-container {
   margin: 20px auto;
