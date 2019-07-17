@@ -14,30 +14,30 @@
 </head>
 <body>
   <!-- Header -->
-    <header class="container">
+    <header>
       <nav class="navbar navbar-expand-lg">
         <!-- Logo -->
         <a class="navbar-brand mx-lg-auto" href="index.html">
-          <img src="img/brand/logo.svg" class="logo" alt="Logo"/>
+          <img src="img/brand/logo.png" class="logo" alt="Logo"/>
         </a>
         <!-- Header SM -->
         <ul class="nav">
           <li class="nav-item d-flex align-items-center">
             <!-- Buscar -->
             <div class="d-lg-none">
-              <img src="img/icons/search.svg" height="25px" alt="Buscar"/>
+              <img src="img/icons/search.svg" class="icon-sm" alt="Buscar"/>
             </div>
           </li>
           <li class="nav-item d-flex align-items-center">
             <!-- Carrito de compras -->
             <a class="cart d-lg-none" href="cart.html">
-              <img src="img/icons/cart.svg" height="25px" alt="Carrito"/>
+              <img src="img/icons/cart.svg" class="icon-sm" alt="Carrito"/>
             </a>
           </li>
           <li class="nav-item">
             <!-- Boton de menu -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse_trg">
-              <img src="img/icons/menu.svg" height="40px" alt="Menú"/>
+              <img src="img/icons/menu.svg" class="icon-sm" alt="Menú"/>
             </button>
           </li>
         </ul>
@@ -83,11 +83,13 @@
   <div class="global-container">       
     <article class="formulario-login p-4">
         <section class="card container pt-2 register col-md-4 col-sm-4">
-                <img class="logo-galvanic-login" src="./img/brand/logo.svg" height="80">
+          <div class="d-flex justify-content-center pt-2">
+            <img class="logo-login" src="./img/brand/logo.png">
+          </div>
             <form action="--------------" method="post" name="formulario" id="formulario" autocomplete="off">
                 <fieldset>
                     <legend class="h4 text-center p-3">
-                        Iniciar sesion
+                      Iniciar sesion
                     </legend>
                     <form>
                       <!-- to error: add class "has-danger" -->
@@ -100,7 +102,7 @@
                           <a href="#" style="float:right;font-size:12px;">¿Olvidaste tu contraseña?</a>
                           <input type="password" class="form-control form-control-sm" id="exampleInputPassword1">
                       </div>
-                      <button type="submit" class="btn  boton-iniciar btn-block">Iniciar sesión</button>
+                      <button type="submit" class="btn btn-dark boton-iniciar btn-block">Iniciar sesión</button>
                       
                       <div class="sign-up p-4 text-center">
                           ¿No tienes una cuenta? <a href="registro.html">Crear una</a>
@@ -117,7 +119,7 @@
       <div class="container-fluid text-center">
         <div class="row justify-content-center">
           <div class="col">
-            <img src="img/brand/logo-secundary.svg" height="80">
+            <img src="img/brand/logo-secundary.png" height="80">
           </div>
           <hr class="clearfix w-100 d-md-none">
           <div class="col col-md-4 mt-3 text-center">
