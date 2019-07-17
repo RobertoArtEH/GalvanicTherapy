@@ -1,24 +1,26 @@
 /* Estilos generales */
 html{
-  height: 100%;
+  /* height: 100%; */
 }
+
 body{
   margin: 0;
   display: grid;
   grid: auto;
   min-height: 100%;
 }
+
 footer{
   background: #212529;
   color: white;
   padding: 3em;
   margin-top: auto;
 }
+
 .home{
   background-color: #000;
   width: 100%;
 }
-
 
 .content-container {
   margin: 20px auto;
@@ -27,8 +29,12 @@ footer{
 /* Estilos de header */
 
 .logo {
-  height: 80px;
+  height: 4em;
   width: auto;
+}
+
+.icon-sm {
+  height: 1.4em;
 }
 
 .nav-link {
@@ -187,8 +193,9 @@ footer{
 
 /* Login y registro */
 
-.logo-galvanic-login {
-	padding-top: 25px;
+.logo-login {
+  height: 4em;
+  width: auto;
 }
 
 .formulario-login {
@@ -217,6 +224,10 @@ footer{
 
 .product-card {
   margin: 20px;
+}
+
+.product-thumbnail {
+  height: 18em;
 }
 
 /* Producto */
