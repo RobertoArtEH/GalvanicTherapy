@@ -14,7 +14,7 @@
 </head>
 <body>
   <!-- Header -->
-    <header>
+    <header class="container">
       <nav class="navbar navbar-expand-lg">
         <!-- Logo -->
         <a class="navbar-brand mx-lg-auto" href="index.html">
