@@ -140,7 +140,7 @@
       <div class="container-fluid text-center">
         <div class="row justify-content-center">
           <div class="col">
-            <img src="img/brand/logo-secundary.png" height="80">
+            <img src="img/brand/logo-secundary.svg" height="80">
           </div>
           <hr class="clearfix w-100 d-md-none">
           <div class="col col-md-4 mt-3 text-center">
@@ -159,8 +159,8 @@
       </div>
     </footer>
     <div class="home text-center py-3">
-      <a class="text-decoration-none text-white" href="#">Inicio de pagina</a>
-    </div>
+        <a class="text-decoration-none text-white" href="#">Inicio de pagina</a>
+      </div>
     <!-- Bootstrap JS -->
     <script src="resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>
     <script src="resources/popper-1.15.0/popper.min.js"></script>
