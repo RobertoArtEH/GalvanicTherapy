@@ -152,17 +152,18 @@
           <a href="#" class="btn btn-dark btn-block disabled">Agotado</a>
         </div>
       </div>
-    </div>
+    
     <?php
       }
       ?>
+      </div>
     <!-- Footer -->
     <footer>
       <!--FOOTER TEXT-->
       <div class="container-fluid text-center">
         <div class="row justify-content-center">
           <div class="col">
-            <img src="img/brand/logo-secundary.svg" height="80">
+            <img src="img/brand/logo-secundary.png" height="80">
           </div>
           <hr class="clearfix w-100 d-md-none">
           <div class="col col-md-4 mt-3 text-center">
