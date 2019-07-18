@@ -1,3 +1,68 @@
+<?php session_start();
+require('conexion.php');
+if(isset($_SESSION['carrito'])){
+  if(isset($_GET['productid'])){
+  $arreglo=$_SESSION['carrito'];
+  $find=false;
+  $num=0;
+  for ($i=0;$i<count($arreglo);$i++){ 
+    if($arreglo[$i]['Productid']==$_GET['productid']){
+        $find=true;
+        $num=$i;
+      }
+    }
+  if($find==true){
+    $arreglo[$num]['Cantidad']=$arreglo[$num]['Cantidad']+1;
+    $_SESSION['carrito']=$arreglo;
+  }else{
+    $nombre='';
+    $precio = 0;
+    $imagen = '';
+    $cantidad = 0;
+    $consulta =$conexion->prepare('SELECT * from products where productid='.$_GET['productid']);
+    $consulta -> execute();
+      $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
+      foreach($resultado as $f){
+        $nombre =$f['productname'];
+        $precio = $f['price'];
+        $imagen = $f['picture'];
+        
+      }
+    $newdata=array('Productid'=>$_GET['productid'],
+    'Productname' =>$nombre,
+    'Price'=>$precio,
+    'Picture' => $imagen
+    
+    );
+    array_push($arreglo, $newdata);
+    $_SESSION['carrito']=$arreglo;
+  }
+}
+}else{
+  if(isset($_GET['productid'])){
+    $nombre='';
+    $precio = 0;
+    $imagen = '';
+    $Cantidad = 0;
+    $consulta =$conexion->prepare('SELECT * from products where productid='.$_GET['productid']);
+    $consulta -> execute();
+    $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
+      foreach($resultado as $f){
+        $nombre =$f['productname'];
+        $precio =$f['price'];
+        $imagen =$f['picture'];
+      }
+      $arreglo[]=array('Productid'=>$_GET['productid'],
+            'Productname'=>$nombre,
+            'Price'=>$precio,
+            'Picture'=> $imagen,
+            'Cantidad'=>1);
+            
+      $_SESSION['carrito']=$arreglo;
+    }
+  }
+  ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,7 +80,7 @@
     <header class="container">
       <nav class="navbar navbar-expand-lg">
         <!-- Logo -->
-        <a class="navbar-brand mx-lg-auto" href="index.html">
+        <a class="navbar-brand mx-lg-auto" href="index.php">
           <img src="img/brand/logo.png" class="logo" alt="Logo"/>
         </a>
         <!-- Header SM -->
@@ -28,7 +93,7 @@
           </li>
           <li class="nav-item d-flex align-items-center">
             <!-- Carrito de compras -->
-            <a class="cart d-lg-none" href="cart.html">
+            <a class="cart d-lg-none" href="cart.php">
               <img src="img/icons/cart.svg" class="icon-sm" alt="Carrito"/>
             </a>
           </li>
@@ -51,27 +116,27 @@
         <!-- Secciones -->
         <ul class="navbar-nav sections-secundary mx-lg-auto">
           <li class="nav-item active">
-            <a class="nav-link product-link" href="index.html">Inicio</a>
+            <a class="nav-link product-link" href="index.php">Inicio</a>
           </li>
           <!-- Dropdown de Productos -->
           <li class="nav-item dropdown">
-            <a class="nav-link product-link" data-toggle="dropdown" href="">Productos</a>
+            <a class="nav-link product-link" data-toggle="dropdown" href="#">Productos</a>
             <div class="dropdown-menu">
               <h4 class="dropdown-header">Categorias</h4>
-              <a class="dropdown-item product-link" href="catalogo.html">Cuidado corporal</a>
-              <a class="dropdown-item product-link" href="catalogo.html">Cuidado facial</a>
-              <a class="dropdown-item product-link" href="catalogo.html">Vitaminas</a>
+              <a id="1"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
+              <a id="2"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
+              <a id="3"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link product-link" href="catalogo.html">Tendencias</a>
+            <a class="nav-link product-link" href="tendencias.php">Tendencias</a>
           </li>
           <li class="nav-item">
             <a class="nav-link product-link" href="catalogo.html">Lo nuevo</a>
           </li>
         </ul>
         <!-- Carrito de compras lg -->
-        <a class="cart d-none d-lg-block" href="cart.html">
+        <a class="cart d-none d-lg-block" href="cart.php">
           <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
         </a>
         <!-- Perfil LG -->
@@ -113,15 +178,22 @@
       <div class="row">
         <!-- Productos -->
         <div class="col-lg col-md-12">
+        <?php
+       $total = 0;
+      if(isset($_SESSION['carrito'])){
+        $data =$_SESSION['carrito'];
+       
+        for($i=0;$i<count($data);$i++){
+          ?>
           <article class="cart-product row px-4 py-3 mb-4">
             <!-- Imagen de producto -->
             <div class="col-auto col-sm-auto">
-              <img src="img/products/kit-spa-en-casa.jpg" alt="Producto" class="img-product img-thumbnail">
+              <img src="img/products/<?php echo $data['picture']; ?>" alt="Producto" class="img-product img-thumbnail">
             </div>
             <!-- Nombre y descripción -->
             <div class="col-4 col-sm-4 text-md-left col-md col-lg">
-              <h4 class="card-title">Producto</h4>
-              <h6>Precio: <span>$999</span></h6>
+              <h4 class="card-title"><?php echo $data['productname']; ?></h4>
+              <h6>Precio: <span>$ <?php echo $data['price']; ?></span></h6>
             </div>
             <!-- Info extra - derecha -->
             <div class="col-12 mt-2 col-sm text-sm-center col-md-auto col-lg-auto text-md-right row">
@@ -150,43 +222,16 @@
               </div> -->
             </div>
           </article>
-          <article class="cart-product row px-4 py-3 mb-4">
-            <!-- Imagen de producto -->
-            <div class="col-auto col-sm-auto">
-              <img src="img/products/kit-spa-en-casa.jpg" alt="Producto" class="img-product img-thumbnail">
-            </div>
-            <!-- Nombre y descripción -->
-            <div class="col-4 col-sm-4 text-md-left col-md col-lg">
-              <h4 class="card-title">Producto</h4>
-              <h6>Precio: <span>$999</span></h6>
-            </div>
-            <!-- Info extra - derecha -->
-            <div class="col-12 mt-2 col-sm text-sm-center col-md-auto col-lg-auto text-md-right row">
-              <!-- Cantidad -->
-              <div class="col-auto col-sm-auto col-md-auto col-lg-auto">
-                <form class="form-inline">
-                  <label class="product-text pr-1" for="formCantidad">Cantidad:</label>
-                  <select class="custom-select" id="formCantidad">
-                    <option selected>-</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                  <button type="button" class="btn btn-dark mt-3 mt-sm-auto ml-sm-2"><img src="img/icons/delete.svg" height="16px" alt="Eliminar"></button>
-                </form>
-              </div>
-              <!-- Eliminar -->
-              <!-- <div class="col-auto col-sm-auto col-md-auto col-lg-auto text-right">
-              </div> -->
-            </div>
-          </article>
+          <?php
+          $total=($data[$i]['Cantidad']*$data[$i]['Price'])+$total;
+        }
+        
+      }
+    else{
+      echo 'El carro de compras esta vacio';
+    }
+    echo  
+          '
         </div>
         <!-- Total -->
         <div class="col-lg-4 col-md-12">
@@ -194,13 +239,14 @@
             <h4 class="card-title">Total</h4>
             <div class="d-flex justify-content-between my-4">
               <h6>Monto total:</h6>
-              <h6>$ 999</h6>
+              <h6>$ '.$total.'</h6>
             </div>
             <button type="button" class="btn btn-dark btn-block">Continuar</button>
           </article>
         </div>
       </div>
-    </div>
+    </div>'
+    ?>
     <!-- Bootstrap JS -->
     <script src="resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>
     <script src="resources/popper-1.15.0/popper.min.js"></script>

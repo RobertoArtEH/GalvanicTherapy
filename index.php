@@ -27,7 +27,7 @@
           </li>
           <li class="nav-item d-flex align-items-center">
             <!-- Carrito de compras -->
-            <a class="cart d-lg-none" href="cart.html">
+            <a class="cart d-lg-none" href="cart.php">
               <img src="img/icons/cart.svg" class="icon-sm" alt="Carrito"/>
             </a>
           </li>
@@ -50,31 +50,31 @@
         <!-- Secciones -->
         <ul class="navbar-nav sections mx-lg-auto">
           <li class="nav-item active">
-            <a class="nav-link product-link" href="index.html">Inicio</a>
+            <a class="nav-link product-link" href="index.php">Inicio</a>
           </li>
           <!-- Dropdown de Productos -->
           <li class="nav-item dropdown">
-            <a class="nav-link product-link" data-toggle="dropdown" href="">Productos</a>
+            <a class="nav-link product-link" data-toggle="dropdown" href="#">Productos</a>
             <div class="dropdown-menu">
               <h4 class="dropdown-header">Categorias</h4>
-              <a class="dropdown-item product-link" href="catalogo.html">Cuidado corporal</a>
-              <a class="dropdown-item product-link" href="catalogo.html">Cuidado facial</a>
-              <a class="dropdown-item product-link" href="catalogo.html">Vitaminas</a>
+              <a id="1"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
+              <a id="2"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
+              <a id="3"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link product-link" href="catalogo.html">Tendencias</a>
+            <a class="nav-link product-link" href="tendencias.php">Tendencias</a>
           </li>
           <li class="nav-item">
             <a class="nav-link product-link" href="catalogo.html">Lo nuevo</a>
           </li>
         </ul>
         <!-- Carrito de compras lg -->
-        <a class="cart d-none d-lg-block" href="cart.html">
+        <a class="cart d-none d-lg-block" href="cart.php">
           <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
         </a>
         <!-- Boton de log-in -->
-        <a class="btn btn-dark" href="login.html" role="button">Iniciar sesión</a>
+        <a class="btn btn-dark" href="login.php" role="button">Iniciar sesión</a>
       </div>
     </nav>
     <!-- Banner -->
@@ -87,9 +87,9 @@
               Galvanic Therapy:<br/>Belleza a tu alcance
             </h1>
             <h4 class="banner-subtitle">
-              Lorem, ipsum dolor sit amet<br/>consectetur adipisicing elit.
+            Productos a base de ingredientes naturales <br/>para el cuidado de la piel.
             </h4>
-            <a role="button" class="btn btn-light banner-button" href="registro.html">Registrarse</a>
+            <a role="button" class="btn btn-light banner-button" href="registro.php">Registrarse</a>
           </section>
           <!-- Slide -->
           <section class="col-lg-6 col-md-12">

@@ -29,7 +29,7 @@
           </li>
           <li class="nav-item d-flex align-items-center">
             <!-- Carrito de compras -->
-            <a class="cart d-lg-none" href="cart.html">
+            <a class="cart d-lg-none" href="cart.php">
               <img src="img/icons/cart.svg" class="icon-sm" alt="Carrito"/>
             </a>
           </li>
@@ -59,13 +59,13 @@
             <a class="nav-link product-link" data-toggle="dropdown" href="">Productos</a>
             <div class="dropdown-menu">
               <h4 class="dropdown-header">Categorias</h4>
-              <a class="dropdown-item product-link" href="catalogo.html">Cuidado corporal</a>
-              <a class="dropdown-item product-link" href="catalogo.html">Cuidado facial</a>
-              <a class="dropdown-item product-link" href="catalogo.html">Vitaminas</a>
+              <a id="1"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
+              <a id="2"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
+              <a id="3"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link product-link" href="catalogo.html">Tendencias</a>
+            <a class="nav-link product-link" href="tendencias.php">Tendencias</a>
           </li>
           <li class="nav-item">
             <a class="nav-link product-link" href="catalogo.html">Lo nuevo</a>
@@ -76,7 +76,7 @@
           <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
         </a>
         <!-- Boton de log-in -->
-        <a class="btn btn-dark" href="login.html" role="button">Iniciar sesión</a>
+        <a class="btn btn-dark" href="login.php" role="button">Iniciar sesión</a>
       </div>
     </nav>
         <div class="formulario-registro global-container">
@@ -87,7 +87,7 @@
                   <div class="d-flex justify-content-center pt-4">
                       <img class="logo-login" src="./img/brand/logo.png">
                     </div>
-                  <form action="--------------" method="post" name="formulario" id="formulario" autocomplete="off">
+                  <form action="validarregistro.php" method="post" name="formulario" id="formulario" autocomplete="off">
                       <fieldset>
     
                           <legend class="h4 p-4 text-center">
@@ -115,7 +115,7 @@
                           </div>
                           <div class="form-group">
                           <label>Contraseña</label>
-                          <input type="password" id="contra" name="contra" class="form-control">
+                          <input type="password" id="contra" name="pass" class="form-control">
                           </div>
                           <div class="form-group text-center">
                           <input type="submit" id="envio" value="Registrarse" class="btn btn-dark registrarse-boton btn-block">

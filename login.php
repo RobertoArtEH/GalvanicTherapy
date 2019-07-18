@@ -53,31 +53,31 @@
         <!-- Secciones -->
         <ul class="navbar-nav sections mx-lg-auto">
           <li class="nav-item active">
-            <a class="nav-link product-link" href="index.html">Inicio</a>
+            <a class="nav-link product-link" href="index.php">Inicio</a>
           </li>
           <!-- Dropdown de Productos -->
           <li class="nav-item dropdown">
-            <a class="nav-link product-link" data-toggle="dropdown" href="">Productos</a>
+            <a class="nav-link product-link" data-toggle="dropdown" href="#">Productos</a>
             <div class="dropdown-menu">
               <h4 class="dropdown-header">Categorias</h4>
-              <a class="dropdown-item product-link" href="catalogo.html">Cuidado corporal</a>
-              <a class="dropdown-item product-link" href="catalogo.html">Cuidado facial</a>
-              <a class="dropdown-item product-link" href="catalogo.html">Vitaminas</a>
+              <a id="1"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
+              <a id="2"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
+              <a id="3"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link product-link" href="catalogo.html">Tendencias</a>
+            <a class="nav-link product-link" href="tendencias.php">Tendencias</a>
           </li>
           <li class="nav-item">
             <a class="nav-link product-link" href="catalogo.html">Lo nuevo</a>
           </li>
         </ul>
         <!-- Carrito de compras lg -->
-        <a class="cart d-none d-lg-block" href="cart.html">
+        <a class="cart d-none d-lg-block" href="cart.php">
           <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
         </a>
         <!-- Boton de log-in -->
-        <a class="btn btn-dark" href="login.html" role="button">Iniciar sesión</a>
+        <a class="btn btn-dark" href="login.php" role="button">Iniciar sesión</a>
       </div>
     </nav>
   <div class="global-container">       
@@ -86,7 +86,7 @@
           <div class="d-flex justify-content-center pt-2">
             <img class="logo-login" src="./img/brand/logo.png">
           </div>
-            <form action="--------------" method="post" name="formulario" id="formulario" autocomplete="off">
+            <form action="validar.php" method="POST" name="formulario" id="formulario" autocomplete="off">
                 <fieldset>
                     <legend class="h4 text-center p-3">
                       Iniciar sesion
@@ -95,17 +95,17 @@
                       <!-- to error: add class "has-danger" -->
                       <div class="form-group">
                           <label for="exampleInputEmail1">Direccion de correo</label>
-                          <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+                          <input type="email" class="form-control form-control-sm" name="email" aria-describedby="emailHelp">
                       </div>
                       <div class="form-group">
                           <label for="exampleInputPassword1">Contraseña</label>
                           <a href="#" style="float:right;font-size:12px;">¿Olvidaste tu contraseña?</a>
-                          <input type="password" class="form-control form-control-sm" id="exampleInputPassword1">
+                          <input type="password" class="form-control form-control-sm" name="password">
                       </div>
                       <button type="submit" class="btn btn-dark boton-iniciar btn-block">Iniciar sesión</button>
                       
                       <div class="sign-up p-4 text-center">
-                          ¿No tienes una cuenta? <a href="registro.html">Crear una</a>
+                          ¿No tienes una cuenta? <a href="registro.php">Crear una</a>
                       </div>
                   </form>
                 </fieldset>
