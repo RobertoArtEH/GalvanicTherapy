@@ -66,7 +66,7 @@
             <a class="nav-link product-link" href="tendencias.php">Tendencias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link product-link" href="catalogo.html">Lo nuevo</a>
+            <a class="nav-link product-link" href="nuevo.php">Lo nuevo</a>
           </li>
         </ul>
         <!-- Carrito de compras lg -->
@@ -108,7 +108,7 @@
           <p class="product-text">Precio: <span>$ <?php echo $f['price']; ?></span></p>
           <form class="form-inline justify-content-center justify-content-lg-start">
             <label class="product-text mr-sm-2" for="formCantidad">Cantidad:</label>
-            <select class="custom-select my-1 mr-sm-2" id="formCantidad">
+            <select class="custom-select my-1 mr-sm-2" class="cantidad">
               <option selected>-</option>
               <option value="1">1</option>
               <option value="2">2</option>

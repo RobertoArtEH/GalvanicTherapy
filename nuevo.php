@@ -77,51 +77,42 @@
         <a class="btn btn-dark" href="login.php" role="button">Iniciar sesión</a>
       </div>
     </nav>
-    <?php
-      
-      require('conexion.php');
-      $consulta = $conexion->prepare('SELECT * FROM categories where categoryid ='.$_GET['categoryid']);
-      $consulta -> execute();
-      $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
-      foreach($resultado as $f){
-      ?>
     <!-- Banner -->
-    <main class="container-fluid <?php echo $f['picturecategorie']; ?> d-flex align-items-center">
+    <main class="container-fluid banner-new-background d-flex align-items-center">
       <div class="container">
         <div class="row banner-content-secundary">
           <div class="col text-center">
-          <h1 class="banner-title"><?php echo $f['categoryname']; ?></h1>
-            <h4 class="banner-subtitle"><?php echo $f['descriptions']; ?></h4>
+            <h1 class="banner-title">Lo Nuevo</h1>
+            <h4 class="banner-subtitle">Prueba nuestros productos más recientes</h4>
           </div>
         </div>
       </div>
     </main>
-    <?php
-      }
-      ?>
-    <!-- Productos - Contenedor -->
+   
+      <!-- Productos - Contenedor -->
+
     <div class="container content-container d-flex flex-wrap justify-content-center">
     <?php
       
       require('conexion.php');
-      $consulta = $conexion->prepare('SELECT * FROM products where unitsinstock >0 and categoryid ='.$_GET['categoryid']);
+      $consulta = $conexion->prepare('SELECT * from orders left join orderdetails on orders.OrderID=OrderDetails.OrderID left join products on OrderDetails.ProductID =
+      products.ProductID left join Categories on products.CategoryID = Categories.CategoryID where unitsinstock >0 group by products.productname order by orders.OrderID desc');
       $consulta -> execute();
       $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
         foreach($resultado as $f){
       ?>
+    
       <!-- Producto -->
       <div class="card product-card" style="width: 18rem;">
         <a href="producto.php?productid=<?php echo $f['productid'];?>">
-        <img src="img/products/<?php echo $f['picture'];?>" class="card-img-top product-thumbnail" alt="Imagen de producto">
+          <img src="img/products<?php echo $f['picture'];?>" class="card-img-top" alt="Imagen de producto">
         </a>
         <div class="card-body text-center">
-          <a href="producto.php?productid=<?php echo $f['productid'];?>" class="product-link">
+          <a href="producto.html" class="product-link">
             <h5 class="card-title"><?php echo $f['productname']; ?></h5>
           </a>
-          <p class="card-text">Precio: $ <?php echo $f['price']; ?></p>
+          <p class="card-text">Precio: $<?php echo $f['price']; ?></p>
           <p class="card-text">Envio: $ 99</p>
-        </div>
-        <div class="card-footer">
           <a href="cart.php?productid=<?php echo $f['productid'];?>" class="btn btn-dark btn-block">Agregar al carrito</a>
         </div>
       </div>
@@ -131,7 +122,8 @@
       <?php
       
       require('conexion.php');
-      $consulta = $conexion->prepare('SELECT * FROM products where unitsinstock <=0 and categoryid ='.$_GET['categoryid']);
+      $consulta = $conexion->prepare('SELECT * from orders left join orderdetails on orders.OrderID=OrderDetails.OrderID left join products on OrderDetails.ProductID =
+      products.ProductID left join Categories on products.CategoryID = Categories.CategoryID where unitsinstock <=0 group by products.productname order by orders.OrderID desc');
       $consulta -> execute();
       $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
         foreach($resultado as $f){
@@ -139,16 +131,14 @@
       <!-- Producto agotado -->
       <div class="card product-card" style="width: 18rem;">
         <a href="producto.php?productid=<?php echo $f['productid'];?>">
-          <img src="img/products/<?php echo $f['picture']; ?>" class="card-img-top product-thumbnail" alt="Imagen de producto">
+          <img src="img/products/<?php echo $f['picture']; ?>" class="card-img-top" alt="Imagen de producto">
         </a>
         <div class="card-body text-center">
-          <a href="producto.php?productid=<?php echo $f['productid'];?>" class="product-link">
+          <a href="producto.html" class="product-link">
             <h5 class="card-title"><?php echo $f['productname']; ?></h5>
           </a>
           <p class="card-text">Precio: $ <?php echo $f['price']; ?></p>
           <p class="card-text">Envio: $ 99</p>
-        </div>
-        <div class="card-footer">
           <a href="#" class="btn btn-dark btn-block disabled">Agotado</a>
         </div>
       </div>
@@ -190,3 +180,4 @@
     <script src="resources/bootstrap-4.3.1/js/bootstrap.js"></script>
   </body>
 </html>
+

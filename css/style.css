@@ -87,7 +87,7 @@ footer{
 }
 
 .banner-cuidadofac-background {
-  background-image: url(../img/backgrounds/bakcground-three.jpg);
+  background-image: url(../img/backgrounds/cuidadofacial.jpg);
   background-repeat: no-repeat;
   background-origin: content;
   background-size: cover;
@@ -103,7 +103,7 @@ footer{
 }
 
 .banner-new-background {
-  background-image: url(../img/backgrounds/background-one.jpg);
+  background-image: url(../img/backgrounds/nuevo.jpg);
   background-repeat: no-repeat;
   background-origin: content;
   background-size: cover;
@@ -111,7 +111,7 @@ footer{
 }
 
 .banner-trends-background {
-  background-image: url(../img/backgrounds/facial.jpg);
+  background-image: url(../img/backgrounds/trends.jpg);
   background-repeat: no-repeat;
   background-origin: content;
   background-size: cover;

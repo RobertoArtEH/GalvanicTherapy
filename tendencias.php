@@ -66,7 +66,7 @@
             <a class="nav-link product-link" href="tendencias.php">Tendencias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link product-link" href="catalogo.html">Lo nuevo</a>
+            <a class="nav-link product-link" href="nuevo.php">Lo nuevo</a>
           </li>
         </ul>
         <!-- Carrito de compras lg -->
@@ -105,7 +105,7 @@
       <!-- Producto -->
       <div class="card product-card" style="width: 18rem;">
         <a href="producto.php?productid=<?php echo $f['productid'];?>">
-          <img src="img/products/kit-spa-en-casa.jpg" class="card-img-top" alt="Imagen de producto">
+          <img src="img/products<?php echo $f['picture'];?>" class="card-img-top" alt="Imagen de producto">
         </a>
         <div class="card-body text-center">
           <a href="producto.html" class="product-link">

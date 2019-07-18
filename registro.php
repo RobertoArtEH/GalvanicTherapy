@@ -68,7 +68,7 @@
             <a class="nav-link product-link" href="tendencias.php">Tendencias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link product-link" href="catalogo.html">Lo nuevo</a>
+            <a class="nav-link product-link" href="nuevo.php">Lo nuevo</a>
           </li>
         </ul>
         <!-- Carrito de compras lg -->

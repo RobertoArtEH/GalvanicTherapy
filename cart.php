@@ -43,7 +43,7 @@ if(isset($_SESSION['carrito'])){
     $nombre='';
     $precio = 0;
     $imagen = '';
-    $Cantidad = 0;
+    $Cantidad = 1;
     $consulta =$conexion->prepare('SELECT * from products where productid='.$_GET['productid']);
     $consulta -> execute();
     $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
@@ -51,12 +51,13 @@ if(isset($_SESSION['carrito'])){
         $nombre =$f['productname'];
         $precio =$f['price'];
         $imagen =$f['picture'];
+        $cantidad = 1;
       }
       $arreglo[]=array('Productid'=>$_GET['productid'],
             'Productname'=>$nombre,
             'Price'=>$precio,
             'Picture'=> $imagen,
-            'Cantidad'=>1);
+            'Cantidad'=> $cantidad =1);
             
       $_SESSION['carrito']=$arreglo;
     }
@@ -182,7 +183,7 @@ if(isset($_SESSION['carrito'])){
        $total = 0;
       if(isset($_SESSION['carrito'])){
         $data =$_SESSION['carrito'];
-       
+        
         for($i=0;$i<count($data);$i++){
           ?>
           <article class="cart-product row px-4 py-3 mb-4">
@@ -201,7 +202,7 @@ if(isset($_SESSION['carrito'])){
               <div class="col-auto col-sm-auto col-md-auto col-lg-auto">
                 <form class="form-inline">
                   <label class="product-text pr-1" for="formCantidad">Cantidad:</label>
-                  <select class="custom-select" id="formCantidad">
+                  <select class="custom-select" class="cantidad" >
                     <option selected>-</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
