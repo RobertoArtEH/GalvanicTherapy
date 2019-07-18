@@ -1,7 +1,4 @@
 /* Estilos generales */
-html{
-  /* height: 100%; */
-}
 
 body{
   margin: 0;
@@ -51,6 +48,14 @@ footer{
   padding: 10px;
 }
 
+.cart {
+  margin: auto 20px;
+}
+
+.btn-dark {
+  background-color: #000;
+}
+
 @media (min-width: 1200px) {
   .sections {
     position: relative;
@@ -61,14 +66,6 @@ footer{
     position: relative;
     left: 50px;
   }
-}
-
-.cart {
-  margin: auto 20px;
-}
-
-.btn-dark {
-  background-color: #000;
 }
 
 /* Banners */
