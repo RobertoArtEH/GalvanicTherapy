@@ -188,12 +188,12 @@ if(isset($_SESSION['carrito'])){
           <article class="cart-product row px-4 py-3 mb-4">
             <!-- Imagen de producto -->
             <div class="col-auto col-sm-auto">
-              <img src="img/products/<?php echo $data['picture']; ?>" alt="Producto" class="img-product img-thumbnail">
+              <img src="img/products/<?php echo $data[$i]['Picture'] ?>" alt="Producto" class="img-product img-thumbnail">
             </div>
             <!-- Nombre y descripción -->
             <div class="col-4 col-sm-4 text-md-left col-md col-lg">
-              <h4 class="card-title"><?php echo $data['productname']; ?></h4>
-              <h6>Precio: <span>$ <?php echo $data['price']; ?></span></h6>
+              <h4 class="card-title"><?php echo $data[$i]['Productname'] ?></h4>
+              <h6>Precio: <span>$ <?php echo $data[$i]['Price'] ?></span></h6>
             </div>
             <!-- Info extra - derecha -->
             <div class="col-12 mt-2 col-sm text-sm-center col-md-auto col-lg-auto text-md-right row">

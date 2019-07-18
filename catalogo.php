@@ -86,7 +86,7 @@
       foreach($resultado as $f){
       ?>
     <!-- Banner -->
-    <main class="container-fluid banner-cuidadocorp-background d-flex align-items-center">
+    <main class="container-fluid <?php echo $f['picturecategorie']; ?> d-flex align-items-center">
       <div class="container">
         <div class="row banner-content-secundary">
           <div class="col text-center">
