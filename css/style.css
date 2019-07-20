@@ -1,13 +1,13 @@
 /* Estilos generales */
 
-body{
+body {
   margin: 0;
   display: grid;
   grid: auto;
   min-height: 100%;
 }
 
-footer{
+footer {
   background: #212529;
   color: white;
   padding: 3em;
@@ -21,6 +21,7 @@ footer{
 
 .content-container {
   margin: 20px auto;
+  overflow-x: hidden;
 }
 
 /* Estilos de header */
