@@ -2,7 +2,7 @@
 
 try{
 
-    $conexion = new PDO('mysql:host=localhost;dbname=galvanictherapy2', 'root', '');
+    $conexion = new PDO('mysql:host=localhost;dbname=galvanictherapy', 'root', '');
 
     
 
