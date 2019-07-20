@@ -175,7 +175,7 @@ if(isset($_SESSION['carrito'])){
       </div>
     </div>
     <div class="container content-container">
-      <h4 class="mb-4 text-center">Carrito</h4>
+      <h4 class="mb-4 mt-2 text-center">Carrito</h4>
       <div class="row">
         <!-- Productos -->
         <div class="col-lg col-md-12">
@@ -186,18 +186,18 @@ if(isset($_SESSION['carrito'])){
         
         for($i=0;$i<count($data);$i++){
           ?>
-          <article class="cart-product row px-4 py-3 mb-4">
+          <article class="cart-product row px-2 py-3 mb-4">
             <!-- Imagen de producto -->
             <div class="col-auto col-sm-auto">
               <img src="img/products/<?php echo $data[$i]['Picture'] ?>" alt="Producto" class="img-product img-thumbnail">
             </div>
             <!-- Nombre y descripción -->
-            <div class="col-4 col-sm-4 text-md-left col-md col-lg">
-              <h4 class="card-title"><?php echo $data[$i]['Productname'] ?></h4>
-              <h6>Precio: <span>$ <?php echo $data[$i]['Price'] ?></span></h6>
+            <div class="col col-sm-4 text-md-left col-md col-lg">
+              <h4 class="cart-title"><?php echo $data[$i]['Productname'] ?></h4>
+              <h6 class="cart-text">Precio: <span>$ <?php echo $data[$i]['Price'] ?></span></h6>
             </div>
             <!-- Info extra - derecha -->
-            <div class="col-12 mt-2 col-sm text-sm-center col-md-auto col-lg-auto text-md-right row">
+            <div class="col mt-2 col-sm text-sm-center col-md-auto col-lg-auto text-md-right row">
               <!-- Cantidad -->
               <div class="col-auto col-sm-auto col-md-auto col-lg-auto">
                 <form class="form-inline">
@@ -218,9 +218,6 @@ if(isset($_SESSION['carrito'])){
                   <button type="button" class="btn btn-dark mt-3 mt-sm-auto ml-sm-2"><img src="img/icons/delete.svg" height="16px" alt="Eliminar"></button>
                 </form>
               </div>
-              <!-- Eliminar -->
-              <!-- <div class="col-auto col-sm-auto col-md-auto col-lg-auto text-right">
-              </div> -->
             </div>
           </article>
           <?php
@@ -228,12 +225,11 @@ if(isset($_SESSION['carrito'])){
         }
         
       }
-    else{
-      echo 'El carro de compras esta vacio';
+    else {
+      echo '<p class="text-center">El carro de compras está vacio.<p>';
     }
-    echo  
-          '
-        </div>
+    echo
+    '</div>
         <!-- Total -->
         <div class="col-lg-4 col-md-12">
           <article class="cart-product px-4 py-3">
