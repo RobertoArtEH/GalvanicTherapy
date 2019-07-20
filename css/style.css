@@ -56,18 +56,6 @@ footer{
   background-color: #000;
 }
 
-@media (min-width: 1200px) {
-  .sections {
-    position: relative;
-    left: 90px;
-  }
-
-  .sections-secundary {
-    position: relative;
-    left: 50px;
-  }
-}
-
 /* Banners */
 
 .banner-background {
@@ -272,4 +260,49 @@ footer{
 
 .price-text {
   font-weight: 700;
+}
+
+/* Media query */
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0;
+    margin: 0;
+  }
+
+  .logo {
+    height: 3.5em;
+  }
+
+  .icon-sm {
+    height: 1.2em;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+/* @media (min-width: 576px) {
+
+} */
+
+/* Medium devices (tablets, 768px and up) */
+/* @media (min-width: 768px) {
+
+} */
+
+/* Large devices (desktops, 992px and up) */
+/* @media (min-width: 992px) {
+
+} */
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .sections {
+    position: relative;
+    left: 90px;
+  }
+
+  .sections-secundary {
+    position: relative;
+    left: 50px;
+  }
 }
