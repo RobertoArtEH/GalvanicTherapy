@@ -103,13 +103,13 @@
       ?>
     
       <!-- Producto -->
-      <div class="card product-card" style="width: 18rem;">
+      <div class="card product-card">
         <a href="producto.php?productid=<?php echo $f['productid'];?>">
           <img src="img/products<?php echo $f['picture'];?>" class="card-img-top" alt="Imagen de producto">
         </a>
         <div class="card-body text-center">
           <a href="producto.html" class="product-link">
-            <h5 class="card-title"><?php echo $f['productname']; ?></h5>
+            <h6 class="card-title"><?php echo $f['productname']; ?></h6>
           </a>
           <p class="card-text">Precio: $<?php echo $f['price']; ?></p>
           <p class="card-text">Envio: $ 99</p>
@@ -129,13 +129,13 @@
         foreach($resultado as $f){
       ?>
       <!-- Producto agotado -->
-      <div class="card product-card" style="width: 18rem;">
+      <div class="card product-card">
         <a href="producto.php?productid=<?php echo $f['productid'];?>">
           <img src="img/products/<?php echo $f['picture']; ?>" class="card-img-top" alt="Imagen de producto">
         </a>
         <div class="card-body text-center">
           <a href="producto.html" class="product-link">
-            <h5 class="card-title"><?php echo $f['productname']; ?></h5>
+            <h6 class="card-title"><?php echo $f['productname']; ?></h6>
           </a>
           <p class="card-text">Precio: $ <?php echo $f['price']; ?></p>
           <p class="card-text">Envio: $ 99</p>
