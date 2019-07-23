@@ -44,8 +44,11 @@
     <nav class="navbar container navbar-expand-lg">
       <div class="collapse navbar-collapse" id="collapse_trg">
         <!-- Buscar -->
-        <div class="search d-none d-lg-block">
-          <img src="img/icons/search.svg" height="16px" alt="Search"/>
+        <div class="search-bar d-none d-lg-block">
+          <input id="searchInput" class="search-input" type="text" placeholder="Buscar...">
+          <a href="#" id="searchIcon" class="search-icon">
+            <img src="img/icons/search.svg" alt="Buscar"/>
+          </a>
         </div>
         <!-- Secciones -->
         <ul class="navbar-nav sections mx-lg-auto">
@@ -187,6 +190,8 @@
     <script src="resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>
     <script src="resources/popper-1.15.0/popper.min.js"></script>
     <script src="resources/bootstrap-4.3.1/js/bootstrap.js"></script>
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
   </body>
 </html>
 
