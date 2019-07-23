@@ -117,23 +117,23 @@ if(isset($_SESSION['carrito'])){
         <!-- Secciones -->
         <ul class="navbar-nav sections-secundary mx-lg-auto">
           <li class="nav-item active">
-            <a class="nav-link product-link" href="index.php">Inicio</a>
+            <a class="nav-link bg-link" href="index.php">Inicio</a>
           </li>
           <!-- Dropdown de Productos -->
           <li class="nav-item dropdown">
-            <a class="nav-link product-link" data-toggle="dropdown" href="#">Productos</a>
+            <a class="nav-link bg-link" data-toggle="dropdown" href="#">Productos</a>
             <div class="dropdown-menu">
               <h4 class="dropdown-header">Categorias</h4>
-              <a id="1"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
-              <a id="2"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
-              <a id="3"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
+              <a id="1"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
+              <a id="2"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
+              <a id="3"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link product-link" href="tendencias.php">Tendencias</a>
+            <a class="nav-link bg-link" href="tendencias.php">Tendencias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link product-link" href="catalogo.html">Lo nuevo</a>
+            <a class="nav-link bg-link" href="catalogo.html">Lo nuevo</a>
           </li>
         </ul>
         <!-- Carrito de compras lg -->
@@ -147,18 +147,18 @@ if(isset($_SESSION['carrito'])){
             <img src="img/icons/arrow.svg" height="14px" alt="Flecha">
           </a>
           <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item product-link" href="admin-productos.html">Gestionar</a>
-            <a class="dropdown-item product-link" href="#">Cerrar sesión</a>
+            <a class="dropdown-item bg-link" href="admin-productos.html">Gestionar</a>
+            <a class="dropdown-item bg-link" href="#">Cerrar sesión</a>
           </div>
         </div>
         <!-- Perfil SM --> 
         <ul class="navbar-nav sections mx-lg-auto d-lg-none">
           <li class="nav-item">
             <div class="dropdown-divider"></div>
-            <a class="nav-link product-link" data-toggle="dropdown" href="">Perfil</a>
+            <a class="nav-link bg-link" data-toggle="dropdown" href="">Perfil</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item product-link" href="admin-productos.html">Gestionar</a>
-              <a class="dropdown-item product-link" href="#">Cerrar sesión</a>
+              <a class="dropdown-item bg-link" href="admin-productos.html">Gestionar</a>
+              <a class="dropdown-item bg-link" href="#">Cerrar sesión</a>
             </div>
           </li>
         </ul>
