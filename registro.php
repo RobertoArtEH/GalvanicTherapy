@@ -16,7 +16,7 @@
     <header class="container">
       <nav class="navbar navbar-expand-lg">
         <!-- Logo -->
-        <a class="navbar-brand mx-lg-auto" href="index.html">
+        <a class="navbar-brand mx-lg-auto" href="index.php">
           <img src="img/brand/logo.png" class="logo" alt="Logo"/>
         </a>
         <!-- Header SM -->
@@ -52,42 +52,51 @@
         <!-- Secciones -->
         <ul class="navbar-nav sections mx-lg-auto">
           <li class="nav-item active">
-            <a class="nav-link product-link" href="index.html">Inicio</a>
+            <a class="nav-link bg-link" href="index.php">Inicio</a>
           </li>
           <!-- Dropdown de Productos -->
           <li class="nav-item dropdown">
-            <a class="nav-link product-link" data-toggle="dropdown" href="">Productos</a>
+            <a class="nav-link bg-link" data-toggle="dropdown" href="">Productos</a>
             <div class="dropdown-menu">
               <h4 class="dropdown-header">Categorias</h4>
-              <a id="1"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
-              <a id="2"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
-              <a id="3"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
+              <a id="1"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
+              <a id="2"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
+              <a id="3"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link product-link" href="tendencias.php">Tendencias</a>
+            <a class="nav-link bg-link" href="tendencias.php">Tendencias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link product-link" href="nuevo.php">Lo nuevo</a>
+            <a class="nav-link bg-link" href="nuevo.php">Lo nuevo</a>
           </li>
         </ul>
         <!-- Carrito de compras lg -->
-        <a class="cart d-none d-lg-block" href="cart.html">
+        <a class="cart d-none d-lg-block" href="cart.php">
           <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
         </a>
-        <!-- Boton de log-in -->
-        <a class="btn btn-dark" href="login.php" role="button">Iniciar sesión</a>
+        <!-- Boton de log-in LG -->
+        <div class="d-none d-lg-block">
+          <a class="btn btn-dark" href="login.php" role="button">Iniciar sesión</a>
+        </div>
+        <!-- Boton de log-in SM -->
+        <ul class="navbar-nav sections mx-lg-auto d-lg-none">
+          <li class="nav-item">
+            <div class="dropdown-divider"></div>
+            <a class="nav-link bg-link" href="login.php">Iniciar sesión</a>
+          </li>
+        </ul>
       </div>
     </nav>
         <div class="formulario-registro global-container">
 
           <article class="p-4">
     
-              <section class="card container  register col-md-4 col-sm-4">
+              <section class="card container  register col-md-8 col-sm-8">
                   <div class="d-flex justify-content-center pt-4">
                       <img class="logo-login" src="./img/brand/logo.png">
                     </div>
-                  <form action="validarregistro.php" method="post" name="formulario" id="formulario" autocomplete="off">
+                  <form class="content-form" action="validarregistro.php" method="post" name="formulario" id="formulario" autocomplete="off">
                       <fieldset>
     
                           <legend class="h4 p-4 text-center">
@@ -95,15 +104,15 @@
                           </legend>
                           <div class="form-group">
                               <label>Usuario</label>
-                              <input type="text" id="user" name="user" class="form-control" placeholder="alex45">
+                              <input type="text" id="user" name="user" class="form-control">
                               </div>
                           <div class="form-group">
                           <label>Nombre</label>
-                          <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Escribe tu nombre">
+                          <input type="text" id="nombre" name="nombre" class="form-control">
                           </div>
                           <div class="form-group">
                               <label>Apellidos</label>
-                              <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Escribe tus apellidos">
+                              <input type="text" id="apellidos" name="apellidos" class="form-control">
                           </div>
                           <div class="form-group">
                             <label>Fecha de nacimiento</label>
@@ -111,7 +120,7 @@
                           </div>
                           <div class="form-group">
                           <label>Correo electronico</label>
-                          <input type="email" id="email" name="email" class="form-control" placeholder="juan@hotmail.com">
+                          <input type="email" id="email" name="email" class="form-control">
                           </div>
                           <div class="form-group">
                           <label>Contraseña</label>
@@ -119,6 +128,9 @@
                           </div>
                           <div class="form-group text-center">
                           <input type="submit" id="envio" value="Registrarse" class="btn btn-dark registrarse-boton btn-block">
+                          </div>
+                          <div class="pb-4 text-center">
+                            ¿Ya tienes una cuenta? <a class="text-link" href="login.php">Inicia sesión</a>
                           </div>
                       </fieldset>
                   </form>

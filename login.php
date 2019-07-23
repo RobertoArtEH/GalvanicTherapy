@@ -17,7 +17,7 @@
     <header class="container">
       <nav class="navbar navbar-expand-lg">
         <!-- Logo -->
-        <a class="navbar-brand mx-lg-auto" href="index.html">
+        <a class="navbar-brand mx-lg-auto" href="index.php">
           <img src="img/brand/logo.png" class="logo" alt="Logo"/>
         </a>
         <!-- Header SM -->
@@ -30,7 +30,7 @@
           </li>
           <li class="nav-item d-flex align-items-center">
             <!-- Carrito de compras -->
-            <a class="cart d-lg-none" href="cart.html">
+            <a class="cart d-lg-none" href="cart.php">
               <img src="img/icons/cart.svg" class="icon-sm" alt="Carrito"/>
             </a>
           </li>
@@ -53,40 +53,49 @@
         <!-- Secciones -->
         <ul class="navbar-nav sections mx-lg-auto">
           <li class="nav-item active">
-            <a class="nav-link product-link" href="index.php">Inicio</a>
+            <a class="nav-link bg-link" href="index.php">Inicio</a>
           </li>
           <!-- Dropdown de Productos -->
           <li class="nav-item dropdown">
-            <a class="nav-link product-link" data-toggle="dropdown" href="#">Productos</a>
+            <a class="nav-link bg-link" data-toggle="dropdown" href="#">Productos</a>
             <div class="dropdown-menu">
               <h4 class="dropdown-header">Categorias</h4>
-              <a id="1"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
-              <a id="2"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
-              <a id="3"class="dropdown-item product-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
+              <a id="1"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
+              <a id="2"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
+              <a id="3"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link product-link" href="tendencias.php">Tendencias</a>
+            <a class="nav-link bg-link" href="tendencias.php">Tendencias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link product-link" href="nuevo.php">Lo nuevo</a>
+            <a class="nav-link bg-link" href="nuevo.php">Lo nuevo</a>
           </li>
         </ul>
         <!-- Carrito de compras lg -->
         <a class="cart d-none d-lg-block" href="cart.php">
           <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
         </a>
-        <!-- Boton de log-in -->
-        <a class="btn btn-dark" href="login.php" role="button">Iniciar sesión</a>
+        <!-- Boton de log-in LG -->
+        <div class="d-none d-lg-block">
+          <a class="btn btn-dark" href="login.php" role="button">Iniciar sesión</a>
+        </div>
+        <!-- Boton de log-in SM -->
+        <ul class="navbar-nav sections mx-lg-auto d-lg-none">
+          <li class="nav-item">
+            <div class="dropdown-divider"></div>
+            <a class="nav-link bg-link" href="login.php">Iniciar sesión</a>
+          </li>
+        </ul>
       </div>
     </nav>
   <div class="global-container">       
     <article class="formulario-login p-4">
-        <section class="card container pt-2 register col-md-4 col-sm-4">
+        <section class="card container pt-2 register col-md-8 col-sm-8">
           <div class="d-flex justify-content-center pt-2">
             <img class="logo-login" src="./img/brand/logo.png">
           </div>
-            <form action="validar.php" method="POST" name="formulario" id="formulario" autocomplete="off">
+            <form class="content-form" action="validar.php" method="POST" name="formulario" id="formulario" autocomplete="off">
                 <fieldset>
                     <legend class="h4 text-center p-3">
                       Iniciar sesion
@@ -99,13 +108,13 @@
                       </div>
                       <div class="form-group">
                           <label for="exampleInputPassword1">Contraseña</label>
-                          <a href="#" style="float:right;font-size:12px;">¿Olvidaste tu contraseña?</a>
+                          <a class="text-link" href="#" style="float:right;font-size:12px;">¿Olvidaste tu contraseña?</a>
                           <input type="password" class="form-control form-control-sm" name="password">
                       </div>
                       <button type="submit" class="btn btn-dark boton-iniciar btn-block">Iniciar sesión</button>
                       
                       <div class="sign-up p-4 text-center">
-                          ¿No tienes una cuenta? <a href="registro.php">Crear una</a>
+                          ¿No tienes una cuenta? <a class="text-link" href="registro.php">Crear una</a>
                       </div>
                   </form>
                 </fieldset>
