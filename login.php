@@ -91,7 +91,7 @@
     </nav>
   <div class="global-container">       
     <article class="formulario-login p-4">
-        <section class="card container pt-2 register col-md-8 col-sm-8">
+        <section class="card container pt-2 register col-md-8 col-sm-8 col-lg-4">
           <div class="d-flex justify-content-center pt-2">
             <img class="logo-login" src="./img/brand/logo.png">
           </div>

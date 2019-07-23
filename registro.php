@@ -92,7 +92,7 @@
 
           <article class="p-4">
     
-              <section class="card container  register col-md-8 col-sm-8">
+              <section class="card container  register col-md-8 col-sm-8 col-lg-4">
                   <div class="d-flex justify-content-center pt-4">
                       <img class="logo-login" src="./img/brand/logo.png">
                     </div>
