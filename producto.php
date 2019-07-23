@@ -108,12 +108,12 @@
     <div class="container">
       <div class="row banner-content">
         <!-- Imagen -->
-        <div class="col-lg-6 col-md-12">
+        <div class="col-lg-6 col-md-12 d-flex justify-content-center">
           <img src="img/products/<?php echo $f['picture']; ?>" class="img-thumbnail" alt="Imagen de producto">
         </div>
         <!-- Detalles -->
         <div class="col-lg-6 col-md-12 text-center text-lg-left">
-          <h4 class="product-title my-1"><?php echo $f['productname']; ?></h4>
+          <h4 class="product-title my-3"><?php echo $f['productname']; ?></h4>
           <p class="product-text">Precio: <span>$ <?php echo $f['price']; ?></span></p>
           <form class="form-inline justify-content-center justify-content-lg-start">
             <label class="product-text mr-sm-2" for="formCantidad">Cantidad:</label>
