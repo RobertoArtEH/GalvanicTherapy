@@ -133,7 +133,7 @@ if(isset($_SESSION['carrito'])){
             <a class="nav-link bg-link" href="tendencias.php">Tendencias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link bg-link" href="catalogo.html">Lo nuevo</a>
+            <a class="nav-link bg-link" href="nuevo.php">Lo nuevo</a>
           </li>
         </ul>
         <!-- Carrito de compras lg -->
@@ -186,6 +186,7 @@ if(isset($_SESSION['carrito'])){
         
         for($i=0;$i<count($data);$i++){
           ?>
+          <div id="producto">
           <article class="cart-product row px-2 py-3 mb-4">
             <!-- Imagen de producto -->
             <div class="col-auto col-sm-auto">
@@ -215,11 +216,12 @@ if(isset($_SESSION['carrito'])){
                     <option value="9">9</option>
                     <option value="10">10</option>
                   </select>
-                  <button type="button" class="btn btn-dark mt-3 mt-sm-auto ml-sm-2"><img src="img/icons/delete.svg" height="16px" alt="Eliminar"></button>
+                  <a href="#" id="borrar" data-id="<?php echo $data[$i]['Productid'] ?>" class="btn btn-dark mt-3 mt-sm-auto ml-sm-2"><img src="img/icons/delete.svg" height="16px" alt="Eliminar"></a>                 
                 </form>
               </div>
             </div>
           </article>
+          </div>
           <?php
           $total=($data[$i]['Cantidad']*$data[$i]['Price'])+$total;
         }
@@ -250,3 +252,22 @@ if(isset($_SESSION['carrito'])){
     <script src="resources/bootstrap-4.3.1/js/bootstrap.js"></script>
 </body>
 </html>
+<script>
+  $(document).ready(function(){
+    $('#borrar').click(function(e){
+    e.preventDefault();
+		var id=$(this).attr('data-id');
+		$(this).parentsUntil('#producto').remove();
+		$.post('./eliminar.php',{
+			Id:id
+		},function(a){
+			
+			if(a=='0'){
+				location.href="cart.php";
+			}
+		});
+    
+  });
+  });
+  
+</script>
