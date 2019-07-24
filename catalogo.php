@@ -1,4 +1,4 @@
-<?php
+<?php 
 include 'config.php';
 include 'conexion.php';
 include 'validarcart.php';
@@ -55,7 +55,62 @@ include 'validarcart.php';
             <img src="img/icons/search.svg" alt="Buscar"/>
           </a>
         </div>
-        <!-- Secciones -->
+        <?php 
+if(isset($_SESSION['email'])){
+  ?>
+  <!-- Secciones -->
+  <ul class="navbar-nav sections-secundary mx-lg-auto">
+          <li class="nav-item active">
+            <a class="nav-link bg-link" href="index.php">Inicio</a>
+          </li>
+          <!-- Dropdown de Productos -->
+          <li class="nav-item dropdown">
+            <a class="nav-link bg-link" data-toggle="dropdown" href="#">Productos</a>
+            <div class="dropdown-menu">
+              <h4 class="dropdown-header">Categorias</h4>
+              <a id="1"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
+              <a id="2"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
+              <a id="3"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bg-link" href="tendencias.php">Tendencias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bg-link" href="nuevo.php">Lo nuevo</a>
+          </li>
+        </ul>
+        <!-- Carrito de compras lg -->
+        <a class="cart d-none d-lg-block" href="cart.php">
+        <span><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>  
+          <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
+        </a>
+        <!-- Perfil LG -->
+        <div class="dropdown d-none d-lg-block">
+          <a href="" data-toggle="dropdown" style="text-decoration: none;">
+            <img src="img/icons/user.png" width="32px" height="32px" alt="Perfil">
+            <img src="img/icons/arrow.svg" height="14px" alt="Flecha">
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item bg-link" href="admin-productos.html">Gestionar</a>
+            <a class="dropdown-item bg-link" href="cerrar.php">Cerrar sesión</a>
+          </div>
+        </div>
+        <!-- Perfil SM --> 
+        <ul class="navbar-nav sections mx-lg-auto d-lg-none">
+          <li class="nav-item">
+            <div class="dropdown-divider"></div>
+            <a class="nav-link bg-link" data-toggle="dropdown" href="">Perfil</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item bg-link" href="admin-productos.html">Gestionar</a>
+              <a class="dropdown-item bg-link" href="cerrar.php">Cerrar sesión</a>
+            </div>
+          </li>
+        </ul>
+      <?php
+        }else{
+
+          ?><!-- Secciones -->
         <ul class="navbar-nav sections mx-lg-auto">
           <li class="nav-item active">
             <a class="nav-link bg-link" href="index.php">Inicio</a>
@@ -81,8 +136,8 @@ include 'validarcart.php';
         <a class="cart d-none d-lg-block" href="cart.php">
           <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
         </a>
-        <!-- Boton de log-in LG -->
-        <div class="d-none d-lg-block">
+  <!-- Boton de log-in LG -->
+  <div class="d-none d-lg-block">
           <a class="btn btn-dark" href="login.php" role="button">Iniciar sesión</a>
         </div>
         <!-- Boton de log-in SM -->
@@ -92,7 +147,9 @@ include 'validarcart.php';
             <a class="nav-link bg-link" href="login.php">Iniciar sesión</a>
           </li>
         </ul>
-      </div>
+  <?php
+}
+?>
     </nav>
     <div class="alert alert-success">
 <?php echo $mensaje; ?>
