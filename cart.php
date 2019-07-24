@@ -1,69 +1,7 @@
-<?php session_start();
-require('conexion.php');
-if(isset($_SESSION['carrito'])){
-  if(isset($_GET['productid'])){
-  $arreglo=$_SESSION['carrito'];
-  $find=false;
-  $num=0;
-  for ($i=0;$i<count($arreglo);$i++){ 
-    if($arreglo[$i]['Productid']==$_GET['productid']){
-        $find=true;
-        $num=$i;
-      }
-    }
-  if($find==true){
-    $arreglo[$num]['Cantidad']=$arreglo[$num]['Cantidad']+1;
-    $_SESSION['carrito']=$arreglo;
-  }else{
-    $nombre='';
-    $precio = 0;
-    $imagen = '';
-    $cantidad = 0;
-    $consulta =$conexion->prepare('SELECT * from products where productid='.$_GET['productid']);
-    $consulta -> execute();
-      $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
-      foreach($resultado as $f){
-        $nombre =$f['productname'];
-        $precio = $f['price'];
-        $imagen = $f['picture'];
-        
-      }
-    $newdata=array('Productid'=>$_GET['productid'],
-    'Productname' =>$nombre,
-    'Price'=>$precio,
-    'Picture' => $imagen
-    
-    );
-    array_push($arreglo, $newdata);
-    $_SESSION['carrito']=$arreglo;
-  }
-}
-}else{
-  if(isset($_GET['productid'])){
-    $nombre='';
-    $precio = 0;
-    $imagen = '';
-    $Cantidad = 1;
-    $consulta =$conexion->prepare('SELECT * from products where productid='.$_GET['productid']);
-    $consulta -> execute();
-    $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
-      foreach($resultado as $f){
-        $nombre =$f['productname'];
-        $precio =$f['price'];
-        $imagen =$f['picture'];
-        $cantidad = 1;
-      }
-      $arreglo[]=array('Productid'=>$_GET['productid'],
-            'Productname'=>$nombre,
-            'Price'=>$precio,
-            'Picture'=> $imagen,
-            'Cantidad'=> $cantidad =1);
-            
-      $_SESSION['carrito']=$arreglo;
-    }
-  }
-  ?>
-
+<?php
+include 'config.php';
+include 'validarcart.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -95,6 +33,7 @@ if(isset($_SESSION['carrito'])){
           <li class="nav-item d-flex align-items-center">
             <!-- Carrito de compras -->
             <a class="cart d-lg-none" href="cart.php">
+            <span><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>
               <img src="img/icons/cart.svg" class="icon-sm" alt="Carrito"/>
             </a>
           </li>
@@ -138,6 +77,7 @@ if(isset($_SESSION['carrito'])){
         </ul>
         <!-- Carrito de compras lg -->
         <a class="cart d-none d-lg-block" href="cart.php">
+        <span><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>  
           <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
         </a>
         <!-- Perfil LG -->
@@ -176,33 +116,34 @@ if(isset($_SESSION['carrito'])){
     </div>
     <div class="container content-container">
       <h4 class="mb-4 mt-2 text-center">Carrito</h4>
+      <?php if(!empty($_SESSION['CARRITO'])){ ?>
       <div class="row">
+      
         <!-- Productos -->
         <div class="col-lg col-md-12">
-        <?php
-       $total = 0;
-      if(isset($_SESSION['carrito'])){
-        $data =$_SESSION['carrito'];
+       
+       <?php $total=0; ?>
+       <?php foreach($_SESSION['CARRITO'] as $indice=>$producto ){  ?>
         
-        for($i=0;$i<count($data);$i++){
-          ?>
           <div id="producto">
           <article class="cart-product row px-2 py-3 mb-4">
             <!-- Imagen de producto -->
             <div class="col-auto col-sm-auto">
-              <img src="img/products/<?php echo $data[$i]['Picture'] ?>" alt="Producto" class="img-product img-thumbnail">
+              <img src="img/products/<?php echo $producto['IMAGEN'] ?>" alt="Producto" class="img-product img-thumbnail">
             </div>
             <!-- Nombre y descripción -->
             <div class="col col-sm-4 text-md-left col-md col-lg">
-              <h4 class="cart-title"><?php echo $data[$i]['Productname'] ?></h4>
-              <h6 class="cart-text">Precio: <span>$ <?php echo $data[$i]['Price'] ?></span></h6>
+              <h4 class="cart-title"><?php echo $producto['NOMBRE'] ?></h4>
+              <h6 class="cart-text">Precio: <span>$ <?php echo $producto['PRECIO'] ?></span></h6>
             </div>
             <!-- Info extra - derecha -->
             <div class="col mt-2 col-sm text-sm-center col-md-auto col-lg-auto text-md-right row">
               <!-- Cantidad -->
               <div class="col-auto col-sm-auto col-md-auto col-lg-auto">
-                <form class="form-inline">
-                  <label class="product-text pr-1" for="formCantidad">Cantidad:</label>
+                <form class="form-inline" action="" method="post">
+                <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($producto['ID'],COD,KEY);?>">
+                <h6 class="cart-text pt-4">Subtotal: <span>$ <?php echo number_format($producto['PRECIO'] * $producto['CANTIDAD'],2 );  ?> </span></h6>        
+               <label class="product-text pr-1" for="formCantidad">Cantidad: <?php echo $producto['CANTIDAD'] ?></label>
                   <select class="custom-select" class="cantidad" >
                     <option selected>-</option>
                     <option value="1">1</option>
@@ -216,58 +157,35 @@ if(isset($_SESSION['carrito'])){
                     <option value="9">9</option>
                     <option value="10">10</option>
                   </select>
-                  <a href="#" id="borrar" data-id="<?php echo $data[$i]['Productid'] ?>" class="btn btn-dark mt-3 mt-sm-auto ml-sm-2"><img src="img/icons/delete.svg" height="16px" alt="Eliminar"></a>                 
+                  <button class="btn btn-dark mt-3 mt-sm-auto ml-sm-2" type="submit" name="btnAccion" value="Eliminar" ><img src="img/icons/delete.svg" height="16px"></button>      
                 </form>
               </div>
             </div>
           </article>
           </div>
-          <?php
-          $total=($data[$i]['Cantidad']*$data[$i]['Price'])+$total;
-        }
-        
-      }
-    else {
-      echo '<p class="text-center">El carro de compras está vacio.<p>';
-    }
-    echo
-    '</div>
+          <?php $total=$total+($producto['PRECIO'] * $producto['CANTIDAD']); ?>
+            <?php } ?>
+    </div>
         <!-- Total -->
         <div class="col-lg-4 col-md-12">
           <article class="cart-product px-4 py-3">
             <h4 class="card-title">Total</h4>
             <div class="d-flex justify-content-between my-4">
               <h6>Monto total:</h6>
-              <h6>$ '.$total.'</h6>
+              <h6>$ <?php echo number_format($total,2); ?></h6>
             </div>
             <button type="button" class="btn btn-dark btn-block">Continuar</button>
           </article>
         </div>
+        <?php } else{ ?>
+          <div class="alert alert-success">No hay productos en el carrito...</div>
+        <?php } ?>
       </div>
-    </div>'
-    ?>
+    </div>
+  
     <!-- Bootstrap JS -->
     <script src="resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>
     <script src="resources/popper-1.15.0/popper.min.js"></script>
     <script src="resources/bootstrap-4.3.1/js/bootstrap.js"></script>
 </body>
 </html>
-<script>
-  $(document).ready(function(){
-    $('#borrar').click(function(e){
-    e.preventDefault();
-		var id=$(this).attr('data-id');
-		$(this).parentsUntil('#producto').remove();
-		$.post('./eliminar.php',{
-			Id:id
-		},function(a){
-			
-			if(a=='0'){
-				location.href="cart.php";
-			}
-		});
-    
-  });
-  });
-  
-</script>
