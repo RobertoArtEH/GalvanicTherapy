@@ -46,8 +46,11 @@
     <nav class="navbar container navbar-expand-lg">
       <div class="collapse navbar-collapse" id="collapse_trg">
         <!-- Buscar -->
-        <div class="search d-none d-lg-block">
-          <img src="img/icons/search.svg" height="16px" alt="Search"/>
+        <div class="search-bar d-none d-lg-block">
+          <input id="searchInput" class="search-input" type="text" placeholder="Buscar...">
+          <a href="#" id="searchIcon" class="search-icon">
+            <img src="img/icons/search.svg" alt="Buscar"/>
+          </a>
         </div>
         <!-- Secciones -->
         <ul class="navbar-nav sections mx-lg-auto">
@@ -165,15 +168,11 @@
         <a class="text-decoration-none text-white" href="#">Inicio de pagina</a>
       </div>
         <!-- Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-          crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-          crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-          crossorigin="anonymous"></script>
+        <script src="resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+        <script src="resources/popper-1.15.0/popper.min.js"></script>
+        <script src="resources/bootstrap-4.3.1/js/bootstrap.js"></script>
+        <!-- Scripts -->
+        <script src="js/script.js"></script>
       </body>
     </html>
     
