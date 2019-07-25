@@ -1,7 +1,5 @@
 <?php session_start();
-if(isset($_SESSION['usuario'])){
-  header('Location: index.php');
-}
+
 if($_SERVER['REQUEST_METHOD']=='POST'){
   $email = $_POST['email'];
   $password = $_POST['password'];
@@ -13,6 +11,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
   if($resultado){
     $_SESSION['email']= $email;
     header('Location: index.php');
+    
     
   }else{
     header('Location: login.php');
