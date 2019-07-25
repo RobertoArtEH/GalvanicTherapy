@@ -1,3 +1,6 @@
+<?php
+  require('conexion.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +12,7 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"/>
+    <link rel="stylesheet" href="resources/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
@@ -99,38 +103,38 @@
                   <div class="d-flex justify-content-center pt-4">
                       <img class="logo-login" src="./img/brand/logo.png">
                     </div>
-                  <form class="content-form" action="validarregistro.php" method="post" name="formulario" id="formulario" autocomplete="off">
+                  <form class="content-form" action="registro.php" method="post" name="formulario" id="formulario" autocomplete="off">
                       <fieldset>
-    
+
                           <legend class="h4 p-4 text-center">
                               Ingresa tus datos
                           </legend>
                           <div class="form-group">
                               <label>Usuario</label>
-                              <input type="text" id="user" name="user" class="form-control">
+                              <input type="text" id="user" name="user" class="form-control" required>
                               </div>
                           <div class="form-group">
                           <label>Nombre</label>
-                          <input type="text" id="nombre" name="nombre" class="form-control">
+                          <input type="text" id="nombre" name="nombre" class="form-control" required>
                           </div>
                           <div class="form-group">
                               <label>Apellidos</label>
-                              <input type="text" id="apellidos" name="apellidos" class="form-control">
+                              <input type="text" id="apellidos" name="apellidos" class="form-control" required>
                           </div>
                           <div class="form-group">
                             <label>Fecha de nacimiento</label>
-                            <input type="date" id="f_nacimiento" name="f_nacimiento" class="form-control">
+                            <input type="date" id="f_nacimiento" name="f_nacimiento" class="form-control" required>
                           </div>
                           <div class="form-group">
                           <label>Correo electronico</label>
-                          <input type="email" id="email" name="email" class="form-control">
+                          <input type="email" id="email" name="email" class="form-control" required>
                           </div>
                           <div class="form-group">
                           <label>Contraseña</label>
-                          <input type="password" id="contra" name="pass" class="form-control">
+                          <input type="password" id="pass" name="pass" class="form-control" required>
                           </div>
                           <div class="form-group text-center">
-                          <input type="submit" id="envio" value="Registrarse" class="btn btn-dark registrarse-boton btn-block">
+                          <input  name="create" type="submit" id="registro" value="Registrarse" class="btn btn-dark registrarse-boton btn-block">
                           </div>
                           <div class="pb-4 text-center">
                             ¿Ya tienes una cuenta? <a class="text-link" href="login.php">Inicia sesión</a>
@@ -171,8 +175,11 @@
         <script src="resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>
         <script src="resources/popper-1.15.0/popper.min.js"></script>
         <script src="resources/bootstrap-4.3.1/js/bootstrap.js"></script>
+        <!-- Sweetalert -->
+        <script src="resources/sweetalert2/sweetalert2.min.js"></script>
         <!-- Scripts -->
         <script src="js/script.js"></script>
+        <script src="js/form.js"></script>
       </body>
     </html>
     
