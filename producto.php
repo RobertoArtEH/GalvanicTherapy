@@ -179,6 +179,6 @@
     <script src="resources/popper-1.15.0/popper.min.js"></script>
     <script src="resources/bootstrap-4.3.1/js/bootstrap.js"></script>
     <!-- Scripts -->
-    <script src="js/script.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>

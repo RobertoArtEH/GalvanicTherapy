@@ -178,7 +178,7 @@
         <!-- Sweetalert -->
         <script src="resources/sweetalert2/sweetalert2.min.js"></script>
         <!-- Scripts -->
-        <script src="js/script.js"></script>
+        <script src="js/search.js"></script>
         <script src="js/form.js"></script>
       </body>
     </html>
