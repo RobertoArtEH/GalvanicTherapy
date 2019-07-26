@@ -1,5 +1,8 @@
 $(function() {
   $('#registro').click(function(e) {
+    $('#email').removeClass('is-invalid');
+    $('#user').removeClass('is-invalid');
+    
     var valid = this.form.checkValidity();
 
     if(valid) {
@@ -35,22 +38,17 @@ $(function() {
             setTimeout(() => window.location = 'registro.php', 1000);
           }
 
+          if(data == 'correo-user-error') {
+            $('#email').addClass('is-invalid');
+            $('#user').addClass('is-invalid');
+          }
+
           if(data == 'correo-existente') {
-            Swal.fire({
-              type: 'error',
-              title: 'El correo electronico ya existe.',
-              showConfirmButton: false,
-              timer: 1500
-            })
+            $('#email').addClass('is-invalid');
           }
 
           if(data == 'user-existente') {
-            Swal.fire({
-              type: 'error',
-              title: 'El nombre de usuario ya existe.',
-              showConfirmButton: false,
-              timer: 1500
-            })
+            $('#user').addClass('is-invalid');
           }
 
           if(data == 'success') {

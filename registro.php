@@ -103,16 +103,19 @@
                   <div class="d-flex justify-content-center pt-4">
                       <img class="logo-login" src="./img/brand/logo.png">
                     </div>
-                  <form class="content-form" action="registro.php" method="post" name="formulario" id="formulario" autocomplete="off">
+                  <form class="content-form needs-validation" action="registro.php" method="post" name="formulario" id="formulario" autocomplete="off">
                       <fieldset>
 
                           <legend class="h4 p-4 text-center">
                               Ingresa tus datos
                           </legend>
                           <div class="form-group">
-                              <label>Usuario</label>
-                              <input type="text" id="user" name="user" class="form-control" required>
-                              </div>
+                            <label>Usuario</label>
+                            <input type="text" id="user" name="user" class="form-control" required>
+                            <div class="invalid-feedback">
+                              El nombre de usuario ya existe.
+                            </div>
+                          </div>
                           <div class="form-group">
                           <label>Nombre</label>
                           <input type="text" id="nombre" name="nombre" class="form-control" required>
@@ -125,9 +128,12 @@
                             <label>Fecha de nacimiento</label>
                             <input type="date" id="f_nacimiento" name="f_nacimiento" class="form-control" required>
                           </div>
-                          <div class="form-group">
-                          <label>Correo electronico</label>
-                          <input type="email" id="email" name="email" class="form-control" required>
+                          <div class="form-group" id="group-email">
+                            <label>Correo electronico</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                            <div class="invalid-feedback">
+                              El correo electronico ya existe.
+                            </div>
                           </div>
                           <div class="form-group">
                           <label>Contraseña</label>
