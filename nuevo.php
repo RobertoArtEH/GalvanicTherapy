@@ -55,7 +55,7 @@ session_start();
           </a>
         </div>
         <?php 
-if(isset($_SESSION['email'])){
+if(isset($_SESSION['email']) || isset($_SESSION['username'])){
   ?>
   <!-- Secciones -->
   <ul class="navbar-nav sections-secundary mx-lg-auto">
@@ -81,7 +81,7 @@ if(isset($_SESSION['email'])){
         </ul>
         <!-- Carrito de compras lg -->
         <a class="cart d-none d-lg-block" href="cart.php">
-        <span><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>  
+        <span class="badge badge-dark cart-count"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>  
           <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
         </a>
         <!-- Perfil LG -->
@@ -91,6 +91,7 @@ if(isset($_SESSION['email'])){
             <img src="img/icons/arrow.svg" height="14px" alt="Flecha">
           </a>
           <div class="dropdown-menu dropdown-menu-right">
+          <span class="dropdown-item-text"><?php echo ($_SESSION['username']); ?></span>
             <a class="dropdown-item bg-link" href="admin-productos.html">Gestionar</a>
             <a class="dropdown-item bg-link" href="cerrar.php">Cerrar sesión</a>
           </div>
@@ -101,6 +102,7 @@ if(isset($_SESSION['email'])){
             <div class="dropdown-divider"></div>
             <a class="nav-link bg-link" data-toggle="dropdown" href="">Perfil</a>
             <div class="dropdown-menu">
+            <span class="dropdown-item-text"><?php echo ($_SESSION['username']); ?></span>
               <a class="dropdown-item bg-link" href="admin-productos.html">Gestionar</a>
               <a class="dropdown-item bg-link" href="cerrar.php">Cerrar sesión</a>
             </div>

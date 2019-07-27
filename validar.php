@@ -12,6 +12,7 @@ if(isset($_POST)) {
 
   if($emailResult) {
     $_SESSION['email']= $access;
+    $_SESSION['username']= $access;
     echo 'success';
     exit();
   }

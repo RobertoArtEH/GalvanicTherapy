@@ -33,7 +33,6 @@ session_start();
             <!-- Carrito de compras -->
             <a class="cart d-lg-none" href="cart.php">
               <img src="img/icons/cart.svg" class="icon-sm" alt="Carrito"/>
-              <span class="badge badge-dark cart-count"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>
             </a>
           </li>
           <li class="nav-item">
@@ -57,6 +56,7 @@ session_start();
         </div>
         <?php 
 if(isset($_SESSION['email']) || isset($_SESSION['username'])){
+  
   ?>
   <!-- Secciones -->
   <ul class="navbar-nav sections-secundary mx-lg-auto">
@@ -83,7 +83,7 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
         <!-- Carrito de compras lg -->
         <a class="cart d-none d-lg-block" href="cart.php">
           <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
-          <span class="badge badge-dark cart-count"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>
+          <span class="badge badge-dark cart-count"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>  
         </a>
         <!-- Perfil LG -->
         <div class="dropdown d-none d-lg-block">
@@ -92,7 +92,8 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
             <img src="img/icons/arrow.svg" height="14px" alt="Flecha">
           </a>
           <div class="dropdown-menu dropdown-menu-right">
-            <span class="dropdown-item-text">username o nombre</span>
+
+            <span class="dropdown-item-text"><?php echo ($_SESSION['username']); ?></span>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item bg-link" href="admin-productos.html">Gestionar</a>
             <a class="dropdown-item bg-link" href="cerrar.php">Cerrar sesión</a>
@@ -104,7 +105,7 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
             <div class="dropdown-divider"></div>
             <a class="nav-link bg-link" data-toggle="dropdown" href="">Perfil</a>
             <div class="dropdown-menu">
-              <span class="dropdown-item-text">username o nombre</span>
+            <span class="dropdown-item-text"><?php echo ($_SESSION['username']); ?></span>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item bg-link" href="admin-productos.html">Gestionar</a>
               <a class="dropdown-item bg-link" href="cerrar.php">Cerrar sesión</a>
@@ -154,8 +155,6 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
   <?php
 }
 ?>
-        
-    
         </div>
     </nav>
     <!-- Banner -->
@@ -171,7 +170,7 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
             Productos a base de ingredientes naturales <br/>para el cuidado de la piel.
             </h4>
             <?php
-               if(!isset($_SESSION['email'])){
+               if(!isset($_SESSION['username'])){
              ?>
             <a role="button" class="btn btn-light banner-button" href="registro.php">Registrarse</a>
             <?php
