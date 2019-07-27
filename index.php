@@ -33,6 +33,7 @@ session_start();
             <!-- Carrito de compras -->
             <a class="cart d-lg-none" href="cart.php">
               <img src="img/icons/cart.svg" class="icon-sm" alt="Carrito"/>
+              <span class="badge badge-dark cart-count"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>
             </a>
           </li>
           <li class="nav-item">
@@ -82,7 +83,7 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
         <!-- Carrito de compras lg -->
         <a class="cart d-none d-lg-block" href="cart.php">
           <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
-          <span class="badge badge-dark"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>  
+          <span class="badge badge-dark cart-count"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>
         </a>
         <!-- Perfil LG -->
         <div class="dropdown d-none d-lg-block">
