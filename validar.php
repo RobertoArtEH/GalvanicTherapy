@@ -1,21 +1,31 @@
 <?php session_start();
 
-if($_SERVER['REQUEST_METHOD']=='POST'){
-  $email = $_POST['email'];
-  $password = $_POST['password'];
+if(isset($_POST)) {
   require("conexion.php");
-  $consulta = $conexion->prepare('SELECT * FROM users WHERE email = :email AND pass = :password');
-  $consulta -> execute(array(':email'=>$email, ':password' =>$password));
-  $message = '';
-  $resultado= $consulta->fetch();
-  if($resultado){
-    $_SESSION['email']= $email;
-    header('Location: index.php');
-    
-    
-  }else{
-    header('Location: login.php');
+  
+  $access = $_POST['access'];
+  $password = $_POST['password'];
+
+  $emailQuery = $conexion -> prepare('SELECT * FROM users WHERE email = :access  AND pass = :password');
+  $emailQuery -> execute(array(':access'=>$access, ':password' =>$password));
+  $emailResult = $emailQuery -> fetch();
+
+  if($emailResult) {
+    $_SESSION['email']= $access;
+    echo 'success';
+    exit();
   }
 
+  $userQuery = $conexion -> prepare('SELECT * FROM users WHERE username = :access AND pass = :password');
+  $userQuery -> execute(array(':access'=>$access, ':password' =>$password));
+  $userResult = $userQuery -> fetch();
+
+  if($userResult) {
+    $_SESSION['username']= $access;
+    echo 'success';
+    exit();
+  } else {
+    echo 'error';
+  }
 }
   
