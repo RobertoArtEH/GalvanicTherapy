@@ -193,9 +193,9 @@ include 'validarcart.php';
                 <form class="form-inline" action="" method="post">
                 <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($producto['ID'],COD,KEY);?>">
                 <h6 class="cart-text pt-4">Subtotal: <span>$ <?php echo number_format($producto['PRECIO'] * $producto['CANTIDAD'],2 );  ?> </span></h6>        
-               <label class="product-text pr-1" for="formCantidad">Cantidad: <?php echo $producto['CANTIDAD'] ?></label>
-                  <select class="custom-select" class="cantidad" >
-                    <option selected>-</option>
+               <label class="product-text pr-1" for="formCantidad">Cantidad:</label>
+                  <select class="custom-select" name="cantidad" >
+                    <option selected><?php echo $producto['CANTIDAD'] ?></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>

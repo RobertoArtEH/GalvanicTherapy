@@ -1,3 +1,9 @@
+<?php
+include 'config.php';
+include 'conexion.php';
+include 'validarcart.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -150,6 +156,9 @@
 ?>
       </div>
     </nav>
+    <div class="alert alert-success">
+<?php echo $mensaje; ?>
+</div>
     <!-- Mini banner -->
     <div class="container-fluid mini-banner-background d-flex align-items-center">
       <div class="container">
@@ -166,22 +175,22 @@
       $consulta = $conexion->prepare('SELECT * FROM products where productid =' .$_GET['productid']);
       $consulta -> execute();
       $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
-        foreach($resultado as $f){
+        foreach($resultado as $producto){
       ?>
     <!-- Producto -->
     <div class="container">
       <div class="row banner-content">
         <!-- Imagen -->
         <div class="col-lg-6 col-md-12 d-flex justify-content-center">
-          <img src="img/products/<?php echo $f['picture']; ?>" class="img-thumbnail" alt="Imagen de producto">
+          <img src="img/products/<?php echo $producto['picture']; ?>" class="img-thumbnail" alt="Imagen de producto">
         </div>
         <!-- Detalles -->
         <div class="col-lg-6 col-md-12 text-center text-lg-left">
-          <h4 class="product-title my-3"><?php echo $f['productname']; ?></h4>
-          <p class="product-text">Precio: <span>$ <?php echo $f['price']; ?></span></p>
+          <h4 class="product-title my-3"><?php echo $producto['productname']; ?></h4>
+          <p class="product-text">Precio: <span>$ <?php echo $producto['price']; ?></span></p>
           <form class="form-inline justify-content-center justify-content-lg-start">
             <label class="product-text mr-sm-2" for="formCantidad">Cantidad:</label>
-            <select class="custom-select my-1 mr-sm-2" class="cantidad">
+            <select class="custom-select my-1 mr-sm-2" name="cantidad">
               <option selected>-</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -194,14 +203,22 @@
               <option value="9">9</option>
               <option value="10">10</option>
             </select>
-            <a class="btn btn-dark btn-block my-4" href="cart.php?productid=<?php echo $f['productid'];?>">Agregar al carrito</a>
           </form>
-          <p class="product-text"><?php echo $f['description']; ?></p>
+          <form action="" method="post">
+          <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($producto['productid'],COD,KEY);?>">
+          <input type="hidden" name="picture" id="picture" value="<?php echo openssl_encrypt($producto['picture'],COD,KEY);?>">
+          <input type="hidden" name="nombre" id="nombre" value="<?php echo openssl_encrypt($producto['productname'],COD,KEY); ?>" >
+          <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt($producto['price'],COD,KEY); ?>" >
+          <input type="hidden" name="cantidad" id="cantidad" value="<?php echo openssl_encrypt(1,COD,KEY); ?>" >
+          <button class="btn btn-dark btn-block my-4" name="btnAccion" value="Agregar" type="submit" >Agregar al carrito</button>
+        </form>
+          <p class="product-text"><?php echo $producto['description']; ?></p>
           <p class="product-text"><strong>Contenido:</strong></p>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item product-text"><?php echo $f['content']; ?></li>
+            <li class="list-group-item product-text"><?php echo $producto['content']; ?></li>
           </ul>
         </div>
+        
       </div>
     
     <?php
