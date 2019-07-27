@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"/>
-      <link rel="stylesheet" href="css/style.css"/>
-      
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="resources/bootstrap-4.3.1/css/bootstrap.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css"/>
+    <!-- Sweetalert CSS -->
+    <link rel="stylesheet" href="resources/sweetalert2/sweetalert2.min.css">
     <title>Iniciar sesion</title>
 </head>
 <body>
@@ -50,7 +50,7 @@
         <!-- Buscar -->
         <div class="search-bar d-none d-lg-block">
           <input id="searchInput" class="search-input" type="text" placeholder="Buscar...">
-          <a href="#" id="searchIcon" class="search-icon">
+          <a id="searchIcon" class="search-icon">
             <img src="img/icons/search.svg" alt="Buscar"/>
           </a>
         </div>
@@ -99,23 +99,25 @@
           <div class="d-flex justify-content-center pt-2">
             <img class="logo-login" src="./img/brand/logo.png">
           </div>
-            <form class="content-form" action="validar.php" method="POST" name="formulario" id="formulario" autocomplete="off">
+            <form class="content-form needs-validation" action="login.php" method="POST" name="formulario" id="formulario" autocomplete="off">
                 <fieldset>
                     <legend class="h4 text-center p-3">
                       Iniciar sesion
                     </legend>
                     <form>
-                      <!-- to error: add class "has-danger" -->
+                      <div id="invalid-alert" class="alert alert-danger d-none" role="alert">
+                        Usuario o contraseña incorrecta.
+                      </div>
                       <div class="form-group">
-                          <label for="exampleInputEmail1">Direccion de correo</label>
-                          <input type="email" class="form-control form-control-sm" name="email" aria-describedby="emailHelp">
+                        <label for="exampleInputEmail1">Correo electrónico o usuario</label>
+                        <input type="text" id="access" class="form-control form-control-sm" name="email" aria-describedby="emailHelp" required>
                       </div>
                       <div class="form-group">
                           <label for="exampleInputPassword1">Contraseña</label>
                           <a class="text-link" href="#" style="float:right;font-size:12px;">¿Olvidaste tu contraseña?</a>
-                          <input type="password" class="form-control form-control-sm" name="password">
+                          <input type="password" id="password" class="form-control form-control-sm" name="password" required>
                       </div>
-                      <button type="submit" class="btn btn-dark boton-iniciar btn-block">Iniciar sesión</button>
+                      <button type="submit" id="login-btn" class="btn btn-dark boton-iniciar btn-block">Iniciar sesión</button>
                       
                       <div class="sign-up p-4 text-center">
                           ¿No tienes una cuenta? <a class="text-link" href="registro.php">Crear una</a>
@@ -156,8 +158,9 @@
     <!-- Bootstrap JS -->
     <script src="resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>
     <script src="resources/popper-1.15.0/popper.min.js"></script>
-    <script src="resources/bootstrap-4.3.1/js/bootstrap.js"></script>
+    <script src="resources/bootstrap-4.3.1/js/bootstrap.min.js"></script>
     <!-- Scripts -->
     <script src="js/search.js"></script>
+    <script src="js/form.js"></script>
 </body>
 </html>

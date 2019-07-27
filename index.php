@@ -8,7 +8,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="resources/bootstrap-4.3.1/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/bootstrap-4.3.1/css/bootstrap.min.css">
+    <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css"/>
     <title>Galvanic Therapy</title>
   </head>
@@ -49,12 +50,12 @@ session_start();
         <!-- Buscar -->
         <div class="search-bar d-none d-lg-block">
           <input id="searchInput" class="search-input" type="text" placeholder="Buscar...">
-          <a href="#" id="searchIcon" class="search-icon">
+          <a id="searchIcon" class="search-icon">
             <img src="img/icons/search.svg" alt="Buscar"/>
           </a>
         </div>
         <?php 
-if(isset($_SESSION['email'])){
+if(isset($_SESSION['email']) || isset($_SESSION['username'])){
   ?>
   <!-- Secciones -->
   <ul class="navbar-nav sections-secundary mx-lg-auto">
@@ -80,8 +81,8 @@ if(isset($_SESSION['email'])){
         </ul>
         <!-- Carrito de compras lg -->
         <a class="cart d-none d-lg-block" href="cart.php">
-        <span><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>  
           <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
+          <span class="badge badge-dark"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>  
         </a>
         <!-- Perfil LG -->
         <div class="dropdown d-none d-lg-block">
@@ -90,6 +91,8 @@ if(isset($_SESSION['email'])){
             <img src="img/icons/arrow.svg" height="14px" alt="Flecha">
           </a>
           <div class="dropdown-menu dropdown-menu-right">
+            <span class="dropdown-item-text">username o nombre</span>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item bg-link" href="admin-productos.html">Gestionar</a>
             <a class="dropdown-item bg-link" href="cerrar.php">Cerrar sesión</a>
           </div>
@@ -100,6 +103,8 @@ if(isset($_SESSION['email'])){
             <div class="dropdown-divider"></div>
             <a class="nav-link bg-link" data-toggle="dropdown" href="">Perfil</a>
             <div class="dropdown-menu">
+              <span class="dropdown-item-text">username o nombre</span>
+              <div class="dropdown-divider"></div>
               <a class="dropdown-item bg-link" href="admin-productos.html">Gestionar</a>
               <a class="dropdown-item bg-link" href="cerrar.php">Cerrar sesión</a>
             </div>
@@ -258,7 +263,7 @@ if(isset($_SESSION['email'])){
     <!-- Bootstrap JS -->
     <script src="resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>
     <script src="resources/popper-1.15.0/popper.min.js"></script>
-    <script src="resources/bootstrap-4.3.1/js/bootstrap.js"></script>
+    <script src="resources/bootstrap-4.3.1/js/bootstrap.min.js"></script>
     <!-- Scripts -->
     <script src="js/search.js"></script>
   </body>

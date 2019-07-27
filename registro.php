@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"/>
-    <link rel="stylesheet" href="resources/sweetalert2/sweetalert2.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="resources/bootstrap-4.3.1/css/bootstrap.min.css">
+    <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css"/>
+    <!-- Sweetalert CSS -->
+    <link rel="stylesheet" href="resources/sweetalert2/sweetalert2.min.css">
 </head>
 <body>
     <!-- Header -->
@@ -52,7 +52,7 @@
         <!-- Buscar -->
         <div class="search-bar d-none d-lg-block">
           <input id="searchInput" class="search-input" type="text" placeholder="Buscar...">
-          <a href="#" id="searchIcon" class="search-icon">
+          <a id="searchIcon" class="search-icon">
             <img src="img/icons/search.svg" alt="Buscar"/>
           </a>
         </div>
@@ -129,10 +129,10 @@
                             <input type="date" id="f_nacimiento" name="f_nacimiento" class="form-control" required>
                           </div>
                           <div class="form-group" id="group-email">
-                            <label>Correo electronico</label>
+                            <label>Correo electrónico</label>
                             <input type="email" id="email" name="email" class="form-control" required>
                             <div class="invalid-feedback">
-                              El correo electronico ya existe.
+                              El correo electrónico ya existe.
                             </div>
                           </div>
                           <div class="form-group">
@@ -180,7 +180,7 @@
         <!-- Bootstrap JS -->
         <script src="resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>
         <script src="resources/popper-1.15.0/popper.min.js"></script>
-        <script src="resources/bootstrap-4.3.1/js/bootstrap.js"></script>
+        <script src="resources/bootstrap-4.3.1/js/bootstrap.min.js"></script>
         <!-- Sweetalert -->
         <script src="resources/sweetalert2/sweetalert2.min.js"></script>
         <!-- Scripts -->

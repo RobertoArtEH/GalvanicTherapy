@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="resources/bootstrap-4.3.1/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/bootstrap-4.3.1/css/bootstrap.min.css">
+    <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css"/>
     <title>Galvanic Therapy</title>
   </head>
@@ -46,7 +47,7 @@
         <!-- Buscar -->
         <div class="search-bar d-none d-lg-block">
           <input id="searchInput" class="search-input" type="text" placeholder="Buscar...">
-          <a href="#" id="searchIcon" class="search-icon">
+          <a id="searchIcon" class="search-icon">
             <img src="img/icons/search.svg" alt="Buscar"/>
           </a>
         </div>
@@ -177,7 +178,7 @@
     <!-- Bootstrap JS -->
     <script src="resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>
     <script src="resources/popper-1.15.0/popper.min.js"></script>
-    <script src="resources/bootstrap-4.3.1/js/bootstrap.js"></script>
+    <script src="resources/bootstrap-4.3.1/js/bootstrap.min.js"></script>
     <!-- Scripts -->
     <script src="js/search.js"></script>
   </body>
