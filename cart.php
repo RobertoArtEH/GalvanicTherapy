@@ -184,7 +184,7 @@ include 'validarcart.php';
             <!-- Nombre y descripción -->
             <div class="col col-sm-4 text-md-left col-md col-lg">
               <h4 class="cart-title"><?php echo $producto['NOMBRE'] ?></h4>
-              <h6 class="cart-text">Precio: <span>$ <?php echo $producto['PRECIO'] ?></span></h6>
+              <h6 class="cart-text">Precio: <span>$ <?php echo number_format($producto['PRECIO'],2); ?></span></h6>
             </div>
             <!-- Info extra - derecha -->
             <div class="col mt-2 col-sm text-sm-center col-md-auto col-lg-auto text-md-right row">

@@ -1,5 +1,7 @@
 <?php
-session_start();
+include 'config.php';
+include 'conexion.php';
+include 'validarcart.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -174,22 +176,32 @@ session_start();
       products.ProductID left join Categories on products.CategoryID = Categories.CategoryID where unitsinstock >0 group by products.productname order by orders.OrderID desc');
       $consulta -> execute();
       $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
-        foreach($resultado as $f){
+        foreach($resultado as $producto){
       ?>
     
-      <!-- Producto -->
-      <div class="card product-card" style="width: 18rem">
-        <a href="producto.php?productid=<?php echo $f['productid'];?>">
-          <img src="img/products<?php echo $f['picture'];?>" class="card-img-top" alt="Imagen de producto">
+       <!-- Producto -->
+       <div class="card product-card" style="width: 18rem">
+        <a href="producto.php?productid=<?php echo $producto['productid'];?>">
+        <img src="img/products/<?php echo $producto['picture'];?>" class="card-img-top product-thumbnail" alt="Imagen de producto">
         </a>
         <div class="card-body text-center">
-          <a href="producto.html" class="bg-link">
-            <h6 class="card-title"><?php echo $f['productname']; ?></h6>
+          <a href="producto.php?productid=<?php echo $producto['productid'];?>" class="bg-link">
+            <h6 class="card-title"><?php echo $producto['productname']; ?></h6>
           </a>
-          <p class="card-text">Precio: $<?php echo $f['price']; ?></p>
+          <p class="card-text">Precio: $ <?php echo number_format($producto['price'],2); ?></p>
           <p class="card-text">Envio: $ 99</p>
-          <a href="cart.php?productid=<?php echo $f['productid'];?>" class="btn btn-dark btn-block">Agregar al carrito</a>
         </div>
+        <form action="" method="post">
+          <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($producto['productid'],COD,KEY);?>">
+          <input type="hidden" name="picture" id="picture" value="<?php echo openssl_encrypt($producto['picture'],COD,KEY);?>">
+          <input type="hidden" name="nombre" id="nombre" value="<?php echo openssl_encrypt($producto['productname'],COD,KEY); ?>" >
+          <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt($producto['price'],COD,KEY); ?>" >
+          <input type="hidden" name="cantidad" id="cantidad" value="<?php echo openssl_encrypt(1,COD,KEY); ?>" >
+
+        <div class="card-footer">
+          <button class="btn btn-dark btn-block" name="btnAccion" value="Agregar" type="submit" >Agregar al carrito</button>
+        </div>
+        </form>
       </div>
       <?php
       }
@@ -201,18 +213,18 @@ session_start();
       products.ProductID left join Categories on products.CategoryID = Categories.CategoryID where unitsinstock <=0 group by products.productname order by orders.OrderID desc');
       $consulta -> execute();
       $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
-        foreach($resultado as $f){
+        foreach($resultado as $producto){
       ?>
       <!-- Producto agotado -->
       <div class="card product-card" style="width: 18rem">
-        <a href="producto.php?productid=<?php echo $f['productid'];?>">
-          <img src="img/products/<?php echo $f['picture']; ?>" class="card-img-top" alt="Imagen de producto">
+        <a href="producto.php?productid=<?php echo $producto['productid'];?>">
+          <img src="img/products/<?php echo $producto['picture']; ?>" class="card-img-top" alt="Imagen de producto">
         </a>
         <div class="card-body text-center">
           <a href="producto.html" class="bg-link">
-            <h6 class="card-title"><?php echo $f['productname']; ?></h6>
+            <h6 class="card-title"><?php echo $producto['productname']; ?></h6>
           </a>
-          <p class="card-text">Precio: $ <?php echo $f['price']; ?></p>
+          <p class="card-text">Precio: $ <?php echo number_format($producto['price'],2); ?></p>
           <p class="card-text">Envio: $ 99</p>
           <a href="#" class="btn btn-dark btn-block disabled">Agotado</a>
         </div>

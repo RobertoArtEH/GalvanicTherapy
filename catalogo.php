@@ -198,7 +198,7 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
           <a href="producto.php?productid=<?php echo $producto['productid'];?>" class="bg-link">
             <h6 class="card-title"><?php echo $producto['productname']; ?></h6>
           </a>
-          <p class="card-text">Precio: $ <?php echo $producto['price']; ?></p>
+          <p class="card-text">Precio: $ <?php echo number_format($producto['price'],2); ?></p>
           <p class="card-text">Envio: $ 99</p>
         </div>
         <form action="" method="post">
@@ -216,8 +216,7 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
       <?php
       }
       ?>
-      <?php
-      
+      <?php   
       require('conexion.php');
       $consulta = $conexion->prepare('SELECT * FROM products where unitsinstock <=0 and categoryid ='.$_GET['categoryid']);
       $consulta -> execute();
@@ -233,7 +232,7 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
           <a href="producto.php?productid=<?php echo $producto['productid'];?>" class="bg-link">
             <h6 class="card-title"><?php echo $producto['productname']; ?></h6>
           </a>
-          <p class="card-text">Precio: $ <?php echo $producto['price']; ?></p>
+          <p class="card-text">Precio: $ <?php echo number_format($producto['price'],2); ?></p>
           <p class="card-text">Envio: $ 99</p>
         </div>
         <div class="card-footer">
