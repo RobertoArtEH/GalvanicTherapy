@@ -224,8 +224,95 @@ include 'validarcart.php';
               <h6>Monto total:</h6>
               <h6>$ <?php echo number_format($total,2); ?></h6>
             </div>
-            <button type="button" class="btn btn-dark btn-block">Continuar</button>
+            <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#modalForm">Continuar</button>
           </article>
+        </div>
+        <div class="modal fade" id="modalForm">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar dirección</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="inputCountry">País</label>
+                  <select id="inputCountry" class="form-control" required>
+                    <option>México</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="inputStreet">Calle</label>
+                  <input type="text" class="form-control" id="inputStreet" required>
+                </div>
+                <div class="form-group">
+                  <label for="inputState">Estado</label>
+                  <select id="inputState" class="form-control" required>
+                    <option>Elegir...</option>
+                    <option>Aguascalientes</option>
+                    <option>Baja California</option>
+                    <option>Baja California Sur</option>
+                    <option>Campeche</option>
+                    <option>Chihuahua</option>
+                    <option>Chiapas</option>
+                    <option>Ciudad de México</option>
+                    <option>Coahuila</option>
+                    <option>Colima</option>
+                    <option>Durango</option>
+                    <option>Guanajuato</option>
+                    <option>Guerrero</option>
+                    <option>Hidalgo</option>
+                    <option>Jalisco</option>
+                    <option>México</option>
+                    <option>Michoacán</option>
+                    <option>Morelos</option>
+                    <option>Nayarit</option>
+                    <option>Nuevo León</option>
+                    <option>Oaxaca</option>
+                    <option>Puebla</option>
+                    <option>Querétaro</option>
+                    <option>Quintana Roo</option>
+                    <option>San Luis Potosí</option>
+                    <option>Sinaloa</option>
+                    <option>Sonora</option>
+                    <option>Tabasco</option>
+                    <option>Tamaulipas</option>
+                    <option>Tlaxcala</option>
+                    <option>Veracruz</option>
+                    <option>Yucatán</option>
+                    <option>Zacatecas</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-6">
+                    <label for="inputCellphone">Celular</label>
+                    <input type="text" class="form-control" id="inputCellphone" required>
+                  </div>
+                  <div class="form-group col-6">
+                    <label for="inputNumber">Número</label>
+                    <input type="text" class="form-control" id="inputNumber" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputZip">Zip</label>
+                  <input type="text" class="form-control" id="inputZip" required>
+                </div>
+                <div class="form-group">
+                  <label for="inputPayment">Método de pago</label>
+                  <select id="inputPayment" class="form-control" required>
+                    <option>Elegir...</option>
+                    <option>Opción</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-dark">Continuar</button>
+              </div>
+            </div>
+          </div>
         </div>
         <?php } else{ ?>
           <div class="alert alert-success">No hay productos en el carrito...</div>
