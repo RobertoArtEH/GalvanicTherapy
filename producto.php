@@ -187,7 +187,7 @@ include 'validarcart.php';
         <!-- Detalles -->
         <div class="col-lg-6 col-md-12 text-center text-lg-left">
           <h4 class="product-title my-3"><?php echo $producto['productname']; ?></h4>
-          <p class="product-text">Precio: <span>$ <?php echo $producto['price']; ?></span></p>
+          <p class="product-text">Precio: <span>$ <?php echo number_format($producto['price'],2); ?></span></p>
           <form class="form-inline justify-content-center justify-content-lg-start">
             <label class="product-text mr-sm-2" for="formCantidad">Cantidad:</label>
             <select class="custom-select my-1 mr-sm-2" name="cantidad">
@@ -210,7 +210,17 @@ include 'validarcart.php';
           <input type="hidden" name="nombre" id="nombre" value="<?php echo openssl_encrypt($producto['productname'],COD,KEY); ?>" >
           <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt($producto['price'],COD,KEY); ?>" >
           <input type="hidden" name="cantidad" id="cantidad" value="<?php echo openssl_encrypt(1,COD,KEY); ?>" >
+          <?php
+          if($producto['unitsinstock'] >0){
+          ?>
           <button class="btn btn-dark btn-block my-4" name="btnAccion" value="Agregar" type="submit" >Agregar al carrito</button>
+          <?php
+          }else{
+            ?>
+            <a  href="#" class="btn btn-dark btn-block disabled my-4">Agotado</a>
+            <?php
+          }
+          ?>
         </form>
           <p class="product-text"><?php echo $producto['description']; ?></p>
           <p class="product-text"><strong>Contenido:</strong></p>
