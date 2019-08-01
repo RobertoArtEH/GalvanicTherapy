@@ -147,6 +147,7 @@ include 'validar-categorias.php';
         <!-- Carrito de compras lg -->
         <a class="cart d-none d-lg-block" href="cart.php">
           <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
+          <span class="badge badge-dark cart-count-log"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>  
         </a>
   <!-- Boton de log-in LG -->
   <div class="d-none d-lg-block">
@@ -159,9 +160,9 @@ include 'validar-categorias.php';
             <a class="nav-link bg-link" href="login.php">Iniciar sesión</a>
           </li>
         </ul>
-  <?php
-}
-?>  
+        <?php
+      }
+      ?>  
       </div>
     </nav>
     <!-- Mini header -->
@@ -234,6 +235,9 @@ include 'validar-categorias.php';
             <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#modalForm">Continuar</button>
           </article>
         </div>
+        <?php
+              if(isset($_SESSION['email']) || isset($_SESSION['username'])){
+              ?>
         <div class="modal fade" id="modalForm">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -321,7 +325,59 @@ include 'validar-categorias.php';
             </div>
           </div>
         </div>
-        <?php } else{ ?>
+            <?php
+              }else{
+                ?>
+                <div class="modal fade" id="modalForm">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header ">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                    <div class="modal-body ">
+                    <div class="global-container">       
+                      <section class=" container p-4 register col-sm-8 col-md-8 col-lg-10">
+                      <div class="d-flex justify-content-center pt-2">
+                          <img class="logo-login" src="./img/brand/logo.png">
+                        </div>
+                          <form class="content-form needs-validation" action="login.php" method="POST" name="formulario" id="formulario" autocomplete="off">
+                              <fieldset>
+                                  <legend class="h4 text-center p-3">
+                                    Iniciar sesion
+                                  </legend>
+                                  <form>
+                                    <div id="invalid-alert" class="alert alert-danger d-none" role="alert">
+                                      Usuario o contraseña incorrecta.
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="exampleInputEmail1">Correo electrónico o usuario</label>
+                                      <input type="text" id="access" class="form-control form-control-sm" name="email" aria-describedby="emailHelp" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Contraseña</label>
+                                        <a class="text-link" href="#" style="float:right;font-size:12px;">¿Olvidaste tu contraseña?</a>
+                                        <input type="password" id="password" class="form-control form-control-sm" name="password" required>
+                                    </div>
+                                    <button type="submit" id="login-btn" class="btn btn-dark boton-iniciar btn-block">Iniciar sesión</button>
+                                    
+                                    <div class="sign-up p-4 text-center">
+                                        ¿No tienes una cuenta? <a class="text-link" href="registro.php">Crear una</a>
+                                    </div>
+                                </form>
+                              </fieldset>
+                          </form>
+                      </section>
+                  </div>
+                </div>
+            </div>
+          <?php
+          }
+          ?>
+        <?php 
+          } else{ ?>
           <div class="alert alert-success">No hay productos en el carrito...</div>
         <?php } ?>
       </div>
@@ -332,5 +388,6 @@ include 'validar-categorias.php';
     <script src="resources/bootstrap-4.3.1/js/bootstrap.min.js"></script>
     <!-- Scripts -->
     <script src="js/search.js"></script>
+    <script src="js/form.js"></script>
 </body>
 </html>

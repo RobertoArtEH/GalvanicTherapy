@@ -148,6 +148,7 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
         <!-- Carrito de compras lg -->
         <a class="cart d-none d-lg-block" href="cart.php">
           <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
+          <span class="badge badge-dark cart-count-log"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>  
         </a>
   <!-- Boton de log-in LG -->
   <div class="d-none d-lg-block">

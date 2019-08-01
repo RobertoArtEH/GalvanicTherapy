@@ -372,6 +372,11 @@ footer {
     top: 50px;
     right: 80px;    
   }
+  .cart-count-log {
+    position: absolute;
+    top: 35px;
+    right: 153px;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -380,6 +385,11 @@ footer {
     position: absolute;
     top: 35px;
     right: 87px;
+  }
+  .cart-count-log {
+    position: absolute;
+    top: 35px;
+    right: 153px;
   }
 }
 
@@ -399,5 +409,10 @@ footer {
     position: absolute;
     top: 35px;
     right: 87px;
+  }
+  .cart-count-log {
+    position: absolute;
+    top: 35px;
+    right: 153px;
   }
 }
