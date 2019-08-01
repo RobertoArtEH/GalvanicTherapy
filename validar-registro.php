@@ -9,7 +9,7 @@
     $f_nacimiento  = $_POST['f_nacimiento'];
     $email         = $_POST['email'];
     $pass          = $_POST['pass'];
-
+    $pass_cifrado= password_hash($pass, PASSWORD_DEFAULT);
     //Validar correo existente
     $emailQuery = 'SELECT * FROM users WHERE email=? LIMIT 1';
     $stmtEmail = $conexion -> prepare($emailQuery);
@@ -42,7 +42,7 @@
               VALUES(?, ?, ?, ?, ?, ?)';
       
     $stmtInsert = $conexion -> prepare($sql);
-    $result = $stmtInsert -> execute([$nombre, $apellidos, $email ,$f_nacimiento, $user, $pass]);
+    $result = $stmtInsert -> execute([$nombre, $apellidos, $email ,$f_nacimiento, $user, $pass_cifrado]);
 
     if($result) {
       echo 'success';

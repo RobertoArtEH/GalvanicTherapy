@@ -66,6 +66,7 @@
             <div class="dropdown-menu">
               <h4 class="dropdown-header">Categorias</h4>
               <?php
+              require ('validar-categorias.php');
               foreach($resultado as $producto){
                 ?>
               <a class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $producto['categoryid'];?>"><?php echo $producto['categoryname'];?></a>
