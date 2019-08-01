@@ -9,6 +9,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="resources/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="img/brand/icon.png" />
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css"/>
     <title>Galvanic Therapy</title>
@@ -68,9 +69,14 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
             <a class="nav-link bg-link" data-toggle="dropdown" href="#">Productos</a>
             <div class="dropdown-menu">
               <h4 class="dropdown-header">Categorias</h4>
-              <a id="1"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
-              <a id="2"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
-              <a id="3"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
+              <?php
+              require ('validar-categorias.php');
+              foreach($resultado as $producto){
+                ?>
+              <a class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $producto['categoryid'];?>"><?php echo $producto['categoryname'];?></a>
+              <?php
+              }
+              ?>
             </div>
           </li>
           <li class="nav-item">
@@ -125,9 +131,14 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
             <a class="nav-link bg-link" data-toggle="dropdown" href="#">Productos</a>
             <div class="dropdown-menu">
               <h4 class="dropdown-header">Categorias</h4>
-              <a id="1"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
-              <a id="2"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
-              <a id="3"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
+              <?php
+              require ('validar-categorias.php');
+              foreach($resultado as $producto){
+                ?>
+              <a class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $producto['categoryid'];?>"><?php echo $producto['categoryname'];?></a>
+              <?php
+              }
+              ?>
             </div>
           </li>
           <li class="nav-item">
@@ -152,9 +163,9 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
             <a class="nav-link bg-link" href="login.php">Iniciar sesión</a>
           </li>
         </ul>
-  <?php
-}
-?>
+          <?php
+        }
+        ?>
         </div>
     </nav>
     <!-- Banner -->

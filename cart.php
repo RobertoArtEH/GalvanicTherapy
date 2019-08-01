@@ -1,6 +1,7 @@
 <?php
 include 'config.php';
 include 'validarcart.php';
+include 'validar-categorias.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +11,7 @@ include 'validarcart.php';
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="resources/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="img/brand/icon.png" />
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css"/>
     <title>Carrito</title>
@@ -68,9 +70,13 @@ include 'validarcart.php';
             <a class="nav-link bg-link" data-toggle="dropdown" href="#">Productos</a>
             <div class="dropdown-menu">
               <h4 class="dropdown-header">Categorias</h4>
-              <a id="1"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
-              <a id="2"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
-              <a id="3"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
+              <?php
+              foreach($resultado as $producto){
+                ?>
+              <a class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $producto['categoryid'];?>"><?php echo $producto['categoryname'];?></a>
+              <?php
+              }
+              ?>
             </div>
           </li>
           <li class="nav-item">
@@ -122,9 +128,13 @@ include 'validarcart.php';
             <a class="nav-link bg-link" data-toggle="dropdown" href="#">Productos</a>
             <div class="dropdown-menu">
               <h4 class="dropdown-header">Categorias</h4>
-              <a id="1"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
-              <a id="2"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
-              <a id="3"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
+              <?php
+              foreach($resultado as $producto){
+                ?>
+              <a class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $producto['categoryid'];?>"><?php echo $producto['categoryname'];?></a>
+              <?php
+              }
+              ?>
             </div>
           </li>
           <li class="nav-item">
@@ -195,17 +205,14 @@ include 'validarcart.php';
                 <h6 class="cart-text pt-4">Subtotal: <span>$ <?php echo number_format($producto['PRECIO'] * $producto['CANTIDAD'],2 );  ?> </span></h6>        
                <label class="product-text pr-1" for="formCantidad">Cantidad:</label>
                   <select class="custom-select" name="cantidad" >
-                    <option selected><?php echo $producto['CANTIDAD'] ?></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
+                  <option selected><?php echo $producto['CANTIDAD'] ?></option>
+                    <?php
+                    for($i = 1; $i <= $producto['CANTIDAD']; $i++){
+                    ?>
+                  <option value='<?php echo $i ?>'><?php echo $i ?></option>
+                  <?php
+                  }
+                  ?>
                   </select>
                   <button class="btn btn-dark mt-3 mt-sm-auto ml-sm-2" type="submit" name="btnAccion" value="Eliminar" ><img src="img/icons/delete.svg" height="16px"></button>      
                 </form>

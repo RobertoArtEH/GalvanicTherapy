@@ -2,7 +2,7 @@
 include 'config.php';
 include 'conexion.php';
 include 'validarcart.php';
-
+include 'validar-categorias.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +12,7 @@ include 'validarcart.php';
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="resources/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="img/brand/icon.png" />
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css"/>
     <title>Galvanic Therapy</title>
@@ -70,9 +71,14 @@ include 'validarcart.php';
             <a class="nav-link bg-link" data-toggle="dropdown" href="#">Productos</a>
             <div class="dropdown-menu">
               <h4 class="dropdown-header">Categorias</h4>
-              <a id="1"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
-              <a id="2"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
-              <a id="3"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
+              <?php
+              
+              foreach($resultado as $producto){
+                ?>
+              <a class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $producto['categoryid'];?>"><?php echo $producto['categoryname'];?></a>
+              <?php
+              }
+              ?>
             </div>
           </li>
           <li class="nav-item">
@@ -124,9 +130,14 @@ include 'validarcart.php';
             <a class="nav-link bg-link" data-toggle="dropdown" href="#">Productos</a>
             <div class="dropdown-menu">
               <h4 class="dropdown-header">Categorias</h4>
-              <a id="1"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 1;?>">Cuidado corporal</a>
-              <a id="2"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 2;?>">Cuidado facial</a>
-              <a id="3"class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $f['categoryid'] = 3;?>">Suplementos Alimenticios</a>
+              <?php
+             
+              foreach($resultado as $producto){
+                ?>
+              <a class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $producto['categoryid'];?>"><?php echo $producto['categoryname'];?></a>
+              <?php
+              }
+              ?>
             </div>
           </li>
           <li class="nav-item">
@@ -151,9 +162,9 @@ include 'validarcart.php';
             <a class="nav-link bg-link" href="login.php">Iniciar sesión</a>
           </li>
         </ul>
-  <?php
-}
-?>
+          <?php
+            }
+            ?>
       </div>
     </nav>
     <div class="alert alert-success">
@@ -170,7 +181,6 @@ include 'validarcart.php';
       </div>
     </div>
     <?php
-      
       require('conexion.php');
       $consulta = $conexion->prepare('SELECT * FROM products where productid =' .$_GET['productid']);
       $consulta -> execute();
@@ -191,17 +201,14 @@ include 'validarcart.php';
           <form class="form-inline justify-content-center justify-content-lg-start">
             <label class="product-text mr-sm-2" for="formCantidad">Cantidad:</label>
             <select class="custom-select my-1 mr-sm-2" name="cantidad">
-              <option selected>-</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
+            <?php
+
+              for($i = 1; $i <= $producto['unitsinstock']; $i++){
+                ?>
+              <option value='<?php $i ?>' ><?php echo $i ?></option>
+              <?php
+              }
+              ?>
             </select>
           </form>
           <form action="" method="post">
@@ -209,7 +216,7 @@ include 'validarcart.php';
           <input type="hidden" name="picture" id="picture" value="<?php echo openssl_encrypt($producto['picture'],COD,KEY);?>">
           <input type="hidden" name="nombre" id="nombre" value="<?php echo openssl_encrypt($producto['productname'],COD,KEY); ?>" >
           <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt($producto['price'],COD,KEY); ?>" >
-          <input type="hidden" name="cantidad" id="cantidad" value="<?php echo openssl_encrypt(1,COD,KEY); ?>" >
+          <input type="hidden" name="cantidad" id="cantidad" value="<?php echo openssl_encrypt($i,COD,KEY); ?>" >
           <?php
           if($producto['unitsinstock'] >0){
           ?>
