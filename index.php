@@ -222,6 +222,45 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
       </div>
     </main>
     <!-- Info -->
+    <div class="text-center my-5">
+      <h1 class="display-4">Explora nuestro catalogo</h1>
+    </div>
+    <div class="container-fluid">
+      <div class="row text-center">
+        <div class="col-12 col-lg-6 banner-new-background py-5">
+          <h1 class="categories-title">Lo nuevo</h1>
+          <h4 class="categories-title">Prueba nuestros productos más recientes</h4>
+          <a role="button" class="btn btn-light mt-2" href="nuevo.php">Explorar catalogo</a>
+        </div>
+        <div class="col-12 col-lg-6 banner-trends-background py-5">
+          <h1 class="categories-title">Tendencias</h1>
+          <h4 class="categories-title">Prueba nuestros productos más vendidos</h4>
+          <a role="button" class="btn btn-light mt-2" href="tendencias.php">Explorar catalogo</a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center my-5">
+      <h1 class="display-4">Categorias</h1>
+    </div>
+    <div class="container-fluid categories-bg">
+      <nav class="index-categories">
+        <ul class="categories-list d-flex">
+          <?php
+            require ('validar-categorias.php');
+            foreach($resultado as $producto){
+          ?>
+            <li>
+              <a class="mini-title" href="catalogo.php?categoryid=<?php echo $producto['categoryid'];?>"><article class="category-square text-center d-flex justify-content-center align-items-center mt-3" 
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.5)), url(img/backgrounds/<?php echo $producto['picturecategorie'];?>);">
+              <h4 class="categories-title"><?php echo $producto['categoryname'];?></h4>
+            </article></a>
+          </li>
+          <?php
+            }
+          ?>
+        </ul>
+      </nav>
+    </div>
     <div class="container content-container">
         <div class="text-center my-5">
           <div class="container">
