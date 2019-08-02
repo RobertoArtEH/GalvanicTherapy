@@ -102,24 +102,7 @@ footer {
   background-position: center center;
 }
 
-.banner-cuidadocorp-background {
-  background-image: url(../img/backgrounds/background-one.jpg);
-  background-repeat: no-repeat;
-  background-origin: content;
-  background-size: cover;
-  background-position: center center;
-}
-
-.banner-cuidadofac-background {
-  background-image: url(../img/backgrounds/cuidadofacial.jpg);
-  background-repeat: no-repeat;
-  background-origin: content;
-  background-size: cover;
-  background-position: center center;
-}
-
-.banner-vitaminas-background {
-  background-image: url(../img/backgrounds/suplementos.jpg);
+.banner-categories-background {
   background-repeat: no-repeat;
   background-origin: content;
   background-size: cover;

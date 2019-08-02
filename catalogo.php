@@ -175,7 +175,7 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
       foreach($resultado as $producto){
       ?>
     <!-- Banner -->
-    <main class="container-fluid <?php echo $producto['picturecategorie']; ?> d-flex align-items-center">
+    <main class="container-fluid banner-categories-background d-flex align-items-center" style="background-image url('/img/backgrounds/<?php echo $producto['picturecategorie'];?>');">
       <div class="container">
         <div class="row banner-content-secundary">
           <div class="col text-center">
