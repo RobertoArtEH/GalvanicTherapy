@@ -5,6 +5,7 @@ if(isset($_POST)) {
   
   $access = $_POST['access'];
   $password = $_POST['password'];
+  $password= hash('sha512',$password );
 
   $emailQuery = $conexion -> prepare('SELECT * FROM users WHERE email = :access  AND pass = :password');
   $emailQuery -> execute(array(':access'=>$access, ':password' =>$password));

@@ -162,13 +162,10 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
             <a class="nav-link bg-link" href="login.php">Iniciar sesión</a>
           </li>
         </ul>
-  <?php
-}
-?>
+        <?php
+      }
+      ?>
     </nav>
-    <div class="alert alert-success">
-<?php echo $mensaje; ?>
-</div>
     <?php
       
       require('conexion.php');

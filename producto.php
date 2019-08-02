@@ -168,9 +168,6 @@ include 'validar-categorias.php';
             ?>
       </div>
     </nav>
-    <div class="alert alert-success">
-<?php echo $mensaje; ?>
-</div>
     <!-- Mini banner -->
     <div class="container-fluid mini-banner-background d-flex align-items-center">
       <div class="container">
