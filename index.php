@@ -101,7 +101,7 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
 
             <span class="dropdown-item-text"><?php echo ($_SESSION['username']); ?></span>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item bg-link" href="admin-productos.html">Gestionar</a>
+            <a class="dropdown-item bg-link" href="admin-productos.html">Configuración</a>
             <a class="dropdown-item bg-link" href="cerrar.php">Cerrar sesión</a>
           </div>
         </div>
@@ -113,7 +113,7 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
             <div class="dropdown-menu">
             <span class="dropdown-item-text"><?php echo ($_SESSION['username']); ?></span>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item bg-link" href="admin-productos.html">Gestionar</a>
+              <a class="dropdown-item bg-link" href="admin-productos.html">Configuración</a>
               <a class="dropdown-item bg-link" href="cerrar.php">Cerrar sesión</a>
             </div>
           </li>
@@ -267,7 +267,7 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
             <h1 class="display-4">Empieza a comprar ahora</h1>
           </div>
         </div>
-      <section class="d-flex flex-wrap justify-content-center">
+      <section class="d-flex flex-wrap justify-content-center mb-4">
         <div class="info-card text-center">
           <img src="img/brand/compras-online.svg" class="info-img" alt="Imagen">
           <h4 class="card-title mt-3">COMPRAS ONLINE</h4>
