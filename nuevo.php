@@ -181,12 +181,7 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
       <!-- Productos - Contenedor -->
     <div class="container content-container d-flex flex-wrap justify-content-center">
     <?php
-      
-      require('conexion.php');
-      $consulta = $conexion->prepare('SELECT * from products where unitsinstock >0 order by productid desc');
-      $consulta -> execute();
-      $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
-        foreach($resultado as $producto){
+        foreach($new as $producto){
       ?>
     
      <!-- Producto -->
