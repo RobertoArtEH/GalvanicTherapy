@@ -1,26 +1,9 @@
 <?php
 require('conexion.php');
-class Categoria {
-  private $categoryid;
-  private $categoryname;
-  private $descriptions;
-  private $picturecategorie;
-  private $statuscategorie;
-  
-  public function __construct($categoryid,$categoryname, $descriptions,$picturecategorie,$statuscategorie) {
-       $this->id = $categoryid;
-       $this->nombre = $categoryname;
-       $this->descripcion = $descriptions;
-       $this->imagen = $picturecategorie;
-       $this->contenido = $statuscategorie;
-       
-     
-  }
-  
-}
-$consulta = $conexion->prepare('SELECT * FROM categories');
-$consulta -> execute();
-$resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
+//Categorias
+    $consulta = $conexion->prepare('SELECT * FROM categories');
+    $consulta -> execute();
+    $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
 
 //tendencias
     $sqltrends = $conexion->prepare('SELECT * from orders left join orderdetails on orders.OrderID=OrderDetails.OrderID left join products on OrderDetails.ProductID =
