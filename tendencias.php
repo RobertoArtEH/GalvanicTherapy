@@ -79,7 +79,6 @@ include 'validar-categorias.php';
             <h6 class="card-title"><?php echo $producto['productname']; ?></h6>
           </a>
           <p class="card-text">Precio: $ <?php echo number_format($producto['price'],2); ?></p>
-          <p class="card-text">Envio: $ 99</p>
           <a href="#" class="btn btn-dark btn-block disabled">Agotado</a>
         </div>
       </div>

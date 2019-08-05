@@ -1,5 +1,6 @@
 <?php
 include 'config.php';
+include 'conexion.php';
 include 'validarcart.php';
 include 'validar-categorias.php';
 ?>
@@ -23,7 +24,7 @@ include 'validar-categorias.php';
       <div class="container">
         <div class="row mini-banner-content">
           <div class="col text-center">
-            <p class="mini-title">¡Envios a todo México!</p>
+            <p class="mini-title">¡Productos a base de ingredientes naturales!</p>
           </div>
         </div>
       </div>
