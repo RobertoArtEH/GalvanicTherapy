@@ -167,7 +167,6 @@ if(isset($_SESSION['email']) || isset($_SESSION['username'])){
       ?>
     </nav>
     <?php
-      
       require('conexion.php');
       $consulta = $conexion->prepare('SELECT * FROM categories where categoryid ='.$_GET['categoryid']);
       $consulta -> execute();

@@ -72,7 +72,6 @@ include 'validar-categorias.php';
             <div class="dropdown-menu">
               <h4 class="dropdown-header">Categorias</h4>
               <?php
-              
               foreach($resultado as $producto){
                 ?>
               <a class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $producto['categoryid'];?>"><?php echo $producto['categoryname'];?></a>
@@ -183,13 +182,8 @@ include 'validar-categorias.php';
 
     <div class="container content-container d-flex flex-wrap justify-content-center">
     <?php
-      
-      require('conexion.php');
-      $consulta = $conexion->prepare('SELECT * from orders left join orderdetails on orders.OrderID=OrderDetails.OrderID left join products on OrderDetails.ProductID =
-      products.ProductID left join Categories on products.CategoryID = Categories.CategoryID where unitsinstock >0 group by products.productname order by orders.OrderID desc');
-      $consulta -> execute();
-      $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
-        foreach($resultado as $producto){
+        
+        foreach($tendencias as $producto){
       ?>
     
        <!-- Producto -->

@@ -72,7 +72,6 @@ include 'validar-categorias.php';
             <div class="dropdown-menu">
               <h4 class="dropdown-header">Categorias</h4>
               <?php
-              
               foreach($resultado as $producto){
                 ?>
               <a class="dropdown-item bg-link" href="catalogo.php?categoryid=<?php echo $producto['categoryid'];?>"><?php echo $producto['categoryname'];?></a>
@@ -179,11 +178,8 @@ include 'validar-categorias.php';
       </div>
     </div>
     <?php
-      require('conexion.php');
-      $consulta = $conexion->prepare('SELECT * FROM products where productid =' .$_GET['productid']);
-      $consulta -> execute();
-      $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
-        foreach($resultado as $producto){
+      require('productos.php');
+        foreach($producto as $producto){
       ?>
     <!-- Producto -->
     <div class="container">
