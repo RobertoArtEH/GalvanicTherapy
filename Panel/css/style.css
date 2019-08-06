@@ -1,0 +1,403 @@
+/* Estilos generales */
+
+body {
+  min-height: 100%;
+}
+
+footer {
+  background: #212529;
+  color: white;
+  padding: 3em;
+  margin-top: auto;
+}
+
+.home {
+  background-color: #000;
+  width: 100%;
+}
+
+.content-container {
+  margin: 20px auto;
+  overflow-x: hidden;
+}
+
+.bg-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.bg-link:hover {
+  color: #63BD6A;
+  text-decoration: none;
+}
+
+/* Estilos de header */
+
+.logo {
+  height: 4em;
+  width: auto;
+}
+
+.icon-sm {
+  height: 1.4em;
+}
+
+.nav-link {
+  color: #000;
+}
+
+.navbar {
+  font-weight: 600;
+  padding-top: 2.5px;
+  padding-bottom: 1px;
+}
+
+.navbar-collapse {
+  padding: 10px;
+}
+
+.cart {
+  margin: auto 20px;
+}
+
+.btn-dark {
+  background-color: #000;
+}
+
+.search-bar {
+  border-radius: 30px;
+  padding: 5px;
+  position: absolute;
+}
+
+.search-input {
+  color: #000;
+  border-color: #000;
+  border-style: solid;
+  border-width: 0 0 1.5px;
+  font-weight: normal;
+  outline: 0;
+  background: none;
+  width: 0;
+  transition: width 0.4s linear;
+}
+
+.search-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.search-input-active {
+  width: 175px;
+  transition: width 0.4s linear;
+}
+
+/* Banners */
+
+.banner-background {
+  background-image: url(../img/backgrounds/bakcground-three.jpg);
+  background-repeat: no-repeat;
+  background-origin: content;
+  background-size: cover;
+  background-position: center center;
+}
+
+.banner-cuidadocorp-background {
+  background-image: url(../img/backgrounds/background-one.jpg);
+  background-repeat: no-repeat;
+  background-origin: content;
+  background-size: cover;
+  background-position: center center;
+}
+
+.banner-cuidadofac-background {
+  background-image: url(../img/backgrounds/cuidadofacial.jpg);
+  background-repeat: no-repeat;
+  background-origin: content;
+  background-size: cover;
+  background-position: center center;
+}
+
+.banner-vitaminas-background {
+  background-image: url(../img/backgrounds/suplementos.jpg);
+  background-repeat: no-repeat;
+  background-origin: content;
+  background-size: cover;
+  background-position: center center;
+}
+
+.banner-new-background {
+  background-image: url(../img/backgrounds/nuevo.jpg);
+  background-repeat: no-repeat;
+  background-origin: content;
+  background-size: cover;
+  background-position: center center;
+}
+
+.banner-trends-background {
+  background-image: url(../img/backgrounds/trends.jpg);
+  background-repeat: no-repeat;
+  background-origin: content;
+  background-size: cover;
+  background-position: center center;
+}
+
+.mini-banner-background {
+  background-color: #000;
+}
+
+.banner-content {
+  margin: 60px auto;
+  color: #fff;
+}
+
+.banner-content-secundary {
+  margin: 40px auto;
+  color: #fff;
+}
+
+.mini-banner-content {
+  margin: 10px auto;
+  color: #fff;
+}
+
+.banner-title {
+  line-height: 46px;
+  margin-bottom: 24px;
+  text-shadow: 0px 0px 12px rgba(17, 0, 0, 0.6);
+}
+
+.banner-subtitle {
+  line-height: 32px;
+  margin-bottom: 24px;
+  text-shadow: 0px 0px 12px rgba(17, 0, 0, 0.6);
+}
+
+.mini-title {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0;
+}
+
+.mini-title:hover {
+  color: #63BD6A;
+  text-decoration: none;
+}
+
+.banner-button {
+  margin-bottom: 30px;
+  text-shadow: 0px 0px 12px rgba(17, 0, 0, 0.6);
+}
+
+/* Info */
+
+.info-card {
+  width: 13em;
+  margin: 1em 4em;
+}
+
+.info-img {
+  height: 10em;
+}
+
+/* Footer */
+
+.footer-background {
+  background-color: #111111;
+}
+
+.footer-copyright{
+  background-color: black;
+}
+
+
+/* Login y registro */
+
+.logo-login {
+  height: 4em;
+  width: auto;
+}
+
+.formulario-login {
+	background:url(../img/backgrounds/background-two.jpg);
+	background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formulario-registro{
+  background: url(../img/backgrounds/background-two.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: content-box;
+  background-position: center;
+}
+
+.logo-galvanic-registro{
+  padding-top: 10px;
+}
+
+.content-form {
+  padding: 0 20px;
+}
+
+.text-link {
+  color: #63BD6A;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  color: #63BD6A;
+  text-decoration: none;
+}
+
+/* Productos */
+
+.product-card {
+  margin: 20px;
+}
+
+.product-thumbnail {
+  height: 18em;
+}
+
+/* Producto */
+
+.product-title {
+  font-size: 28px;
+  color: #000;
+}
+
+.product-text {
+  color: #000;
+}
+
+/* Ventas */
+
+.table .thead-dark th {
+  background-color: #272727;
+  border-color: #272727;
+}
+
+.table-sm {
+  box-shadow: 0 3px 6px 0 rgba(17, 0, 0, 0.16);
+}
+
+/* Cart */
+
+.cart-product {
+  box-shadow: 0 3px 6px 0 rgba(17, 0, 0, 0.16);
+}
+
+.img-product {
+  height: 140px;
+  width: 140px;
+}
+
+.cart-title {
+  margin-bottom: 0.75rem;
+}
+
+.cart-text {
+  font-weight: 700;
+}
+
+/* Media query */
+
+@media (max-width: 575px) {
+  .container {
+    padding: 0;
+    margin: 0;
+  }
+
+  .logo {
+    height: 3.5em;
+  }
+
+  .icon-sm {
+    height: 1.2em;
+  }
+
+  /* Carrito */
+  .img-product {
+    height: 70px;
+    width: 70px;
+  }
+
+  .cart-title {
+    font-size: 12px;
+  }
+
+  .cart-text {
+    font-size: 12px;
+  }
+
+  .cart-count {
+    position: absolute;
+    top: 46px;
+    right: 77px; 
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  /* Carrito */
+  .cart-title {
+    font-size: 16px;
+  }
+
+  .cart-text {
+    font-size: 16px;
+  }
+
+  .cart-count {
+    position: absolute;
+    top: 50px;
+    right: 80px;    
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .cart-title {
+    font-size: 22px;
+  }
+
+  .cart-count {
+    position: absolute;
+    top: 50px;
+    right: 80px;    
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .cart-count {
+    position: absolute;
+    top: 35px;
+    right: 87px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .sections {
+    position: relative;
+    left: 90px;
+  }
+
+  .sections-secundary {
+    position: relative;
+    left: 63px;
+  }
+
+  .cart-count {
+    position: absolute;
+    top: 35px;
+    right: 87px;
+  }
+}
