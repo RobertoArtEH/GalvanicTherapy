@@ -1,18 +1,21 @@
 <header class="container">
   <nav class="navbar navbar-expand-lg">
     <!-- Logo -->
-    <a class="navbar-brand mx-lg-auto" href="index.php">
+    <a  id="logo" class="navbar-brand mx-lg-auto" href="index.php">
       <img src="img/brand/logo.png" class="logo" alt="Logo"/>
     </a>
     <!-- Header SM -->
     <ul class="nav">
-      <li class="nav-item d-flex align-items-center">
+      <li id="searchSM" class="nav-item d-flex align-items-center">
         <!-- Buscar -->
-        <div class="d-lg-none">
-          <img src="img/icons/search.svg" class="icon-sm" alt="Buscar"/>
+        <div class="d-lg-none container">
+          <input id="searchInputSM" class="search-input-sm" type="text" placeholder="Buscar...">
+          <a id="searchIconSM">
+            <img src="img/icons/search.svg" class="icon-sm" alt="Buscar"/>
+          </a>
         </div>
       </li>
-      <li class="nav-item d-flex align-items-center">
+      <li id="cartSM" class="nav-item d-flex align-items-center">
         <!-- Carrito de compras -->
         <a class="cart d-lg-none" href="cart.php">
           <img src="img/icons/cart.svg" class="icon-sm" alt="Carrito"/>

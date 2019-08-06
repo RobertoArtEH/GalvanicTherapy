@@ -92,6 +92,22 @@ footer {
   transition: width 0.4s linear;
 }
 
+.search-input-sm {
+  color: #000;
+  /* border-color: #000;
+  border-style: solid;
+  border-width: 0 0 1.5px; */
+  font-weight: normal;
+  /* outline: 0; */
+  background: none;
+  width: 0;
+}
+
+.search-input-sm-active {
+  width: 100vh;
+  margin: 1rem 1rem 1rem auto;
+}
+
 /* Index */
 
 .sections-banner {
@@ -342,6 +358,10 @@ footer {
 
   .icon-sm {
     height: 1.2em;
+  }
+
+  .search-input-sm-active {
+    width: 17rem;
   }
 
   /* Carrito */
