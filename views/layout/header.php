@@ -16,6 +16,7 @@
         <!-- Carrito de compras -->
         <a class="cart d-lg-none" href="cart.php">
           <img src="img/icons/cart.svg" class="icon-sm" alt="Carrito"/>
+          <span class="badge badge-dark cart-count"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>
         </a>
       </li>
       <li class="nav-item">
@@ -98,7 +99,7 @@
       } else {
 
     ?>
-    <!-- Secciones -->
+    <!-- Secciones LG -->
     <ul class="navbar-nav sections mx-lg-auto">
       <li class="nav-item active">
         <a class="nav-link bg-link" href="index.php">Inicio</a>
@@ -128,7 +129,7 @@
     <!-- Carrito de compras lg -->
     <a class="cart d-none d-lg-block" href="cart.php">
       <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
-      <span class="badge badge-dark cart-count-log"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>  
+      <span class="badge badge-dark cart-count-log"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>
     </a>
     <!-- Boton de log-in LG -->
     <div class="d-none d-lg-block">
