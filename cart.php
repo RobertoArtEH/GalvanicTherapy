@@ -232,7 +232,9 @@ include 'validar-categorias.php';
           ?>
         <?php 
           } else{ ?>
-          <div class="alert alert-success">No hay productos en el carrito...</div>
+          <!-- <div class="alert alert-success">No hay productos en el carrito...</div> -->
+          <img src="https://image.flaticon.com/icons/png/512/107/107831.png" height="250" class="mx-auto d-block">
+          <h6 class="text-center">Carrito de compras vacio</h6>
         <?php } ?>
       </div>
     </div>
