@@ -57,7 +57,7 @@ include 'validar-categorias.php';
               <div class="col-auto col-sm-auto col-md-auto col-lg-auto">
                 <form class="form-inline" action="" method="post">
                 <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($producto['ID'],COD,KEY);?>">
-                <h6 class="cart-text pt-4">Subtotal: <span>$ <?php echo number_format($producto['PRECIO'] * $producto['CANTIDAD'],2 );  ?> </span></h6>        
+                <!-- <h6 class="cart-text pt-4">Subtotal: <span>$ <?php echo number_format($producto['PRECIO'] * $producto['CANTIDAD'],2 );  ?> </span></h6>         -->
                <label class="product-text pr-1" for="formCantidad">Cantidad:</label>
                   <select class="custom-select" name="cantidad" >
                   <option selected><?php echo $producto['CANTIDAD'] ?></option>
