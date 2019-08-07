@@ -46,18 +46,31 @@ if (isset($_POST['btnAccion'])) {
         );
         $_SESSION['CARRITO'][0]=$producto;
       }else {
-        $NumeroProductos=count($_SESSION['CARRITO']);
-        $producto=array(
-          'ID'=>$ID,
-          'IMAGEN'=>$IMAGEN,
-          'NOMBRE'=>$NOMBRE,
-          'PRECIO'=>$PRECIO,
-          'CANTIDAD'=>$CANTIDAD
-        );
-        $_SESSION['CARRITO'][$NumeroProductos]=$producto;
-      }
+        $found = false;
+        for ($k=0; $k < sizeof($_SESSION['CARRITO']) ; $k++) { 
+          if ($ID == $_SESSION['CARRITO'][$k]['ID']) {
+            $_SESSION['CARRITO'][$k]['CANTIDAD']+= $CANTIDAD;
+            $found = true;
+            break;
+          }
+        }
 
-      $mensaje=print_r($_SESSION,true);
+        if (!$found) {
+          $_SESSION['CARRITO'][sizeof($_SESSION['CARRITO'])] = array 
+          (
+            'ID'=>$ID,
+            'IMAGEN'=>$IMAGEN,
+            'NOMBRE'=>$NOMBRE,
+            'PRECIO'=>$PRECIO,
+            'CANTIDAD'=>$CANTIDAD
+          );
+        }
+
+        
+      }
+      var_dump($_SESSION['CARRITO']);
+
+      // $mensaje=print_r($_SESSION,true);
 
     break;
     case "Eliminar":
