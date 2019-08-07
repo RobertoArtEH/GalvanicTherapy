@@ -93,19 +93,26 @@ footer {
 }
 
 .search-input-sm {
-  color: #000;
-  /* border-color: #000;
-  border-style: solid;
-  border-width: 0 0 1.5px; */
-  font-weight: normal;
-  /* outline: 0; */
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0;
+  font-size: 1rem;
+  outline: 0;
   background: none;
   width: 0;
+  padding: 0;
 }
 
 .search-input-sm-active {
+  padding: .25rem .5rem;
   width: 100vh;
-  margin: 1rem 1rem 1rem auto;
+  margin: 1rem auto;
+  line-height: 1.5;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  font-weight: 400;
+  margin-right: 1rem;
 }
 
 /* Index */

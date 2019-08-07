@@ -8,11 +8,15 @@
     <ul class="nav">
       <li id="searchSM" class="nav-item d-flex align-items-center">
         <!-- Buscar -->
-        <div class="d-lg-none container">
-          <input id="searchInputSM" class="search-input-sm" type="text" placeholder="Buscar...">
-          <a id="searchIconSM">
-            <img src="img/icons/search.svg" class="icon-sm" alt="Buscar"/>
-          </a>
+        <div class="d-lg-none">
+          <div class="form-inline">
+            <div class="form-group">
+              <input id="searchInputSM" class="search-input-sm" type="text" placeholder="Buscar...">
+              <a id="searchIconSM">
+                <img src="img/icons/search.svg" class="icon-sm" alt="Buscar"/>
+              </a>
+            </div>
+          </div>
         </div>
       </li>
       <li id="cartSM" class="nav-item d-flex align-items-center">
