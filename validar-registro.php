@@ -9,6 +9,7 @@
     $f_nacimiento  = $_POST['f_nacimiento'];
     $email         = $_POST['email'];
     $pass          = $_POST['pass'];
+    $pass          = hash('sha512',$pass );
 
     //Validar correo existente
     $emailQuery = 'SELECT * FROM users WHERE email=? LIMIT 1';
@@ -38,11 +39,19 @@
     }
 
     //Registrar usuario
-    $sql = 'INSERT INTO users(first_name, last_name, email, birthday, username, pass) 
-              VALUES(?, ?, ?, ?, ?, ?)';
+    $sql = 'INSERT INTO users(first_name, last_name, email, birthday, username, pass, role, status) 
+              VALUES(:nombre, :apellidos, :email, :birthday, :username, :pass, :role, :status)';
       
     $stmtInsert = $conexion -> prepare($sql);
-    $result = $stmtInsert -> execute([$nombre, $apellidos, $email ,$f_nacimiento, $user, $pass]);
+    $result = $stmtInsert -> execute([
+      ':nombre'=>$nombre, 
+      ':apellidos'=>$apellidos, 
+      ':email'=>$email ,
+      ':birthday'=>$f_nacimiento, 
+      ':username'=>$user, 
+      ':pass'=>$pass, 
+      ':role'=>'user', 
+      ':status'=>'active']);
 
     if($result) {
       echo 'success';

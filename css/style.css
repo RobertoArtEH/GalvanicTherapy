@@ -92,6 +92,61 @@ footer {
   transition: width 0.4s linear;
 }
 
+.search-input-sm {
+  color: #000;
+  /* border-color: #000;
+  border-style: solid;
+  border-width: 0 0 1.5px; */
+  font-weight: normal;
+  /* outline: 0; */
+  background: none;
+  width: 0;
+}
+
+.search-input-sm-active {
+  width: 100vh;
+  margin: 1rem 1rem 1rem auto;
+}
+
+/* Index */
+
+.sections-banner {
+  padding: 2rem auto;
+}
+
+.categories-bg {
+  background-color: #2A2A2A;
+}
+
+.index-categories {
+  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.categories-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.category-square {
+  width: 15em;
+  height: 15em;
+  margin-right: 30px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px 0;
+  background-repeat: no-repeat;
+  background-origin: content;
+  background-size: cover;
+  background-position: center center;
+}
+
+.categories-title {
+  color: #fff;
+  word-wrap: break-word;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.7);
+}
+
 /* Banners */
 
 .banner-background {
@@ -102,24 +157,7 @@ footer {
   background-position: center center;
 }
 
-.banner-cuidadocorp-background {
-  background-image: url(../img/backgrounds/background-one.jpg);
-  background-repeat: no-repeat;
-  background-origin: content;
-  background-size: cover;
-  background-position: center center;
-}
-
-.banner-cuidadofac-background {
-  background-image: url(../img/backgrounds/cuidadofacial.jpg);
-  background-repeat: no-repeat;
-  background-origin: content;
-  background-size: cover;
-  background-position: center center;
-}
-
-.banner-vitaminas-background {
-  background-image: url(../img/backgrounds/suplementos.jpg);
+.banner-categories-background {
   background-repeat: no-repeat;
   background-origin: content;
   background-size: cover;
@@ -322,6 +360,10 @@ footer {
     height: 1.2em;
   }
 
+  .search-input-sm-active {
+    width: 17rem;
+  }
+
   /* Carrito */
   .img-product {
     height: 70px;
@@ -372,6 +414,11 @@ footer {
     top: 50px;
     right: 80px;    
   }
+  .cart-count-log {
+    position: absolute;
+    top: 35px;
+    right: 153px;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -380,6 +427,15 @@ footer {
     position: absolute;
     top: 35px;
     right: 87px;
+  }
+  .cart-count-log {
+    position: absolute;
+    top: 35px;
+    right: 153px;
+  }
+
+  .categories-list {
+    justify-content: center;
   }
 }
 
@@ -399,5 +455,15 @@ footer {
     position: absolute;
     top: 35px;
     right: 87px;
+  }
+
+  .cart-count-log {
+    position: absolute;
+    top: 35px;
+    right: 153px;
+  }
+
+  .categories-list {
+    justify-content: center;
   }
 }
