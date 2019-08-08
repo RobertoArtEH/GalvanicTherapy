@@ -68,7 +68,7 @@ if (isset($_POST['btnAccion'])) {
 
         
       }
-      var_dump($_SESSION['CARRITO']);
+      // var_dump($_SESSION['CARRITO']);
 
       // $mensaje=print_r($_SESSION,true);
 
