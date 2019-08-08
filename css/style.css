@@ -106,7 +106,7 @@ footer {
 
 .search-input-sm-active {
   padding: .25rem .5rem;
-  width: 100vh;
+  /* width: 100%; */
   margin: 1rem auto;
   line-height: 1.5;
   border: 1px solid #ced4da;
@@ -152,6 +152,10 @@ footer {
   color: #fff;
   word-wrap: break-word;
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.7);
+}
+
+.form-group {
+  margin-bottom: 0;
 }
 
 /* Banners */
@@ -368,7 +372,7 @@ footer {
   }
 
   .search-input-sm-active {
-    width: 17rem;
+    width: 78vw;
   }
 
   /* Carrito */
@@ -408,6 +412,10 @@ footer {
     top: 50px;
     right: 80px;    
   }
+
+  .search-input-sm-active {
+    width: 25em;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -421,10 +429,15 @@ footer {
     top: 50px;
     right: 80px;    
   }
+  
   .cart-count-log {
     position: absolute;
     top: 35px;
     right: 153px;
+  }
+
+  .search-input-sm-active {
+    width: 36rem;
   }
 }
 
@@ -435,6 +448,7 @@ footer {
     top: 35px;
     right: 87px;
   }
+  
   .cart-count-log {
     position: absolute;
     top: 35px;

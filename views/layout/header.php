@@ -6,16 +6,16 @@
     </a>
     <!-- Header SM -->
     <ul class="nav">
-      <li id="searchSM" class="nav-item d-flex align-items-center">
+      <li id="searchSM" class="d-flex align-items-center">
         <!-- Buscar -->
         <div class="d-lg-none">
-          <div class="form-inline">
+          <div class="form-inline container">
             <div class="form-group">
               <input id="searchInputSM" class="search-input-sm" type="text" placeholder="Buscar...">
-              <a id="searchIconSM">
-                <img src="img/icons/search.svg" class="icon-sm" alt="Buscar"/>
-              </a>
             </div>
+            <a id="searchIconSM">
+              <img src="img/icons/search.svg" class="icon-sm" alt="Buscar"/>
+            </a>
           </div>
         </div>
       </li>
