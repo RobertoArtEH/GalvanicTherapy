@@ -4,7 +4,6 @@ $sentencia=$pdo->prepare("SELECT *FROM products WHERE productid='".$id."'");
 $sentencia->execute();
 while($row=$sentencia->fetch(PDO::FETCH_ASSOC))
 {
-    print_r($row);
    
 
 ?>
@@ -19,9 +18,9 @@ while($row=$sentencia->fetch(PDO::FETCH_ASSOC))
     <link rel="stylesheet" href="css/bootstrapstor.min.css">
 </head>
 <body>
-
-<div class="container col-6">
+<div class="container border border-primary mt-1 col-6">
 <form method="POST" ectype="multipart/form-data">
+    <h1>Editar producto</h1>
     <label for=""class="control-label invisible">ID</label>
     <input type="hidden" class="form-control" id="id" name="id" placeholder="" value="<?php echo $row['productid']?>" require="">
     <label for="" class="control-label">Nombre</label>
@@ -34,15 +33,10 @@ while($row=$sentencia->fetch(PDO::FETCH_ASSOC))
     <input type="text" class="form-control" id="imagen" name="imagen" placeholder=""require="" value="<?php echo $row['picture']?>" >    
     <label for="" class="control-label">Precio</label>
     <input type="text" class="form-control" id="precio" name="precio" placeholder="" require="" value="<?php echo $row['price']?>">
-    <label for="" class="control-label">Categoria</label>
-    <select class="form-control" name="category" id="categoria">
-        <option value="<?php echo $row['categoryid']?>"><?php echo $row['categoryid']?></option>
-    
-        </select>                    
     <label for="" class="control-label">Stock</label>
     <input type="text" class="form-control" id="stock" name="stock" placeholder="" require="" value="<?php echo $row['unitsinstock']?>" >
     </div>   
-        <div class="modal-footer">
+        <div class="modal-footer mt-1">
         <div class="form-group"> <!-- Submit Button -->
         <button type="submit" name="" class="btn btn-primary">Actualizar</button>
         <a href="index.php"><button type="button" value="Cancelar" name="accion" class="btn btn-danger">Regresar</button></a>
@@ -70,6 +64,7 @@ $imagen!=null  || $content!=null || $category!=null)
     }
 }?>
 
+</div>    
 </div>    
 </body>
 </html>

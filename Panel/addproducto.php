@@ -13,7 +13,7 @@
 
 <div class="container col-6">
     
-<form action="" method="post" ectype="multipart/form-data">
+<form action="" method="post" enctype="multipart/form-data">
     <label for="" class="control-label">ID</label>
     <input type="text" class="form-control" id="id" name="id" placeholder="" require="">
     <label for="" class="control-label">Nombre</label>
@@ -23,7 +23,7 @@
     <label for="" class="control-label">Content</label>
     <input type="text" class="form-control" id="content" name="content" placeholder="" require="">
     <label for="" class="control-label">Imagen</label>
-    <input type="text" class="form-control" id="imagen" name="imagen" placeholder=""require="" >    
+    <input type="file" accept="image/*" class="form-control" id="imagen" name="imagen" placeholder=""require="" >    
     <label for="" class="control-label">Precio</label>
     <input type="text" class="form-control" id="precio" name="precio" placeholder="" require="">
     <label for="" class="control-label">Categoria</label>
@@ -35,7 +35,7 @@ $id =$_POST['id'];
 $descripcion =$_POST['descripcion'];
 $precio =$_POST['precio'];
 $stock =$_POST['stock'];
-$imagen =$_POST['imagen'];
+$imagen =$_FILES['imagen']["name"];
 $content =$_POST['content'];
 $category =$_POST['category'];
 if($nombre!=null || $id=null || $descripcion!=null || $precio !=null || $stock!=null ||
@@ -45,7 +45,13 @@ $imagen!=null || $accion!=null || $content!=null || $category!=null)
     VALUES (:productid,:productname,:picture,:description,:content,:categoryid,:price,:unitsinstock)");
     $sentencia->bindParam(':productid',$id);
     $sentencia->bindParam(':productname',$nombre);
-    $sentencia->bindParam(':picture',$imagen);
+    $Fecha= new DateTime();
+    $conversion=($imagen!="")?$Fecha->getTimestamp()."_".$_FILES["imagen"]["name"]:"default.jpg";
+    $temporalfoto=$_FILES["imagen"]["tmp_name"];
+    if($temporalfoto!=""){
+        move_uploaded_file($temporalfoto,"imagenes/".$conversion);
+    }
+    $sentencia->bindParam(':picture',$conversion);
     $sentencia->bindParam(':description',$descripcion);
     $sentencia->bindParam(':content',$content);
     $sentencia->bindParam(':categoryid',$category);

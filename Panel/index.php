@@ -13,16 +13,15 @@ $listaproductos=$senten->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Productos</title>
-    <script src="https://kit.fontawesome.com/a2a999c481.js"></script>
     <link rel="stylesheet" href="css/bootstrapstor.min.css"> 
      <!-- Font Awesome -->
     
  </head>
 <body >
-<a href="#">
-                  <small class="bg-green">Online</small>
-                  <span class="hidden-xs">Raul</span>
-                </a>
+    <div class="container">
+    <h1 class="text-center text-info">Productos</h1>
+    </div>
+
 <h3><a href="addproducto.php"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
 <i class="fa fa-plus"> </i>
 </button></a></h3>
@@ -31,10 +30,10 @@ $listaproductos=$senten->fetchAll(PDO::FETCH_ASSOC);
 <!-- FIN DEL FORM -->
     
     <div id="crudarticulos" class="row">
-    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
     <div class="table-responsive">
         <table class="table table-striped table-bordered table-condensed table-hover">
-            <thead>
+            <thead class="table-primary" >
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Descripcion</th>
@@ -46,11 +45,11 @@ $listaproductos=$senten->fetchAll(PDO::FETCH_ASSOC);
                     <th>Accion</th>                  
                 </thead>
                <?php foreach($listaproductos as $producto){?>
-                    <tr>
-                    <td><?php echo $producto['productid'];?></td>
-                    <td><?php echo $producto['productname'];?></td>
+                    <tr >
+                    <td ><?php echo $producto['productid'];?></td>
+                    <td ><?php echo $producto['productname'];?></td>
                         <td><?php echo $producto['description'];?></td>
-                        <td><?php echo $producto['picture'];?></td>
+                        <td><img class="img-thumbnail"width="100px" src="imagenes/<?php echo $producto['picture'];?>"></td>
                         <td><?php echo $producto['content'];?></td>
                         <td><?php echo $producto['categoryid'];?></td>
                         <td><?php echo $producto['price'];?></td>
@@ -66,10 +65,14 @@ $listaproductos=$senten->fetchAll(PDO::FETCH_ASSOC);
                         <input type="hidden" value="<?php echo $producto['categoryid'];?>" name="categoria">
                         <input type="hidden" value="<?php echo $producto['productid'];?>" name="id">
                         <input type="hidden" value="<?php echo $producto['unitsinstock'];?>" name="stock">
-                            <a href="editarproducto.php?id=<?php echo $producto['productid'];?>
-                            "> <i class="fa fa-edit" name="accion" value="editar">editar</i></a>
+                           <button class="btn btn-warning">
+                           <a href="editarproducto.php?id=<?php echo $producto['productid'];?>
+                            "> <i class="fa fa-edit" style="color :white "name="accion" value="editar"></i></a>
+                           </button> 
+                           <button class="btn btn-danger">
                        <a href="eliminarproducto.php?id=<?php echo $producto['productid'];?>"
-                       > <i class="fa fa-refresh ">eliminar</i></a>  
+                       > <i class="fa fa-trash "style="color :white"></i></a>  
+                       </button> 
                        </form>                      
                      </td>
                       
