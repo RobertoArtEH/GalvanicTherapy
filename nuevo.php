@@ -70,13 +70,15 @@ include 'validar-categorias.php';
     <!-- Producto agotado -->
     <div class="card product-card" style="width: 18rem">
       <a href="producto.php?productid=<?php echo $producto['productid'];?>">
-        <img src="img/products/<?php echo $producto['picture']; ?>" class="card-img-top" alt="Imagen de producto">
+        <img src="img/products/<?php echo $producto['picture']; ?>" class="card-img-top product-thumbnail" alt="Imagen de producto">
       </a>
       <div class="card-body text-center">
-        <a href="producto.html" class="bg-link">
+        <a href="producto.php?productid=<?php echo $producto['productid'];?>" class="bg-link">
           <h6 class="card-title"><?php echo $producto['productname']; ?></h6>
         </a>
         <p class="card-text">Precio: $ <?php echo number_format($producto['price'],2); ?></p>
+      </div>
+      <div class="card-footer">
         <a href="#" class="btn btn-dark btn-block disabled">Agotado</a>
       </div>
     </div>
