@@ -86,7 +86,7 @@ include 'validar-categorias.php';
               <h6>Monto total:</h6>
               <h6>$ <?php echo number_format($total,2); ?></h6>
             </div>
-            <button type="button" class="btn btn-primary btn-block">Paypal</button>
+            <button type="button" class="btn btn-primary btn-block">Boton paypal</button>
             <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#modalDeposito">Depósito bancario</button>
           </article>
         </div>
