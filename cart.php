@@ -156,7 +156,7 @@ include 'validar-categorias.php';
             <?php
               }else{
                 ?>
-                <div class="modal fade" id="modalForm">
+                <div class="modal fade" id="modalDeposito">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header ">
@@ -165,7 +165,7 @@ include 'validar-categorias.php';
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                    <div class="modal-body ">
+                    <div class="modal-body">
                     <div class="global-container">       
                       <section class=" container p-4 register col-sm-8 col-md-8 col-lg-10">
                       <div class="d-flex justify-content-center pt-2">
