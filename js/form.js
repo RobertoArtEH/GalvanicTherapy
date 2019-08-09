@@ -28,6 +28,8 @@ $('#registro').click(function(e) {
         pass: pass
       },
       success: function(data) {
+        console.log(data);
+
         if(data == 'no-data') {
           Swal.fire({
             type: 'error',
@@ -74,8 +76,6 @@ $('#registro').click(function(e) {
             showConfirmButton: false,
             timer: 1500
           })
-
-          setTimeout(() => window.location = 'registro.php', 1000);
         }
       },
       error: function() {
@@ -109,8 +109,6 @@ $('#login-btn').click(function(e) {
         password: password
       },
       success: function(data) {
-        // console.log(data);
-        
         if(data == 'user-success') {
           window.location = 'index.php';
         }

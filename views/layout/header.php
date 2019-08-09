@@ -1,21 +1,29 @@
 <header class="container">
   <nav class="navbar navbar-expand-lg">
     <!-- Logo -->
-    <a class="navbar-brand mx-lg-auto" href="index.php">
+    <a  id="logo" class="navbar-brand mx-lg-auto" href="index.php">
       <img src="img/brand/logo.png" class="logo" alt="Logo"/>
     </a>
     <!-- Header SM -->
     <ul class="nav">
-      <li class="nav-item d-flex align-items-center">
+      <li id="searchSM" class="d-flex align-items-center">
         <!-- Buscar -->
         <div class="d-lg-none">
-          <img src="img/icons/search.svg" class="icon-sm" alt="Buscar"/>
+          <div class="form-inline container">
+            <div class="form-group mb-0">
+              <input id="searchInputSM" class="search-input-sm" type="text" placeholder="Buscar...">
+            </div>
+            <a id="searchIconSM">
+              <img src="img/icons/search.svg" class="icon-sm" alt="Buscar"/>
+            </a>
+          </div>
         </div>
       </li>
-      <li class="nav-item d-flex align-items-center">
+      <li id="cartSM" class="nav-item d-flex align-items-center">
         <!-- Carrito de compras -->
         <a class="cart d-lg-none" href="cart.php">
           <img src="img/icons/cart.svg" class="icon-sm" alt="Carrito"/>
+          <span class="badge badge-dark cart-count"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>
         </a>
       </li>
       <li class="nav-item">
@@ -98,7 +106,7 @@
       } else {
 
     ?>
-    <!-- Secciones -->
+    <!-- Secciones LG -->
     <ul class="navbar-nav sections mx-lg-auto">
       <li class="nav-item active">
         <a class="nav-link bg-link" href="index.php">Inicio</a>
@@ -128,7 +136,7 @@
     <!-- Carrito de compras lg -->
     <a class="cart d-none d-lg-block" href="cart.php">
       <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
-      <span class="badge badge-dark cart-count-log"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>  
+      <span class="badge badge-dark cart-count-log"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>
     </a>
     <!-- Boton de log-in LG -->
     <div class="d-none d-lg-block">

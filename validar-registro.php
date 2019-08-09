@@ -9,7 +9,8 @@
     $f_nacimiento  = $_POST['f_nacimiento'];
     $email         = $_POST['email'];
     $pass          = $_POST['pass'];
-    $pass= hash('sha512',$pass );
+    $pass          = hash('sha512',$pass );
+
     //Validar correo existente
     $emailQuery = 'SELECT * FROM users WHERE email=? LIMIT 1';
     $stmtEmail = $conexion -> prepare($emailQuery);

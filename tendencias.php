@@ -45,7 +45,6 @@ include 'validar-categorias.php';
             <h6 class="card-title"><?php echo $producto['productname']; ?></h6>
           </a>
           <p class="card-text">Precio: $ <?php echo number_format($producto['price'],2); ?></p>
-          <p class="card-text">Envio: $ 99</p>
         </div>
       <form action="" method="post">
         <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($producto['productid'],COD,KEY);?>">
@@ -63,8 +62,8 @@ include 'validar-categorias.php';
       ?>
       <?php
       require('conexion.php');
-      $consulta = $conexion->prepare('SELECT * from orders left join orderdetails on orders.OrderID=OrderDetails.OrderID left join products on OrderDetails.ProductID =
-      products.ProductID left join Categories on products.CategoryID = Categories.CategoryID where unitsinstock <=0 group by products.productname order by orders.OrderID desc');
+      $consulta = $conexion->prepare('SELECT * from orders left join orderdetails on orders.orderid=orderdetails.orderid left join products on orderDetails.productid =
+      products.productid left join categories on products.categoryid = categories.categoryid where unitsinstock <=0 group by products.productname order by orders.orderid desc');
       $consulta -> execute();
       $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
       foreach($resultado as $producto){

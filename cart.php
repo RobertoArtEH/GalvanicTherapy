@@ -57,7 +57,7 @@ include 'validar-categorias.php';
               <div class="col-auto col-sm-auto col-md-auto col-lg-auto">
                 <form class="form-inline" action="" method="post">
                 <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($producto['ID'],COD,KEY);?>">
-                <h6 class="cart-text pt-4">Subtotal: <span>$ <?php echo number_format($producto['PRECIO'] * $producto['CANTIDAD'],2 );  ?> </span></h6>        
+                <!-- <h6 class="cart-text pt-4">Subtotal: <span>$ <?php echo number_format($producto['PRECIO'] * $producto['CANTIDAD'],2 );  ?> </span></h6>         -->
                <label class="product-text pr-1" for="formCantidad">Cantidad:</label>
                   <select class="custom-select" name="cantidad" >
                   <option selected><?php echo $producto['CANTIDAD'] ?></option>
@@ -86,95 +86,69 @@ include 'validar-categorias.php';
               <h6>Monto total:</h6>
               <h6>$ <?php echo number_format($total,2); ?></h6>
             </div>
-            <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#modalForm">Continuar</button>
+            <button type="button" class="btn btn-primary btn-block">Paypal</button>
+            <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#modalDeposito">Depósito bancario</button>
           </article>
         </div>
         <?php
               if(isset($_SESSION['email']) || isset($_SESSION['username'])){
               ?>
-        <div class="modal fade" id="modalForm">
-          <div class="modal-dialog" role="document">
+        <div class="modal fade" id="modalDeposito">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Agregar dirección</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Depósito bancario</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
-                <div class="form-group">
-                  <label for="inputCountry">País</label>
-                  <select id="inputCountry" class="form-control" required>
-                    <option>México</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="inputStreet">Calle</label>
-                  <input type="text" class="form-control" id="inputStreet" required>
-                </div>
-                <div class="form-group">
-                  <label for="inputState">Estado</label>
-                  <select id="inputState" class="form-control" required>
-                    <option>Elegir...</option>
-                    <option>Aguascalientes</option>
-                    <option>Baja California</option>
-                    <option>Baja California Sur</option>
-                    <option>Campeche</option>
-                    <option>Chihuahua</option>
-                    <option>Chiapas</option>
-                    <option>Ciudad de México</option>
-                    <option>Coahuila</option>
-                    <option>Colima</option>
-                    <option>Durango</option>
-                    <option>Guanajuato</option>
-                    <option>Guerrero</option>
-                    <option>Hidalgo</option>
-                    <option>Jalisco</option>
-                    <option>México</option>
-                    <option>Michoacán</option>
-                    <option>Morelos</option>
-                    <option>Nayarit</option>
-                    <option>Nuevo León</option>
-                    <option>Oaxaca</option>
-                    <option>Puebla</option>
-                    <option>Querétaro</option>
-                    <option>Quintana Roo</option>
-                    <option>San Luis Potosí</option>
-                    <option>Sinaloa</option>
-                    <option>Sonora</option>
-                    <option>Tabasco</option>
-                    <option>Tamaulipas</option>
-                    <option>Tlaxcala</option>
-                    <option>Veracruz</option>
-                    <option>Yucatán</option>
-                    <option>Zacatecas</option>
-                  </select>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-6">
-                    <label for="inputCellphone">Celular</label>
-                    <input type="text" class="form-control" id="inputCellphone" required>
+              <div class="modal-body text-center p-4">
+                <p>En los siguientes sitios podrás realizar tu depósito bancario:</p>
+                <div class="row align-items-center">
+                  <div class="col">
+                    <img src="img/icons/oxxo.png" alt="Oxxo" height="30px">
                   </div>
-                  <div class="form-group col-6">
-                    <label for="inputNumber">Número</label>
-                    <input type="text" class="form-control" id="inputNumber" required>
+                  <div class="col">
+                    <p>...</p>
+                  </div>
+                  <div class="col">
+                    <p>Nombre</p>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="inputZip">Zip</label>
-                  <input type="text" class="form-control" id="inputZip" required>
+                <hr>
+                <div class="row align-items-center">
+                  <div class="col">
+                    <img src="img/icons/7-eleven.png" alt="7 eleven" height="30px">
+                  </div>
+                  <div class="col">
+                    <p>...</p>
+                  </div>
+                  <div class="col">
+                    <p>Nombre</p>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="inputPayment">Método de pago</label>
-                  <select id="inputPayment" class="form-control" required>
-                    <option>Elegir...</option>
-                    <option>Opción</option>
-                  </select>
+                <hr>
+                <div class="row align-items-center">
+                  <div class="col">
+                    <img src="img/icons/bbva.gif" alt="BBVA Bancomer" height="30px">
+                  </div>
+                  <div class="col">
+                    <p>...</p>
+                  </div>
+                  <div class="col">
+                    <p>Nombre</p>
+                  </div>
                 </div>
+                <hr>
+                <p> Una vez realizado, envía el comprobante de pago al siguiente correo electrónico:</p>
+                <div class="row justify-content-center my-3">
+                  <img class="mx-2" src="img/icons/mail-black.svg" height="30px">
+                  <h5>ejemplo@correo.com</h5>
+                </div>
+                <p>Tu pago será confirmado una vez revisemos tu comprobante de pago.</p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-dark">Continuar</button>
               </div>
             </div>
           </div>
@@ -232,7 +206,9 @@ include 'validar-categorias.php';
           ?>
         <?php 
           } else{ ?>
-          <div class="alert alert-success">No hay productos en el carrito...</div>
+          <!-- <div class="alert alert-success">No hay productos en el carrito...</div> -->
+          <img src="https://image.flaticon.com/icons/png/512/107/107831.png" height="250" class="mx-auto d-block">
+          <h6 class="text-center">Carrito de compras vacio</h6>
         <?php } ?>
       </div>
     </div>
