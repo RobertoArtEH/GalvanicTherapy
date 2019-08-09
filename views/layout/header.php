@@ -10,7 +10,7 @@
         <!-- Buscar -->
         <div class="d-lg-none">
           <div class="form-inline container">
-            <div class="form-group">
+            <div class="form-group mb-0">
               <input id="searchInputSM" class="search-input-sm" type="text" placeholder="Buscar...">
             </div>
             <a id="searchIconSM">
