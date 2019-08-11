@@ -95,46 +95,28 @@ include 'validar-categorias.php';
               </div>
               <div class="modal-body text-center p-4">
                 <p>En los siguientes sitios podrás realizar tu depósito bancario:</p>
+                <?php
+                  foreach($pago as $pago){
+                  ?>
                 <div class="row align-items-center">
                   <div class="col">
-                    <img src="img/icons/oxxo.png" alt="Oxxo" height="30px">
+                    <img src="img/icons/<?php echo $pago['payment_picture']?>" alt="" height="30px">
                   </div>
                   <div class="col">
-                    <p>...</p>
+                    <p><?php echo $pago['payment_number']; ?></p>
                   </div>
                   <div class="col">
-                    <p>Nombre</p>
+                    <p><?php echo $pago['method_payment']; ?></p>
                   </div>
                 </div>
                 <hr>
-                <div class="row align-items-center">
-                  <div class="col">
-                    <img src="img/icons/7-eleven.png" alt="7 eleven" height="30px">
-                  </div>
-                  <div class="col">
-                    <p>...</p>
-                  </div>
-                  <div class="col">
-                    <p>Nombre</p>
-                  </div>
-                </div>
-                <hr>
-                <div class="row align-items-center">
-                  <div class="col">
-                    <img src="img/icons/bbva.gif" alt="BBVA Bancomer" height="30px">
-                  </div>
-                  <div class="col">
-                    <p>...</p>
-                  </div>
-                  <div class="col">
-                    <p>Nombre</p>
-                  </div>
-                </div>
-                <hr>
+                <?php
+                  }
+                  ?>
                 <p> Una vez realizado, envía el comprobante de pago al siguiente correo electrónico:</p>
                 <div class="row justify-content-center my-3">
                   <img class="mx-2" src="img/icons/mail-black.svg" height="30px">
-                  <h5>ejemplo@correo.com</h5>
+                  <h5>galvanictherapy@hotmail.com</h5>
                 </div>
                 <p>Tu pago será confirmado una vez revisemos tu comprobante de pago.</p>
               </div>
