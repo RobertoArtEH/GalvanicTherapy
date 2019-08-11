@@ -28,12 +28,12 @@ include 'orden.php';
           foreach($compra as $compra){
             ?>
           <div>
-    <div class="accordion" id="accordionCompras<?php echo $compra['orderid'] ?>">
+    <div class="accordion" id="accordionCompras<?php echo $count; ?>">
       <div class="card">
         <div class="card-header d-flex justify-content-between">
           <div>
-            <button class="btn bg-link" type="button" data-toggle="collapse" data-target="#collapseProducts" aria-expanded="true" aria-controls="collapseProducts">
-              Orden <?php echo $count ?><span class="info-date"><?php echo $compra['orderdate']; ?></span>
+            <button class="btn bg-link" type="button" data-toggle="collapse" data-target="#collapseProducts<?php echo $count;?>" aria-expanded="true" aria-controls="collapseProducts">
+              Orden <?php echo $count ?>  <span class="info-date"><?php echo $compra['orderdate']; ?></span>
             </button>
           </div>
           <div>
@@ -42,19 +42,10 @@ include 'orden.php';
             </button>
           </div>
         </div>
-        <?php
-           $count++;
-          }
-          ?>
-
-        <div id="collapseProducts" class="collapse" aria-labelledby="headingOne" data-parent="#accordionCompras<?php echo $compra['orderid'] ?>">
+        
+        <div id="collapseProducts<?php echo $count;?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionCompras<?php echo $count; ?>">
           <div class="card-body">
             <div id="producto">
-            <?php
-            require 'orden.php';
-            
-          foreach($compra as $compra){
-            ?>
               <article class="cart-product row px-2">
                 <!-- Imagen de producto -->
                 <div class="col-auto col-sm-auto">
@@ -76,17 +67,16 @@ include 'orden.php';
                   </div>
                 </div>
               </article>
-              <?php
-          }
-        
-          ?>
             </div>
           </div>
-          
 
         </div>
       </div>
     </div>
+    <?php
+           $count++;
+          }
+          ?>
   </div>
 
   <!-- Bootstrap JS -->
