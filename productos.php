@@ -5,4 +5,5 @@ require('conexion.php');
     $stmt->execute();
     $producto = $stmt ->fetchAll();
 
+
  ?>
