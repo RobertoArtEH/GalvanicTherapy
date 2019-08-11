@@ -33,7 +33,21 @@ include 'orden.php';
         <div class="card-header d-flex justify-content-between">
           <div>
             <button class="btn bg-link" type="button" data-toggle="collapse" data-target="#collapseProducts<?php echo $count;?>" aria-expanded="true" aria-controls="collapseProducts">
-              Orden <?php echo $count ?>  <span class="info-date"><?php echo $compra['orderdate']; ?></span>
+              Orden <?php echo $count ?>
+              <span class="info-date mr-2"><?php echo $compra['orderdate']; ?></span>
+              <?php
+              switch($compra['orderstatus']) {
+                case 'completado':
+                    echo '<span class="badge badge-success">Confirmado</span>';
+                    break;
+                case 'pendiente':
+                    echo '<span class="badge badge-warning">Pendiente</span>';
+                    break;
+                case 'cancelado':
+                    echo '<span class="badge badge-danger">Cancelado</span>';
+                    break;
+              }
+              ?>
             </button>
           </div>
           <div>
