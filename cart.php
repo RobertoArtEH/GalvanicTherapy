@@ -19,16 +19,7 @@ include 'validar-categorias.php';
   </head>
   <body>
     <?php require_once 'views/layout/header.php' ?>
-    <!-- Mini header -->
-    <div class="container-fluid mini-banner-background d-flex align-items-center">
-      <div class="container">
-        <div class="row mini-banner-content">
-          <div class="col text-center">
-            <p class="mini-title">¡Productos a base de ingredientes naturales!</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php require_once 'views/components/mini-banner.php' ?>
     <div class="container content-container">
       <h4 class="mb-4 mt-2 text-center">Carrito</h4>
       <?php if(!empty($_SESSION['CARRITO'])){ ?>
@@ -171,32 +162,29 @@ include 'validar-categorias.php';
                       <div class="d-flex justify-content-center pt-2">
                           <img class="logo-login" src="./img/brand/logo.png">
                         </div>
-                          <form class="content-form needs-validation" action="login.php" method="POST" name="formulario" id="formulario" autocomplete="off">
-                              <fieldset>
-                                  <legend class="h4 text-center p-3">
-                                    Iniciar sesion
-                                  </legend>
-                                  <form>
-                                    <div id="invalid-alert" class="alert alert-danger d-none" role="alert">
-                                      Usuario o contraseña incorrecta.
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="exampleInputEmail1">Correo electrónico o usuario</label>
-                                      <input type="text" id="access" class="form-control form-control-sm" name="email" aria-describedby="emailHelp" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Contraseña</label>
-                                        <a class="text-link" href="#" style="float:right;font-size:12px;">¿Olvidaste tu contraseña?</a>
-                                        <input type="password" id="password" class="form-control form-control-sm" name="password" required>
-                                    </div>
-                                    <button type="submit" id="login-btn" class="btn btn-dark boton-iniciar btn-block">Iniciar sesión</button>
-                                    
-                                    <div class="sign-up p-4 text-center">
-                                        ¿No tienes una cuenta? <a class="text-link" href="registro.php">Crear una</a>
-                                    </div>
-                                </form>
-                              </fieldset>
-                          </form>
+                        <form class="content-form needs-validation" action="cart.php" method="POST" name="formulario" id="formulario" autocomplete="off">
+                          <fieldset>
+                            <legend class="h4 text-center p-3">
+                              Iniciar sesion
+                            </legend>
+                            <form>
+                              <div id="login-alert" class="alert alert-danger d-none" role="alert"></div>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Correo electrónico o usuario</label>
+                                <input type="text" id="access" class="form-control form-control-sm" name="email" aria-describedby="emailHelp" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputPassword1">Contraseña</label>
+                                <a class="text-link" href="#" style="float:right;font-size:12px;">¿Olvidaste tu contraseña?</a>
+                                <input type="password" id="password" class="form-control form-control-sm" name="password" required>
+                              </div>
+                              <button type="submit" id="login-btn" class="btn btn-dark boton-iniciar btn-block">Iniciar sesión</button>
+                              <div class="sign-up p-4 text-center">
+                                ¿No tienes una cuenta? <a class="text-link" href="registro.php">Crear una</a>
+                              </div>
+                            </form>
+                          </fieldset>
+                        </form>
                       </section>
                   </div>
                 </div>

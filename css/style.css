@@ -246,6 +246,21 @@ footer {
   height: 10em;
 }
 
+.info-date {
+  font-size: 0.8em;
+  color: gray;
+}
+
+.info-price {
+  background-color: #000;
+  border-radius: 0;
+  color: #fff;
+}
+
+.info-price:hover {
+  color: #fff;
+}
+
 /* Footer */
 
 .footer-background {

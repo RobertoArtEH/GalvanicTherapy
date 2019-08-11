@@ -114,7 +114,7 @@ $('#login-btn').click(function(e) {
         }
 
         if(data == 'admin-success') {
-          // Entrar como admin
+          window.location = 'Panel/index.php';
         }
 
         if(data == 'error') {
