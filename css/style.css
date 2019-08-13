@@ -39,6 +39,7 @@ footer {
 }
 
 .icon-sm {
+  cursor: pointer;
   height: 1.4em;
 }
 
@@ -83,6 +84,7 @@ footer {
 }
 
 .search-icon {
+  cursor:pointer;
   width: 16px;
   height: 16px;
 }

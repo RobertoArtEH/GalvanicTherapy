@@ -77,8 +77,7 @@ include 'validar-categorias.php';
               <h6>Monto total:</h6>
               <h6>$ <?php echo number_format($total,2); ?></h6>
             </div>
-            <button type="button" class="btn btn-primary btn-block">Boton paypal</button>
-            <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#modalDeposito">Depósito bancario</button>
+            <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modalDeposito">Depósito bancario</button>
           </article>
         </div>
         <?php
@@ -119,9 +118,13 @@ include 'validar-categorias.php';
                   <h5>galvanictherapy@hotmail.com</h5>
                 </div>
                 <p>Tu pago será confirmado una vez revisemos tu comprobante de pago.</p>
+                <div class="alert alert-warning mb-0" role="alert">
+                  Al continuar, se procesará tu compra. <br> Puedes ver todas tus compras en <a href="compras.php" class="alert-link">Mis compras.</a>
+                </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-success">Continuar</button>
               </div>
             </div>
           </div>
@@ -152,7 +155,7 @@ include 'validar-categorias.php';
                             <form>
                               <div id="login-alert" class="alert alert-danger d-none" role="alert"></div>
                               <div class="form-group">
-                                <label for="exampleInputEmail1">Correo electrónico o usuario</label>
+                                <label for="exampleInputEmail1">Usuario</label>
                                 <input type="text" id="access" class="form-control form-control-sm" name="email" aria-describedby="emailHelp" required>
                               </div>
                               <div class="form-group">
@@ -176,8 +179,7 @@ include 'validar-categorias.php';
           ?>
         <?php 
           } else{ ?>
-          <!-- <div class="alert alert-success">No hay productos en el carrito...</div> -->
-          <img src="https://image.flaticon.com/icons/png/512/107/107831.png" height="250" class="mx-auto d-block">
+          <img src="img/icons/cart.png" height="250" class="mx-auto d-block">
           <h6 class="text-center">Carrito de compras vacio</h6>
         <?php } ?>
       </div>
