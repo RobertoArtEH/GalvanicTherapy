@@ -122,8 +122,8 @@ session_start();
         </div>
         <div class="info-card text-center">
           <img src="img/brand/envios.svg" class="info-img" alt="Imagen">
-          <h4 class="card-title mt-3">ENVIOS</h4>
-          <p class="card-text">Envio seguro, rápido y eficaz a todo México.</p>
+          <h4 class="card-title mt-3">SERVICIO</h4>
+          <p class="card-text">Servicio seguro, rápido y eficaz.</p>
         </div>
         <div class="info-card text-center">
           <img src="img/brand/formas-de-pago.svg" class="info-img" alt="Imagen">
