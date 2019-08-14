@@ -18,12 +18,15 @@
 <nav class="navbar navbar-dark bg-info">
 <a class="navbar-brand" href="#">Usuarios</a>
 <a class="navbar-brand" href="#">Categorias</a>
-<a class="navbar-brand" href="Vistaproductos.php">Productos</a>
+<a class="navbar-brand" href="productos.php">Productos</a>
 <a class="navbar-brand" href="#">Ordenes</a>
 <a class="navbar-brand" href="#">PDF</a>
 <a class="navbar-brand" href="#">Salir</a>
 </nav>
 <body>
+  <div class="row">
+      <div class="col-3"></div>
+  </div>
     
 </body>
 
