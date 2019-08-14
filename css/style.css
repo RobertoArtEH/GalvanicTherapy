@@ -39,6 +39,7 @@ footer {
 }
 
 .icon-sm {
+  cursor: pointer;
   height: 1.4em;
 }
 
@@ -83,6 +84,7 @@ footer {
 }
 
 .search-icon {
+  cursor:pointer;
   width: 16px;
   height: 16px;
 }
@@ -244,6 +246,21 @@ footer {
 
 .info-img {
   height: 10em;
+}
+
+.info-date {
+  font-size: 0.8em;
+  color: gray;
+}
+
+.info-price {
+  background-color: #000;
+  border-radius: 0;
+  color: #fff;
+}
+
+.info-price:hover {
+  color: #fff;
 }
 
 /* Footer */

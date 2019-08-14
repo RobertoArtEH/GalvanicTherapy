@@ -19,16 +19,7 @@ include 'validar-categorias.php';
   </head>
   <body>
     <?php require_once 'views/layout/header.php' ?>
-    <!-- Mini header -->
-    <div class="container-fluid mini-banner-background d-flex align-items-center">
-      <div class="container">
-        <div class="row mini-banner-content">
-          <div class="col text-center">
-            <p class="mini-title">¡Productos a base de ingredientes naturales!</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php require_once 'views/components/mini-banner.php' ?>
     <div class="container content-container">
       <h4 class="mb-4 mt-2 text-center">Carrito</h4>
       <?php if(!empty($_SESSION['CARRITO'])){ ?>
@@ -86,8 +77,7 @@ include 'validar-categorias.php';
               <h6>Monto total:</h6>
               <h6>$ <?php echo number_format($total,2); ?></h6>
             </div>
-            <button type="button" class="btn btn-primary btn-block">Paypal</button>
-            <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#modalDeposito">Depósito bancario</button>
+            <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modalDeposito">Depósito bancario</button>
           </article>
         </div>
         <?php
@@ -104,51 +94,37 @@ include 'validar-categorias.php';
               </div>
               <div class="modal-body text-center p-4">
                 <p>En los siguientes sitios podrás realizar tu depósito bancario:</p>
+                <?php
+                  foreach($pago as $pago){
+                  ?>
                 <div class="row align-items-center">
                   <div class="col">
-                    <img src="img/icons/oxxo.png" alt="Oxxo" height="30px">
+                    <img src="img/icons/<?php echo $pago['payment_picture']?>" alt="" height="30px">
                   </div>
                   <div class="col">
-                    <p>...</p>
+                    <p><?php echo $pago['payment_number']; ?></p>
                   </div>
                   <div class="col">
-                    <p>Nombre</p>
+                    <p><?php echo $pago['method_payment']; ?></p>
                   </div>
                 </div>
                 <hr>
-                <div class="row align-items-center">
-                  <div class="col">
-                    <img src="img/icons/7-eleven.png" alt="7 eleven" height="30px">
-                  </div>
-                  <div class="col">
-                    <p>...</p>
-                  </div>
-                  <div class="col">
-                    <p>Nombre</p>
-                  </div>
-                </div>
-                <hr>
-                <div class="row align-items-center">
-                  <div class="col">
-                    <img src="img/icons/bbva.gif" alt="BBVA Bancomer" height="30px">
-                  </div>
-                  <div class="col">
-                    <p>...</p>
-                  </div>
-                  <div class="col">
-                    <p>Nombre</p>
-                  </div>
-                </div>
-                <hr>
+                <?php
+                  }
+                  ?>
                 <p> Una vez realizado, envía el comprobante de pago al siguiente correo electrónico:</p>
                 <div class="row justify-content-center my-3">
                   <img class="mx-2" src="img/icons/mail-black.svg" height="30px">
-                  <h5>ejemplo@correo.com</h5>
+                  <h5>galvanictherapy@hotmail.com</h5>
                 </div>
                 <p>Tu pago será confirmado una vez revisemos tu comprobante de pago.</p>
+                <div class="alert alert-warning mb-0" role="alert">
+                  Al continuar, se procesará tu compra. <br> Puedes ver todas tus compras en <a href="compras.php" class="alert-link">Mis compras.</a>
+                </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-success">Continuar</button>
               </div>
             </div>
           </div>
@@ -156,7 +132,7 @@ include 'validar-categorias.php';
             <?php
               }else{
                 ?>
-                <div class="modal fade" id="modalForm">
+                <div class="modal fade" id="modalDeposito">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header ">
@@ -165,38 +141,35 @@ include 'validar-categorias.php';
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                    <div class="modal-body ">
+                    <div class="modal-body">
                     <div class="global-container">       
                       <section class=" container p-4 register col-sm-8 col-md-8 col-lg-10">
                       <div class="d-flex justify-content-center pt-2">
                           <img class="logo-login" src="./img/brand/logo.png">
                         </div>
-                          <form class="content-form needs-validation" action="login.php" method="POST" name="formulario" id="formulario" autocomplete="off">
-                              <fieldset>
-                                  <legend class="h4 text-center p-3">
-                                    Iniciar sesion
-                                  </legend>
-                                  <form>
-                                    <div id="invalid-alert" class="alert alert-danger d-none" role="alert">
-                                      Usuario o contraseña incorrecta.
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="exampleInputEmail1">Correo electrónico o usuario</label>
-                                      <input type="text" id="access" class="form-control form-control-sm" name="email" aria-describedby="emailHelp" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Contraseña</label>
-                                        <a class="text-link" href="#" style="float:right;font-size:12px;">¿Olvidaste tu contraseña?</a>
-                                        <input type="password" id="password" class="form-control form-control-sm" name="password" required>
-                                    </div>
-                                    <button type="submit" id="login-btn" class="btn btn-dark boton-iniciar btn-block">Iniciar sesión</button>
-                                    
-                                    <div class="sign-up p-4 text-center">
-                                        ¿No tienes una cuenta? <a class="text-link" href="registro.php">Crear una</a>
-                                    </div>
-                                </form>
-                              </fieldset>
-                          </form>
+                        <form class="content-form needs-validation" action="cart.php" method="POST" name="formulario" id="formulario" autocomplete="off">
+                          <fieldset>
+                            <legend class="h4 text-center p-3">
+                              Iniciar sesion
+                            </legend>
+                            <form>
+                              <div id="login-alert" class="alert alert-danger d-none" role="alert"></div>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Usuario</label>
+                                <input type="text" id="access" class="form-control form-control-sm" name="email" aria-describedby="emailHelp" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputPassword1">Contraseña</label>
+                                <a class="text-link" href="#" style="float:right;font-size:12px;">¿Olvidaste tu contraseña?</a>
+                                <input type="password" id="password" class="form-control form-control-sm" name="password" required>
+                              </div>
+                              <button type="submit" id="login-btn" class="btn btn-dark boton-iniciar btn-block">Iniciar sesión</button>
+                              <div class="sign-up p-4 text-center">
+                                ¿No tienes una cuenta? <a class="text-link" href="registro.php">Crear una</a>
+                              </div>
+                            </form>
+                          </fieldset>
+                        </form>
                       </section>
                   </div>
                 </div>
@@ -206,8 +179,7 @@ include 'validar-categorias.php';
           ?>
         <?php 
           } else{ ?>
-          <!-- <div class="alert alert-success">No hay productos en el carrito...</div> -->
-          <img src="https://image.flaticon.com/icons/png/512/107/107831.png" height="250" class="mx-auto d-block">
+          <img src="img/icons/cart.png" height="250" class="mx-auto d-block">
           <h6 class="text-center">Carrito de compras vacio</h6>
         <?php } ?>
       </div>

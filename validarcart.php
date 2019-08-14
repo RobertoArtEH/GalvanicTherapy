@@ -1,5 +1,11 @@
 <?php
 session_start();
+//MetodosDePago
+$stmt= $conexion->prepare('SELECT * FROM payments');
+$stmt->execute();
+$pago = $stmt ->fetchAll();
+
+//validacion
 $mensaje = "";
 
 if (isset($_POST['btnAccion'])) {

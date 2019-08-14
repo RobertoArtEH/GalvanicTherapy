@@ -12,7 +12,7 @@ if(isset($_POST)) {
   // $Result = $Query -> fetch(PDO::FETCH_ASSOC);
 
   // Verificar contraseña
-  $accessQuery = $conexion -> prepare('SELECT * FROM users WHERE email OR username = :access AND pass = :password');
+  $accessQuery = $conexion -> prepare('SELECT * FROM users WHERE username = :access AND pass = :password');
   $accessQuery -> execute(array(':access'=>$access, ':password' =>$password));
   $accessResult = $accessQuery -> fetch(PDO::FETCH_ASSOC);
 

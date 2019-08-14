@@ -29,7 +29,7 @@
             <form>
               <div id="login-alert" class="alert alert-danger d-none" role="alert"></div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Correo electrónico o usuario</label>
+                <label for="exampleInputEmail1">Usuario</label>
                 <input type="text" id="access" class="form-control form-control-sm" name="email" aria-describedby="emailHelp" required>
               </div>
               <div class="form-group">
