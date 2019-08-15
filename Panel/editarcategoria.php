@@ -5,17 +5,17 @@ $senten = $pdo->prepare("SELECT *FROM categories WHERE categoryid='".$id."'");
 $senten->execute();
 $row=$senten->fetch(PDO::FETCH_ASSOC);
 
-    if($row['Status'] == 'activado')
+    if($row['statuscategorie'] == 'activado')
     {
        $status='desactivado';
     }
-    if($row['Status'] == 'desactivado')
+    if($row['statuscategorie'] == 'desactivado')
 
     {
         $status='activado';
     }
 
-$sentencia=$pdo->prepare ("UPDATE categories SET Status='".$status."' WHERE categoryid='".$id."'");
+$sentencia=$pdo->prepare ("UPDATE categories SET statuscategorie='".$status."' WHERE categoryid='".$id."'");
 $sentencia->execute();
 header("location:categorias.php");
 ?>

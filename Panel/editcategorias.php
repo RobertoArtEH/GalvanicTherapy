@@ -19,7 +19,7 @@ while($row=$sentencia->fetch(PDO::FETCH_ASSOC))
 </head>
 <body>
 <div class="container border border-primary mt-1 col-6">
-<form method="POST" ectype="multipart/form-data">
+<form method="POST" enctype="multipart/form-data">
     <h1>Editar categoria</h1>
     <label for=""class="control-label invisible">ID</label>
     <input type="hidden" class="form-control" id="id" name="id" placeholder="" value="<?php echo $row['categoryid']?>" require="">
@@ -28,8 +28,8 @@ while($row=$sentencia->fetch(PDO::FETCH_ASSOC))
     <label for="" class="control-label">Descripcion</label>
     <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="" require="" value="<?php echo $row['descriptions']?>">
     <label for="" class="control-label">Imagen</label>
-    <input type="file" class="form-control" id="imagen" name="imagen" placeholder=""require="" value="<?php echo $row['picturecategorie']?>" >    
-    <input type="hidden" class="form-control" id="status" name="status" placeholder=""require="" value="<?php echo $row['Status']?>" >    
+    <input type="file" accept="image/*" class="form-control" id="imagen" name="imagen"placeholder=""  value="<?php echo $row['picturecategorie']?>" >    
+    <input type="hidden" class="form-control" id="status" name="status" placeholder=""require="" value="<?php echo $row['statuscategorie']?>" >    
        </div>   
         <div class="modal-footer mt-1">
         <div class="form-group"> <!-- Submit Button -->
@@ -41,19 +41,37 @@ while($row=$sentencia->fetch(PDO::FETCH_ASSOC))
 <?php
 $nombre =(isset($_POST['nombre']))?$_POST['nombre']:"";
 $descripcion =(isset($_POST['descripcion']))?$_POST['descripcion']:"";
-$imagen =(isset($_POST['imagen']))?$_POST['imagen']:"";
+$imagen =(isset($_FILES['imagen']["name"]))?$_FILES['imagen']["name"]:"";
 $status =(isset($_POST['status']))?$_POST['status']:"";
-if($nombre!=null || $id=null || $descripcion!=null ||
-$imagen!=null)
+if($nombre!="" && $descripcion!="" && $status!="")
 {
     $sentencia=$pdo->prepare ("UPDATE categories SET categoryname='".$nombre."',descriptions='".$descripcion."',
     picturecategorie='".$imagen."',Status='".$status."' WHERE  categoryid='".$id."'");
     $sentencia->execute();
-    if($nombre=1)
-    {
-        $nombre="";
-        header("location:categorias.php");
+    $sentencia=$pdo->prepare ("UPDATE categories SET 
+    categoryname=:categoryname,
+    descriptions=:descriptions,
+    statuscategorie=:statuscategorie WHERE categoryid=:categoryid");
+     $sentencia->bindParam(':categoryid',$id);
+     $sentencia->bindParam(':categoryname',$nombre);
+     $sentencia->bindParam(':descriptions',$descripcion);
+     $sentencia->bindParam(':statuscategorie',$status);
+
+    $sentencia->execute();
+
+    $Fecha= new DateTime();
+    $conversion=($imagen!="")?$Fecha->getTimestamp()."_".$_FILES["imagen"]["name"]:"default.jpg";
+    $temporalfoto=(isset($_FILES['imagen']["tmp_name"]))?$_FILES['imagen']["tmp_name"]:"";
+    if($temporalfoto!=""){
+        move_uploaded_file($temporalfoto,"imagenes/".$conversion);
     }
+    $sentencia=$pdo->prepare ("UPDATE categories SET 
+    picturecategorie=:picture WHERE categoryid=:categoryid");
+         $sentencia->bindParam(':categoryid',$id);
+         $sentencia->bindParam(':picture',$conversion);
+         $sentencia->execute();
+    header("location:categorias.php");
+
 }?>
 
 </div>    

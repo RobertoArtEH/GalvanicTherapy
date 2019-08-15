@@ -21,7 +21,7 @@ $orders=$senten->fetchAll(PDO::FETCH_ASSOC);
     
  </head>
 <body >
-<?php require_once '../views/components/mini-banner.php' ?>
+<!-- <?php require_once '../views/components/mini-banner.php' ?> -->
     <div class="container content-container">
       <h4 class="mb-4 mt-2 text-center">Ordenes</h4>
       <div class="row">
@@ -52,25 +52,8 @@ $orders=$senten->fetchAll(PDO::FETCH_ASSOC);
                     </tr>
                <?php } ?>
     </table>
-<<<<<<< HEAD
-</div>
-</div>
-<div class="container">
-<table class="table table-striped table-bordered table-condensed table-hover usuarios invisible">
-            <thead class="table-primary" >
-                    <th>ID</th>
-                    <th>First_Name</th>
-                    <th>Last_Name</th>
-                    <th>Imageprofile</th>                             
-                </thead>
-                <tr id="tabla">
-                </tr>
-    </table>
-</div>
-=======
     </div>
     </div>
     </div>
->>>>>>> 59157cca178a7b3ea395710d274c04a4e61f4abe
 </body>                                           
 </html>

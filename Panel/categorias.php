@@ -25,12 +25,76 @@ $listacategorias=$senten->fetchAll(PDO::FETCH_ASSOC);
       <div class="row">
       <div class="container">
      <h3>
-            <a href="addcategorias.php"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-        <i class="fa fa-plus"> </i>
+     <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">
+           <i class="fa fa-plus" height="50px"> </i>Agregar
         </button>
-        </a>
         </h3>
     </div>
+
+     <!-- MODAL LARGE -->
+ <!-- Large modal -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- FORM -->
+      <?php include('conexion.php')?>
+<?php 
+$nombre =(isset($_POST['nombre']))?$_POST['nombre']:"";
+$id =(isset($_POST['id']))?$_POST['id']:"";
+$descripcion =(isset($_POST['descripcion']))?$_POST['descripcion']:"";
+$imagen =(isset($_FILES['imagen']["name"]))?$_FILES['imagen']["name"]:"";
+$status='activado';
+
+if($nombre!=null || $id=null || $descripcion!=null ||
+$imagen!=null )
+{
+      $sentencia=$pdo->prepare("INSERT INTO categories(categoryid,categoryname,descriptions,picturecategorie,statuscategorie)
+      VALUES (:categoryid,:categoryname,:descriptions,:picturecategorie,:Status)");
+     
+    $sentencia->bindParam(':categoryid',$id);
+    $sentencia->bindParam(':categoryname',$nombre);
+    $Fecha= new DateTime();
+    $conversion=($imagen!="")?$Fecha->getTimestamp()."_".$_FILES["imagen"]["name"]:"default.jpg";
+    $temporalfoto=$_FILES["imagen"]["tmp_name"];
+    if($temporalfoto!=""){
+        move_uploaded_file($temporalfoto,"imagenes/".$conversion);
+    }
+    $sentencia->bindParam(':picturecategorie',$conversion);
+    $sentencia->bindParam(':descriptions',$descripcion);
+    $sentencia->bindParam(':Status',$status);
+    $sentencia->execute();
+    if($nombre=1)
+    {
+        $nombre="";
+        header("location:categorias.php");
+    }
+
+}
+?>
+   <div class="container col-6">
+    
+    <form action="" method="post" enctype="multipart/form-data">
+        <label for="" class="control-label">ID</label>
+        <input type="text" class="form-control" id="id" name="id" placeholder="" required="">
+        <label for="" class="control-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" required="" >
+        <label for="" class="control-label">Descripcion</label>
+        <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="" required="">
+        <label for="" class="control-label">Imagen</label>
+        <input type="file" accept="image/*" class="form-control" id="imagen" name="imagen" placeholder="" > 
+        </div>   
+            <div class="modal-footer">
+            <div class="form-group"> <!-- Submit Button -->
+            <button type="submit" value="Agregar" name="accion" class="btn btn-primary">Crear</button>
+            <a href="index.php"><button type="button" value="Cancelar" name="accion" class="btn btn-danger">Cancelar</button></a>
+    
+    </div>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+
     
         <table class="table table table-striped table-bordered table-hover text-center">
             <form>
@@ -55,15 +119,11 @@ $listacategorias=$senten->fetchAll(PDO::FETCH_ASSOC);
                         <input type="hidden" value="<?php echo $categoria['categoryname'];?>" name="categoryname">
                         <input type="hidden" value="<?php echo $categoria['descriptions'];?>" name="descriptions">
                         <input type="hidden" value="<?php echo $categoria['picturecategorie'];?>" name="picturecategorie">
-                        <input type="hidden" value="<?php echo $categoria['Status'];?>" name="Status">
-                           <button class="btn btn-warning">
+                        <input type="hidden" value="<?php echo $categoria['statuscategorie'];?>" name="statuscategorie">
                            <a href="editcategorias.php?id=<?php echo $categoria['categoryid'];?>
-                            "> <i class="fa fa-edit" style="color :white "name="accion" value="editar"></i></a>
-                           </button> 
-                           <button class="btn btn-danger">
+                            "> editar provisional no internet :(<i class="fa fa-edit" style="color :white "name="accion" value="editar"></i></a>
                        <a href="editarcategoria.php?id=<?php echo $categoria['categoryid'];?>"
-                       > <i class="fa fa-sync "style="color :white"></i></a>  
-                       </button> 
+                       >change status provisional no internet :(<i class="fa fa-sync "style="color :white"></i></a>  
                        </form>                      
                      </td>
                       

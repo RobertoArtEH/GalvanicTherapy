@@ -49,10 +49,10 @@ $listausers=$senten->fetchAll(PDO::FETCH_ASSOC);
                         <td><?php echo $users['status'];?></td>
                         <!-- FORMULARIO OCULTO PARA ENVIAR LA INFORMACION -->
                         <td>
-                           <button class="btn btn-danger">
+                           <div class="btn btn-danger">
                        <a href="changestatususer.php?id=<?php echo $users['id'];?>"
                        > <i class="fa fa-sync "style="color :white"></i></a>  
-                       </button>   
+               </div>   
                         </form>               
                      </td>
                       
