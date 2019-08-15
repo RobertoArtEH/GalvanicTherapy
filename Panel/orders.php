@@ -66,8 +66,6 @@ $orders=$senten->fetchAll(PDO::FETCH_ASSOC);
                 </thead>
                 <tr id="tabla">
                 </tr>
-              
-            
     </table>
 </div>
 </body>                                           
