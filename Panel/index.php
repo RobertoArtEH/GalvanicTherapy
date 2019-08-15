@@ -16,46 +16,56 @@
   <nav class="admin-sections tbg-white">
     <ul class="ul-sections d-flex my-4">
       <li>
-        <a href="users.php">
-          <article class="section-square section-audit">
-            <!-- <div>
-              <h4 class="mini-title">Usuarios</h4>
-            </div> -->
+        <a class="tw" href="users.php">
+          <article class="section-square section-users d-flex align-items-end">
+            <div class="section-banner text-center">
+              <h5 class="m-0">Usuarios</h5>
+            </div>
           </article>
         </a>
       </li>
       <li>
-        <a href="categorias.php">
-          <article class="section-square section-audit">
-            <!-- <h4>Categorias</h4> -->
+        <a class="tw" href="categorias.php">
+          <article class="section-square section-category d-flex align-items-end">
+          <div class="section-banner text-center">
+              <h5 class="m-0">Categorias</h5>
+            </div>
           </article>
         </a>
       </li>
       <li>
-        <a href="productos.php">
-          <article class="section-square section-products">
-            <!-- <h4>Productos</h4> -->
+        <a class="tw" href="productos.php">
+          <article class="section-square section-products d-flex align-items-end">
+          <div class="section-banner text-center">
+              <h5 class="m-0">Productos</h5>
+            </div>
           </article>
         </a>
       </li>
       <li>
-        <a href="orders.php">
-          <article class="section-square section-orders">
-            <!-- <h4>Ordenes</h4> -->
+        <a class="tw" href="orders.php">
+          <article class="section-square section-orders d-flex align-items-end">
+          <div class="section-banner text-center">
+              <h5 class="m-0">Ordenes</h5>
+            </div>
           </article>
         </a>
       </li>
       <li>
-        <a href="auditoria.php">
-          <article class="section-square section-audit">
-            <!-- <h4>Auditoria</h4> -->
+        <a class="tw" href="auditoria.php">
+          <article class="section-square section-audit d-flex align-items-end">
+          <div class="section-banner text-center">
+              <h5 class="m-0">Auditoria</h5>
+            </div>
           </article>
         </a>
       </li>
       <li>
-        <a href="#">
-          <article class="section-square section-audit">
-            <!-- <h4>Reportes</h4> -->
+        <a class="tw" href="#">
+          <article class="section-square section-reportes d-flex align-items-end">
+          <div class="section-banner text-center">
+              <h5 class="m-0">Reportes</h5>
+            </div>
           </article>
         </a>
       </li>
