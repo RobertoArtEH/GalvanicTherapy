@@ -14,26 +14,27 @@ $listacategorias=$senten->fetchAll(PDO::FETCH_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Categorias</title>
     <link rel="stylesheet" href="css/bootstrapstor.min.css"> 
+    <link rel="stylesheet" href="../css/style.css">
      <!-- Font Awesome -->
     
  </head>
 <body >
-    <div class="container">
-    <h1 class="text-center text-info">Categorias</h1>
+<?php require_once '../views/components/mini-banner.php' ?>
+    <div class="container content-container">
+      <h4 class="mb-4 mt-2 text-center">Categorias</h4>
+      <div class="row">
+      <div class="container">
+     <h3>
+            <a href="addcategorias.php"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+        <i class="fa fa-plus"> </i>
+        </button>
+        </a>
+        </h3>
     </div>
-
-<h3><a href="addcategorias.php"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-<i class="fa fa-plus"> </i>
-</button></a></h3>
-
-</form>
-<!-- FIN DEL FORM -->
     
-    <div id="crudarticulos" class="row">
-    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered table-condensed table-hover">
-            <thead class="table-primary" >
+        <table class="table table table-striped table-bordered table-hover text-center">
+            <form>
+            <thead class="thead-dark" >
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Descripcion</th>
@@ -47,7 +48,7 @@ $listacategorias=$senten->fetchAll(PDO::FETCH_ASSOC);
                     <td ><?php echo $categoria['categoryname'];?></td>
                         <td><?php echo $categoria['descriptions'];?></td>
                         <td><img class="img-thumbnail"width="100px" src="imagenes/<?php echo $categoria['picturecategorie'];?>"></td>
-                        <td><?php echo $categoria['Status'];?></td>
+                        <td><?php echo $categoria['statuscategorie'];?></td>
                         <!-- FORMULARIO OCULTO PARA ENVIAR LA INFORMACION -->
                         <td>
                             <form action="" method="post">
@@ -61,7 +62,7 @@ $listacategorias=$senten->fetchAll(PDO::FETCH_ASSOC);
                            </button> 
                            <button class="btn btn-danger">
                        <a href="editarcategoria.php?id=<?php echo $categoria['categoryid'];?>"
-                       > <i class="fa fa-trash "style="color :white"></i></a>  
+                       > <i class="fa fa-sync "style="color :white"></i></a>  
                        </button> 
                        </form>                      
                      </td>
@@ -71,6 +72,7 @@ $listacategorias=$senten->fetchAll(PDO::FETCH_ASSOC);
 
             
     </table>
+</div>
 </div>
 </div>
 </body>                                           

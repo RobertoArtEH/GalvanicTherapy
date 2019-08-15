@@ -14,7 +14,8 @@ $listaproductos=$senten->fetchAll(PDO::FETCH_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Productos</title>
     <link rel="stylesheet" href="css/bootstrapstor.min.css"> 
-     <!-- Font Awesome -->
+     <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css"/>
     
  </head>
 <body >

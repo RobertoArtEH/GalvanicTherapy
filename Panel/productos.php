@@ -14,26 +14,27 @@ $listaproductos=$senten->fetchAll(PDO::FETCH_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Productos</title>
     <link rel="stylesheet" href="css/bootstrapstor.min.css"> 
+    <link rel="stylesheet" href="../css/style.css">
      <!-- Font Awesome -->
     
  </head>
 <body >
+    <?php require_once '../views/components/mini-banner.php' ?>
+    <div class="container content-container">
+      <h4 class="mb-4 mt-2 text-center">Productos</h4>
+      <div class="row">
     <div class="container">
-    <h1 class="text-center text-info">Productos</h1>
+    <h3>
+        <a href="addproducto.php">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+           <i class="fa fa-plus" height="50px"> </i>
+        </button>
+        </a>
+    </h3>
     </div>
-
-<h3><a href="addproducto.php"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-<i class="fa fa-plus"> </i>
-</button></a></h3>
-
-</form>
-<!-- FIN DEL FORM -->
-    
-    <div id="crudarticulos" class="row">
-    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered table-condensed table-hover">
-            <thead class="table-primary" >
+        <table class="table table table-striped table-bordered table-hover text-center">
+            <form>
+            <thead class="thead-dark" >
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Descripcion</th>
@@ -67,20 +68,21 @@ $listaproductos=$senten->fetchAll(PDO::FETCH_ASSOC);
                         <input type="hidden" value="<?php echo $producto['unitsinstock'];?>" name="stock">
                            <button class="btn btn-warning">
                            <a href="editarproducto.php?id=<?php echo $producto['productid'];?>
-                            "> <i class="fa fa-edit" style="color :white "name="accion" value="editar"></i></a>
+                            "><i class="fa fa-edit" style="color :white "name="accion" value="editar"></i></a>
                            </button> 
+                           <br>
+                           </br>
                            <button class="btn btn-danger">
                        <a href="eliminarproducto.php?id=<?php echo $producto['productid'];?>"
-                       > <i class="fa fa-trash "style="color :white"></i></a>  
+                       ><i class="fa fa-trash "style="color :white"></i></a>  
                        </button> 
                        </form>                      
                      </td>
                       
                     </tr>
                <?php } ?>
-
-            
     </table>
+</div>
 </div>
 </div>
 </body>                                           
