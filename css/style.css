@@ -182,19 +182,20 @@ footer {
 }
 
 .banner-new-background {
-  background-image: url(../img/backgrounds/nuevo.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.061),rgba(0, 0, 0, 0.198)),  url(../img/backgrounds/nuevo.jpg);
   background-repeat: no-repeat;
   background-origin: content;
   background-size: cover;
   background-position: center center;
+
 }
 
 .banner-trends-background {
-  background-image: url(../img/backgrounds/trends.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.061),rgba(0, 0, 0, 0.198)),  url(../img/backgrounds/trends.jpg);
   background-repeat: no-repeat;
   background-origin: content;
   background-size: cover;
-  background-position: center center;
+  background-position: center 30%;
 }
 
 .mini-banner-background {
@@ -554,6 +555,18 @@ footer {
   border: 4px solid #fff;
   box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px 0;
 }
+.section-users {
+  background-image: url(../img/backgrounds/users.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.section-category {
+  background-image: url(../img/backgrounds/category.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 
 .section-audit {
   background-image: url(../img/backgrounds/auditoria.jpg);
@@ -571,6 +584,13 @@ footer {
 
 .section-products {
   background-image: url(../img/backgrounds/productos.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.section-reportes {
+  background-image: url(../img/backgrounds/reportes.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
