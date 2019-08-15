@@ -1,4 +1,5 @@
 <header>
+<script src="https://kit.fontawesome.com/a2a999c481.js"></script>
   <nav class="navbar navbar-expand-md navbar-light bg-light">
     <a class="navbar-brand" href="index.php">
       <img src="../img/brand/logo.png" class="logo d-inline-block align-top" alt="Galvanic Therapy">

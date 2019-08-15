@@ -16,6 +16,8 @@ $orders=$senten->fetchAll(PDO::FETCH_ASSOC);
     <title>Orders</title>
     <link rel="stylesheet" href="css/bootstrapstor.min.css"> 
     <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/a2a999c481.js"></script>
+
      <!-- Font Awesome -->
     
  </head>
@@ -34,25 +36,54 @@ $orders=$senten->fetchAll(PDO::FETCH_ASSOC);
                     <th>Fecha</th>                  
                     <th>Status</th>                  
                     <th>Método de pago</th>                  
+                    <th>Accion</th>                  
                                       
                 </thead>
                <?php foreach($orders as $ord){?>
                     <tr>
                     <td>
-                    <button class="btn btn-white order"><?php echo $ord['orderid'];?>
+                    <button class="btn id btn-white order"><?php echo $ord['orderid'];?>
                     <i class="far fa-eye fa-ms" style="color :black;" ></i></button>
                     </td>
                     <td><?php echo $ord['first_name'];?></td>
                         <td>$<?php echo $ord['total'];?></td>
                         <td><?php echo $ord['orderdate'];?></td>
-                        <td><?php echo $ord['orderstatus'];?></td>
+                        <td><button class="btn status"><?php echo $ord['orderstatus'];?></button></td>
                         <td><?php echo $ord['method_payment'];?></td>
                         <!-- FORMULARIO OCULTO PARA ENVIAR LA INFORMACION -->
+                        <td class="accion"><div class="row justify-content-center">
+                           <a  href="PaymentChange.php?id=<?php echo $ord['orderid'];?>"
+                            class=""> <div class="col">
+                            <i class="ban fa fa-sync" style="color :info"></i></td>
+                            </div>
+                            </a>
+                        </div>
+                    <br>
+               </td>
                     </tr>
                <?php } ?>
     </table>
     </div>
     </div>
     </div>
-</body>                                           
+</body> 
+<script src="js/jquery.min.js"></script>
 </html>
+<script>
+
+$(document).ready(function () {
+    $('.status').each(function(indice,valor) {
+      if($(this).text()== 'completado')
+      {
+     $(this).addClass('btn-success');
+      }
+      else if($(this).text()== 'pendiente')
+        $(this).addClass('btn-warning');
+        else if($(this).text()== 'rechazado')
+        $(this).addClass('btn-danger');
+      });  
+
+    
+});
+
+</script>

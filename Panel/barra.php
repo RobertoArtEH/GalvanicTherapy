@@ -11,8 +11,7 @@
      <!-- Font Awesome -->
      <script src="https://kit.fontawesome.com/a2a999c481.js"></script>
      <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/fontaw
-    esome.min.css">  
+    <link rel="stylesheet" href="css/fontawesome.min.css">  
 </head>
 </nav>
 <nav class="navbar navbar-dark bg-info">
