@@ -34,7 +34,6 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Contraseña</label>
-                <a class="text-link" href="#" style="float:right;font-size:12px;">¿Olvidaste tu contraseña?</a>
                 <input type="password" id="password" class="form-control form-control-sm" name="password" required>
               </div>
               <button type="submit" id="login-btn" class="btn btn-dark boton-iniciar btn-block">Iniciar sesión</button>

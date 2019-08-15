@@ -4,6 +4,14 @@ body {
   min-height: 100%;
 }
 
+.bg-admin {
+  height: 100vh;
+  background-image: url(../img/backgrounds/admin-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 footer {
   background: #212529;
   color: white;
@@ -174,19 +182,20 @@ footer {
 }
 
 .banner-new-background {
-  background-image: url(../img/backgrounds/nuevo.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.061),rgba(0, 0, 0, 0.198)),  url(../img/backgrounds/nuevo.jpg);
   background-repeat: no-repeat;
   background-origin: content;
   background-size: cover;
   background-position: center center;
+
 }
 
 .banner-trends-background {
-  background-image: url(../img/backgrounds/trends.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.061),rgba(0, 0, 0, 0.198)),  url(../img/backgrounds/trends.jpg);
   background-repeat: no-repeat;
   background-origin: content;
   background-size: cover;
-  background-position: center center;
+  background-position: center 30%;
 }
 
 .mini-banner-background {
@@ -471,6 +480,11 @@ footer {
   .categories-list {
     justify-content: center;
   }
+
+  .ul-sections {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -500,4 +514,98 @@ footer {
   .categories-list {
     justify-content: center;
   }
+
+  /* .ul-sections {
+    display: flex;
+    justify-content: center;
+  } */
+}
+
+/* Admin */
+
+.navbar-light {
+  box-shadow: rgba(117, 111, 111, 0.5) 0px 0px 10px 0px;
+}
+
+.admin-sections {
+  margin: 6rem auto;
+  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ul-sections {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tbg-white {
+  width: 100%;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px 0;
+}
+
+.section-square {
+  width: 12rem;
+  height: 12rem;
+  margin: auto 1rem;
+  border-radius: 1rem;
+  border: 4px solid #fff;
+  box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px 0;
+}
+.section-users {
+  background-image: url(../img/backgrounds/users.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.section-category {
+  background-image: url(../img/backgrounds/category.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.section-audit {
+  background-image: url(../img/backgrounds/auditoria.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.section-orders {
+  background-image: url(../img/backgrounds/ordenes.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.section-products {
+  background-image: url(../img/backgrounds/productos.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.section-reportes {
+  background-image: url(../img/backgrounds/reportes.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.section-banner {
+  background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.tw {
+  color: white;
+}
+
+.tw:hover {
+  text-decoration: none;
+  color: white;
 }

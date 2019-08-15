@@ -1,5 +1,4 @@
 <?php include('conexion.php')?>
-<?php include('barra.php')?>
 <?php
 $senten = $pdo->prepare("SELECT *FROM users inner join orders 
 on users.id = orders.usersid inner join payments 
