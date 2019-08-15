@@ -14,30 +14,27 @@ $listausers=$senten->fetchAll(PDO::FETCH_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Usuarios</title>
     <link rel="stylesheet" href="css/bootstrapstor.min.css"> 
+    <link rel="stylesheet" href="../css/style.css">
      <!-- Font Awesome -->
     
  </head>
 <body >
-    <div class="container">
-    <h1 class="text-center text-info">Usuarios</h1>
-    </div>
-
-
-
-</form>
-<!-- FIN DEL FORM -->
+<?php require_once '../views/components/mini-banner.php' ?>
+    <div class="container content-container">
+      <h4 class="mb-4 mt-2 text-center">Usuarios</h4>
+      <div class="row">
     
-    <div id="crudarticulos" class="row">
-    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered table-condensed table-hover">
-            <thead class="table-primary" >
+
+    
+        <table class="table table table-striped table-bordered table-hover text-center">
+            <form>
+            <thead class="thead-dark" >
                     <th>ID</th>
-                    <th>First_Name</th>
-                    <th>Last_Name</th>
-                    <th>Imageprofile</th>                  
-                    <th>Username</th>                  
-                    <th>role</th>                  
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Imagen</th>                  
+                    <th>Usuario</th>                  
+                    <th>Role</th>                  
                     <th>Status</th>                  
                     <th>Accion</th>                  
                 </thead>
@@ -55,15 +52,16 @@ $listausers=$senten->fetchAll(PDO::FETCH_ASSOC);
                            <button class="btn btn-danger">
                        <a href="changestatususer.php?id=<?php echo $users['id'];?>"
                        > <i class="fa fa-sync "style="color :white"></i></a>  
-                       </button>                  
+                       </button>   
+                        </form>               
                      </td>
                       
                     </tr>
-               <?php } ?>
-
-            
-    </table>
-</div>
-</div>
+               <?php } ?> 
+        </table>
+        
+    </div>
+    </div>
+    </div>
 </body>                                           
 </html>

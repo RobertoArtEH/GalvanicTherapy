@@ -14,31 +14,29 @@ $bitacora=$senten->fetchAll(PDO::FETCH_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bitacora</title>
     <link rel="stylesheet" href="css/bootstrapstor.min.css"> 
+    <link rel="stylesheet" href="../css/style.css">
      <!-- Font Awesome -->
     
  </head>
 <body >
-    <div class="container">
-    <h1 class="text-center text-warning">Bitacora</h1>
-    </div>
-</form>
-<!-- FIN DEL FORM -->
-    
-    <div id="crudarticulos" class="row">
-    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered table-condensed table-hover">
-            <thead class="table-warning" >
-                    <th>statement</th>
-                    <th>user</th>
-                    <th>productname</th>
-                    <th>last description</th>                  
-                    <th>new description</th>                  
-                    <th>last price</th>                  
-                    <th>new price</th>                  
-                    <th>last stock</th>                  
-                    <th>new stock</th>                  
-                    <th>date</th>                  
+<?php require_once '../views/components/mini-banner.php' ?>
+    <div class="container content-container">
+      <h4 class="mb-4 mt-2 text-center">Auditoria</h4>
+      <div class="row">
+
+        <table class="table table table-striped table-bordered table-hover text-center">
+            <form>
+            <thead class="thead-dark" >
+                    <th>Sentencia</th>
+                    <th>Usuario</th>
+                    <th>Producto</th>
+                    <th>Última descripción</th>                  
+                    <th>Nueva Descripción</th>                  
+                    <th>Último precio</th>                  
+                    <th>Nuevo precio</th>                  
+                    <th>Último stock</th>                  
+                    <th>Nuevo stock</th>                  
+                    <th>Fecha</th>                  
                 </thead>
                <?php foreach($bitacora as $bita){?>
                     <tr >
@@ -52,15 +50,12 @@ $bitacora=$senten->fetchAll(PDO::FETCH_ASSOC);
                         <td><?php echo $bita['last_stock'];?></td>
                         <td><?php echo $bita['new_stock'];?></td>
                         <td><?php echo $bita['date'];?></td>
-                        <!-- FORMULARIO OCULTO PARA ENVIAR LA INFORMACION -->
-                       
-                      
                     </tr>
+               </form>
                <?php } ?>
-
-            
-    </table>
-</div>
-</div>
+        </table>
+    </div>
+    </div>
+    </div>
 </body>                                           
 </html>
