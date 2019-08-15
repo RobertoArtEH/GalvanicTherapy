@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index.php">
       <img src="../img/brand/logo.png" class="logo d-inline-block align-top" alt="Galvanic Therapy">
     </a>
 
@@ -11,19 +11,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="users.php">Usuarios</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Categorias</a>
+        <a class="nav-link" href="categorias.php">Categorias</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Productos</a>
+        <a class="nav-link" href="productos.php">Productos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Ordenes</a>
+        <a class="nav-link" href="orders.php">Ordenes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">PDF</a>
+        <a class="nav-link" href="auditoria.php">Auditoria</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Reportes</a>
       </li>
       <li class="nav-item d-block d-md-none">
         <hr>

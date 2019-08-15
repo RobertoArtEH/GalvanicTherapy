@@ -1,5 +1,4 @@
 <?php include('conexion.php')?>
-<?php include('barra.php')?>
 <?php
 $senten = $pdo->prepare("SELECT *FROM categories");
 $senten->execute();
@@ -19,7 +18,7 @@ $listacategorias=$senten->fetchAll(PDO::FETCH_ASSOC);
     
  </head>
 <body >
-<?php require_once '../views/components/mini-banner.php' ?>
+<?php require_once 'views/layout/header.php' ?>
     <div class="container content-container">
       <h4 class="mb-4 mt-2 text-center">Categorias</h4>
       <div class="row">
@@ -75,5 +74,9 @@ $listacategorias=$senten->fetchAll(PDO::FETCH_ASSOC);
 </div>
 </div>
 </div>
+<!-- Bootstrap JS -->
+<script src="../resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+<script src="../resources/popper-1.15.0/popper.min.js"></script>
+<script src="../resources/bootstrap-4.3.1/js/bootstrap.min.js"></script>
 </body>                                           
 </html>

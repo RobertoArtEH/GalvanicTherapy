@@ -514,13 +514,17 @@ footer {
     justify-content: center;
   }
 
-  .ul-sections {
+  /* .ul-sections {
     display: flex;
     justify-content: center;
-  }
+  } */
 }
 
 /* Admin */
+
+.navbar-light {
+  box-shadow: rgba(117, 111, 111, 0.5) 0px 0px 10px 0px;
+}
 
 .admin-sections {
   margin: 6rem auto;
@@ -536,9 +540,10 @@ footer {
 
 .tbg-white {
   width: 100%;
-  border-top: 3px solid #fff;
-  border-bottom: 3px solid #fff;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
   background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px 0;
 }
 
 .section-square {
@@ -546,7 +551,7 @@ footer {
   height: 12rem;
   margin: auto 1rem;
   border-radius: 1rem;
-  border: 3px solid #fff;
+  border: 4px solid #fff;
   box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px 0;
 }
 
