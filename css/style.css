@@ -575,3 +575,18 @@ footer {
   background-position: center center;
   background-repeat: no-repeat;
 }
+
+.section-banner {
+  background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.tw {
+  color: white;
+}
+
+.tw:hover {
+  text-decoration: none;
+  color: white;
+}
