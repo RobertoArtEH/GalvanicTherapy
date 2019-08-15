@@ -62,7 +62,7 @@ $listacategorias=$senten->fetchAll(PDO::FETCH_ASSOC);
                            </button> 
                            <button class="btn btn-danger">
                        <a href="editarcategoria.php?id=<?php echo $categoria['categoryid'];?>"
-                       > <i class="fa fa-trash "style="color :white"></i></a>  
+                       > <i class="fa fa-sync "style="color :white"></i></a>  
                        </button> 
                        </form>                      
                      </td>
