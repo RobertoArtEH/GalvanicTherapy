@@ -16,8 +16,8 @@
 </head>
 </nav>
 <nav class="navbar navbar-dark bg-info">
-<a class="navbar-brand" href="#">Usuarios</a>
-<a class="navbar-brand" href="#">Categorias</a>
+<a class="navbar-brand" href="users.php">Usuarios</a>
+<a class="navbar-brand" href="categorias.php">Categorias</a>
 <a class="navbar-brand" href="productos.php">Productos</a>
 <a class="navbar-brand" href="#">Ordenes</a>
 <a class="navbar-brand" href="#">PDF</a>
@@ -35,4 +35,6 @@
     <!-- Bootstrap 3.3.5 -->
     <script src="js/bootstrapstor.min.js"></script>
     <script src="js/popper.min.js"></script>
+    <script src="js/orders.js"></script>
+
 </html>
