@@ -51,7 +51,6 @@ include 'validar-categorias.php';
                 <!-- <h6 class="cart-text pt-4">Subtotal: <span>$ <?php echo number_format($producto['PRECIO'] * $producto['CANTIDAD'],2 );  ?> </span></h6>         -->
                <label class="product-text pr-1" for="formCantidad">Cantidad:</label>
                   <select class="custom-select" name="cantidad" >
-                  <option selected><?php echo $producto['CANTIDAD'] ?></option>
                     <?php
                     for($i = 1; $i <= $producto['CANTIDAD']; $i++){
                     ?>
@@ -93,6 +92,7 @@ include 'validar-categorias.php';
                 </button>
               </div>
               <div class="modal-body text-center p-4">
+              <form action="pagar.php" method="post">
                 <p>En los siguientes sitios podrás realizar tu depósito bancario:</p>
                 <?php
                   foreach($pago as $pago){
@@ -125,6 +125,7 @@ include 'validar-categorias.php';
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-success">Continuar</button>
+            </form>
               </div>
             </div>
           </div>
