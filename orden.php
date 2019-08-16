@@ -2,9 +2,6 @@
 require 'conexion.php';
 
  if(isset($_SESSION['username'])){
-//   $sentenciaId = $conexion -> prepare('SELECT id FROM users WHERE username = '.$_SESSION['username']);
-//   $sentenciaId -> execute();
-//   $resultId = $sentenciaId -> fetchAll();
   $username = $_SESSION['username'];
 
   $sentencia=$conexion ->prepare('SELECT * from products  inner join orderdetails
