@@ -4,7 +4,6 @@ $sentencia=$pdo->prepare("SELECT *FROM products WHERE productid='".$id."'");
 $sentencia->execute();
 while($row=$sentencia->fetch(PDO::FETCH_ASSOC))
 {
-   
 
 ?>
 <!DOCTYPE html>

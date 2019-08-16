@@ -1,5 +1,10 @@
 <?php include('../conexion.php')?>
 <?php
+$count = $pdo->prepare("SELECT COUNT(*) as total FROM products");
+$count->execute();
+$number =$count->fetch(PDO::FETCH_ASSOC);
+print_r($number['total']);
+
 $senten = $pdo->prepare("SELECT *FROM products");
 $senten->execute();
 $listaproductos=$senten->fetchAll(PDO::FETCH_ASSOC);
@@ -19,7 +24,8 @@ $listaproductos=$senten->fetchAll(PDO::FETCH_ASSOC);
  </head>
 <body >
     <div class="container content-container">
-      <h4 class="mb-4 mt-2 text-center">Productos</h4>
+    <h1>TOTAL PRODUCTOS : <?php echo $number['total'];?>
+</h1>
       <div class="row">
     <div class="container">
     </div>

@@ -16,6 +16,7 @@ while($row=$senten->fetch(PDO::FETCH_ASSOC))
 {
    $data["data"][]=$row;
 }
+header('Content-type: application/json');
 echo json_encode($data);
 
 // $sentencia=$pdo->prepare ("UPDATE categories SET statuscategorie='".$status."' WHERE categoryid='".$id."'");

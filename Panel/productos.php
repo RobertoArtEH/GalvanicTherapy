@@ -10,10 +10,8 @@
     <link rel="stylesheet" href="css/bootstrapstor.min.css"> 
     <link rel="stylesheet" href="../css/style.css">
      <!-- Font Awesome -->
-    
  </head>
 <body >
-    
     <?php require_once '../views/components/mini-banner.php' ?>
   <div class="container content-container">
       <h4 class="mb-4 mt-2 text-center">Productos</h4>
@@ -34,6 +32,7 @@
     <div class="modal-content">
       <!-- FORM -->
       <?php include('conexion.php')?>
+      <!-- METODO INSERTAR -->
 <?php 
 $accion =(isset($_POST['accion']))?$_POST['accion']:"";
 $nombre =(isset($_POST['nombre']))?$_POST['nombre']:"";
@@ -123,10 +122,8 @@ $senten->execute();
 $listaproductos=$senten->fetchAll(PDO::FETCH_ASSOC);
 // OBTENER TODOS LOS PRODUCTOS 
 ?>
-  
-<!-- FORM -->
-
-        <table class="table table table-striped table-bordered table-hover text-center">
+  <!-- FORM -->
+ <table class="table table table-striped table-bordered table-hover text-center">
             <form>
             <thead class="thead-dark" >
                     <th>ID</th>

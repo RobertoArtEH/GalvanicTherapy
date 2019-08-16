@@ -44,7 +44,7 @@ $orders=$senten->fetchAll(PDO::FETCH_ASSOC);
                     <td>
                     <button type="button" value="<?php echo $ord['orderid'];?>" class="enviar btn btn-white"  data-toggle="modal" data-target=".bd-example-modal-lg"
                     class="btn id btn-white order"><?php echo $ord['orderid'];?>
-                    <i class="far fa-eye fa-ms" style="color :blue;" ></i></button>
+                    <i class="far fa-eye" style="color :blue;" ></i></button>
                     </td>
                     <td><?php echo $ord['first_name'];?></td>
                         <td>$<?php echo $ord['total'];?></td>
@@ -117,9 +117,9 @@ $(document).ready(function () {
         else if($(this).text()== 'cancelado')
         $(this).addClass('btn-danger');
       });  
-      function limpiar(user)
+      function limpiar(prod)
       {
-        $(user.data).each(function(index,value){
+        $(prod.data).each(function(index,value){
           $("#tablainfo td").remove();
           $("#tablainfo td").remove();
           $("#tablainfo td").remove();
@@ -136,11 +136,11 @@ $(document).ready(function () {
         $(this).click(function(){
          let id= $(this).val();
          $.post('orderdetails.php',{id},function(response){
-            const user =JSON.parse(response);
-            limpiar(user);
-           $(user.data).each(function(index,value){
+           console.log(response);
+            limpiar(response);
+           $(response.data).each(function(index,value){
             $("#tablainfo").append('<tr></tr>');
-            $("#tablainfo").append('<td><img class="img-thumbnail"width="100px" src="imagenes/' + value.picture  + '"></td>');
+            $("#tablainfo").append('<td><img class="img-thumbnail"width="100px" src="imagenes/default.jpg"></td>');
             $("#tablainfo").append('<td>' + value.productname + '</td>');
             $("#tablainfo").append('<td>' + value.description + '</td>');
             $("#tablainfo").append('<td>' + value.price + '</td>');
