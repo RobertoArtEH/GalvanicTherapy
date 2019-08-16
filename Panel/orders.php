@@ -42,8 +42,9 @@ $orders=$senten->fetchAll(PDO::FETCH_ASSOC);
                <?php foreach($orders as $ord){?>
                     <tr>
                     <td>
-                    <button class="btn id btn-white order"><?php echo $ord['orderid'];?>
-                    <i class="far fa-eye fa-ms" style="color :black;" ></i></button>
+                    <button type="button" value="<?php echo $ord['orderid'];?>" class="enviar btn btn-white"  data-toggle="modal" data-target=".bd-example-modal-lg"
+                    class="btn id btn-white order"><?php echo $ord['orderid'];?>
+                    <i class="far fa-eye fa-ms" style="color :blue;" ></i></button>
                     </td>
                     <td><?php echo $ord['first_name'];?></td>
                         <td>$<?php echo $ord['total'];?></td>
@@ -66,8 +67,42 @@ $orders=$senten->fetchAll(PDO::FETCH_ASSOC);
     </div>
     </div>
     </div>
+
+ <!-- MODAL LARGE -->
+ <!-- Large modal -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- FORM -->
+      <?php include('conexion.php')?>
+      <table id="tablainfo" class="table table table-striped table-bordered table-hover text-center">
+            <form>
+            <thead class="thead-dark" >
+                    <th>Picture</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>                  
+                    <th>quantity</th>                  
+                    <th>Total</th>                 
+                </thead>
+               
+    </table>
+  
+    </div>
+    
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+    
+
 </body> 
 <script src="js/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="js/bootstrapstor.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/orders.js"></script>
 </html>
 <script>
 
@@ -79,10 +114,63 @@ $(document).ready(function () {
       }
       else if($(this).text()== 'pendiente')
         $(this).addClass('btn-warning');
-        else if($(this).text()== 'rechazado')
+        else if($(this).text()== 'cancelado')
         $(this).addClass('btn-danger');
       });  
+      function limpiar(user)
+      {
+        $(user.data).each(function(index,value){
+          $("#tablainfo td").remove();
+          $("#tablainfo td").remove();
+          $("#tablainfo td").remove();
+          $("#tablainfo td").remove();
+          $("#tablainfo td").remove();
+          $("#tablainfo td").remove();
+          $("#tablainfo td").remove();
 
+        });
+
+      }
+
+      $('.enviar').each(function(indice,valor){
+        $(this).click(function(){
+         let id= $(this).val();
+         $.post('orderdetails.php',{id},function(response){
+            const user =JSON.parse(response);
+            limpiar(user);
+           $(user.data).each(function(index,value){
+            $("#tablainfo").append('<tr></tr>');
+            $("#tablainfo").append('<td><img class="img-thumbnail"width="100px" src="imagenes/' + value.picture  + '"></td>');
+            $("#tablainfo").append('<td>' + value.productname + '</td>');
+            $("#tablainfo").append('<td>' + value.description + '</td>');
+            $("#tablainfo").append('<td>' + value.price + '</td>');
+            $("#tablainfo").append('<td>' + value.quantity + '</td>');
+            $("#tablainfo").append('<td>' + value.total + '</td>');
+
+
+            console.log(value.picture);
+            console.log(value.productname);
+            console.log(value.description);
+            console.log(value.price);
+            console.log(value.quantity);
+            console.log(value.total);
+           });
+            // $("#tabla td").remove();
+            // $('.usuarios').removeClass('invisible');
+            // $('#tabla').append('<td>'+user.id+'</td>');
+            // $('#tabla').append('<td>'+user.first_name+'</td>');
+            // $('#tabla').append('<td>'+user.last_name+'</td>');
+            // $('#tabla').append('<td><img class="img-thumbnail"width="100px" src="imagenes/'+user.imageprofile+'"></td>');
+        })
+
+        //   $(".order" ).click(function() {
+        // let id = $(this).text();
+        // $.post('orderproducts.php',{id},function(response){
+        //    console.log(response);
+
+
+        })
+      });
     
 });
 
