@@ -22,7 +22,7 @@ $orders=$senten->fetchAll(PDO::FETCH_ASSOC);
     
  </head>
 <body >
-<?php require_once 'views/layout/header.php' ?>
+<!-- <?php require_once '../views/components/mini-banner.php' ?> -->
     <div class="container content-container">
       <h4 class="mb-4 mt-2 text-center">Ordenes</h4>
       <div class="row">
@@ -49,7 +49,7 @@ $orders=$senten->fetchAll(PDO::FETCH_ASSOC);
                     <td><?php echo $ord['first_name'];?></td>
                         <td>$<?php echo $ord['total'];?></td>
                         <td><?php echo $ord['orderdate'];?></td>
-                        <td><button class="btn status"><?php echo $ord['orderstatus'];?></button></td>
+                        <td><div class="btn status"><?php echo $ord['orderstatus'];?></div></td>
                         <td><?php echo $ord['method_payment'];?></td>
                         <!-- FORMULARIO OCULTO PARA ENVIAR LA INFORMACION -->
                         <td class="accion"><div class="row justify-content-center">

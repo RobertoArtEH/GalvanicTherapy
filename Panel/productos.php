@@ -1,4 +1,5 @@
 <?php include('conexion.php')?>
+<?php include('barra.php')?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +13,12 @@
     
  </head>
 <body >
-<?php require_once 'views/layout/header.php' ?>
-<div class="container content-container">
+    
+    <?php require_once '../views/components/mini-banner.php' ?>
+  <div class="container content-container">
       <h4 class="mb-4 mt-2 text-center">Productos</h4>
-      <div class="row">
+</div>
+  <div class="row">
     <div class="container">
     <h3>
         <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">
@@ -59,7 +62,7 @@ switch($accion)
         $sentencia->bindParam(':categoryid',$category);
         $sentencia->bindParam(':price',$precio);
         $sentencia->bindParam(':unitsinstock',$stock);
-        $sentencia->bindParam(':discontinued',$discontinued);
+        $sentencia->bindParam(':Discontinued',$discontinued);
         $sentencia->execute();  
         header("location:productos.php");
         
@@ -147,7 +150,7 @@ $listaproductos=$senten->fetchAll(PDO::FETCH_ASSOC);
                         <td><?php echo $producto['categoryid'];?></td>
                         <td><?php echo $producto['price'];?></td>
                         <td><?php echo $producto['unitsinstock'];?></td>
-                        <td><?php echo $producto['discontinued'];?></td>
+                        <td><?php echo $producto['Discontinued'];?></td>
                         <!-- FORMULARIO OCULTO PARA ENVIAR LA INFORMACION -->
                         <td>
                             <form action="" method="post" enctype="multipart/form-data">
@@ -159,7 +162,7 @@ $listaproductos=$senten->fetchAll(PDO::FETCH_ASSOC);
                         <input type="hidden" value="<?php echo $producto['categoryid'];?>" name="categoria">
                         <input type="hidden" value="<?php echo $producto['productid'];?>" name="id">
                         <input type="hidden" value="<?php echo $producto['unitsinstock'];?>" name="stock">
-                        <input type="hidden" value="<?php echo $producto['discontinued'];?>" name="Discontinued">
+                        <input type="hidden" value="<?php echo $producto['Discontinued'];?>" name="Discontinued">
                            <div class="btn btn-warning">
                            <a class="eliminar" href="editarproducto.php?id=<?php echo $producto['productid'];?>">
                            provisional no icons no internet :(
@@ -177,7 +180,7 @@ $listaproductos=$senten->fetchAll(PDO::FETCH_ASSOC);
     </table>
 </div>
 </div>
-
+</div>
 <!-- Bootstrap JS -->
 <script src="../resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>
 <script src="../resources/popper-1.15.0/popper.min.js"></script>

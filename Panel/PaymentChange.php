@@ -7,7 +7,7 @@ $row=$senten->fetch(PDO::FETCH_ASSOC);
 
     if($row['orderstatus'] == 'completado')
     {
-       $status='rechazado';
+       $status='cancelado';
     }
     if($row['orderstatus'] == 'cancelado'||$row['orderstatus'] == 'pendiente')
 
