@@ -17,7 +17,7 @@ if ($_POST) {
       // $idVENTA=$conexion->lastInsertId();
       }
       $resultado=$conexion->prepare("INSERT INTO `orders` (`orderid`, `usersid`, `total`, `orderdate`, `orderstatus`, `id_payment`)
-      VALUES (NULL, '17', :total , NOW() , 'pendiente', :id_payment);");
+      VALUES (NULL, '6', :total , NOW() , 'pendiente', :id_payment);");
       $resultado->bindParam(":total",$total);
       $resultado->bindParam(":id_payment",$pago);
       $resultado->execute();
