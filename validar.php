@@ -33,7 +33,7 @@ if(isset($_POST)) {
       // Rol usuario
       if($roleResult) {
         $_SESSION['username']= $access;
-
+        $_SESSION['user']=$accessResult;
         echo 'user-success';
         exit();
       }
