@@ -22,7 +22,7 @@ $orders=$senten->fetchAll(PDO::FETCH_ASSOC);
     
  </head>
 <body >
-<!-- <?php require_once '../views/components/mini-banner.php' ?> -->
+<?php require_once 'views/layout/header.php' ?>
     <div class="container content-container">
       <h4 class="mb-4 mt-2 text-center">Ordenes</h4>
       <div class="row">
