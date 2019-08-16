@@ -99,6 +99,7 @@ include 'validar-categorias.php';
                   ?>
                 <div class="row align-items-center">
                   <div class="col">
+                    <input type="radio" name="pago" value="<?php echo $pago['id_payment_method'] ?>">
                     <img src="img/icons/<?php echo $pago['payment_picture']?>" alt="" height="30px">
                   </div>
                   <div class="col">
