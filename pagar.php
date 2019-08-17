@@ -4,9 +4,10 @@ include 'conexion.php';
 include 'validarcart.php';
 ?>
 <?php
-echo "<script>alert('Producto comprado...');</script>";
+// RECUPERAR SESSION CARRITO
+isset($_SESSION['CARRITO']);
+// echo "<script>alert('Producto comprado...');</script>";
 $pago=$_POST['pago'];
-echo $username = $_SESSION['username'];
 $user=$_SESSION['user'];
 if ($_POST) {
 
@@ -37,12 +38,16 @@ if ($_POST) {
       $precio=$producto['PRECIO'];
       $cantidad=$producto['CANTIDAD'];
       $resultado=$conexion->prepare("INSERT INTO `orderdetails` (`orderid`, `productid`, `unitprice`, `quantity`, `discount`) VALUES (:orderid , :productid , :unitprice, :quantity , '0');");
-
+      
       $resultado->bindParam(":orderid",$idVENTA);
       $resultado->bindParam(":productid",$id_producto);
       $resultado->bindParam(":unitprice",$precio);
       $resultado->bindParam(":quantity",$cantidad);
       $resultado->execute();
-    }
+      }
+
+      // ELIMINAR SESSION CARRITO
+      unset($_SESSION['CARRITO']);
+      header('Location: index.php');
 }
 ?>
