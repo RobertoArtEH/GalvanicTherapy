@@ -1,10 +1,6 @@
 <?php
 include 'conexion.php';
-$id=$_POST['id'];
-$senten = $pdo->prepare("SELECT *FROM products inner join orderdetails
-on products.productid = orderdetails.productid inner join
-orders on orderdetails.orderid = orders.orderid WHERE
-orders.orderid = $id");
+$senten = $pdo->prepare("SELECT *FROM products");
 // 'SELECT * from products  inner join orderdetails
 //   on products.productid = orderdetails.productid inner join orders on orderdetails.orderid = orders.orderid inner join users on users.id = orders.usersid
 $senten->execute();
