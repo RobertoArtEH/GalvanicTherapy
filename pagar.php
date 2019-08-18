@@ -48,6 +48,6 @@ if ($_POST) {
 
       // ELIMINAR SESSION CARRITO
       unset($_SESSION['CARRITO']);
-      header('Location: index.php');
+      header('Location: compras.php');
 }
 ?>
