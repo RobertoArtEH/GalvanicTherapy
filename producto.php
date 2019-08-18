@@ -85,3 +85,11 @@ include 'validar-categorias.php';
     <script src="js/search.js"></script>
   </body>
 </html>
+<script type="text/javascript">
+$(document).ready(function(){
+$('#cantidad').change(function(){
+  var texto = $("#cantidad option:selected").html();
+  alert(texto);
+});
+});
+</script>
