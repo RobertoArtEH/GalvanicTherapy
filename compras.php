@@ -102,6 +102,7 @@ include 'orden.php';
               }
               ?>
             </button>
+            <span ><img src="img/icons/<?php echo $compra['payment_picture']?>" alt="" height="18px"> </span>
           </div>
           <div class="mr-0">
             <button class="btn text-right info-price" type="button" data-toggle="collapse" data-target="#collapseProducts<?php echo $compra['orderid'] ?>" aria-expanded="true" aria-controls="collapseProducts<?php echo $compra['orderid'] ?>">
