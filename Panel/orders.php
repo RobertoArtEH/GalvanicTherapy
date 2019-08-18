@@ -147,13 +147,6 @@ $(document).ready(function () {
             $("#tablainfo").append('<td>' + value.quantity + '</td>');
             $("#tablainfo").append('<td>' + value.total + '</td>');
 
-
-            console.log(value.picture);
-            console.log(value.productname);
-            console.log(value.description);
-            console.log(value.price);
-            console.log(value.quantity);
-            console.log(value.total);
            });
             // $("#tabla td").remove();
             // $('.usuarios').removeClass('invisible');

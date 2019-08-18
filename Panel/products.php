@@ -10,20 +10,84 @@
     <link rel="stylesheet" href="css/bootstrapstor.min.css"> 
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/sweetalert2.all.js"></script>
+    <link rel="stylesheet" href="css/sweetalert2.css">
+
      <!-- Font Awesome -->
 </head>
 <body>
 <?php require_once '../views/components/mini-banner.php' ?>
+
   <div class="container content-container">
       <h4 class="mb-4 mt-2 text-center">Productos</h4>
+      <ul class="navbar-nav ml-auto">
+  <form class="form-inline my-2 my-lg-0">
+        <input type="search" id="search" class="form-control mr-sm-2"
+        placeholder="Buscar...">
+        <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+  </ul>
 </div>
   <div class="row">
     <div class="container">
     <h3>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">
+        <button id="agregar" type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">
            <i class="fa fa-plus" height="50px"> </i>Agregar
         </button>
     </h3>
+
+    <!-- MODAL -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div>
+    <div class="modal-content">
+    <div class="modal-header justify-content-center">
+    <h5 class="modal-title" id="TituloModal">Agregar Producto</h5>
+    </div>
+    <div class="container"> 
+    <form id="products-form" action="" method="post" enctype="multipart/form-data">
+    <label for="" id="lbid" class="control-label">ID</label>
+    <input type="text" class="form-control" id="id" name="id"placeholder="" required="" >
+    <label for="" class="control-label">Nombre</label>
+    <input type="text" class="form-control" id="nombre" name="nombre"placeholder="" required=""  >
+    <label for="" class="control-label">Descripcion</label>
+    <input type="text" class="form-control" id="descripcion" name="descripcion"placeholder="" required="" >
+    <label for="" class="control-label">Content</label>
+    <input type="text" class="form-control" id="content" name="content"placeholder="" required="" >
+    <label for="imagen" class="control-label">imagen</label>
+    <input type="file" accept="image/*" class="form-control" id="imagen" name="imagen" required="" placeholder="" >    
+    <label for="" class="control-label">Precio</label>
+    <input type="text" class="form-control" id="precio" name="precio"placeholder="" required="" >
+    <label for="" class="control-label">Categoria</label>
+    <select class="form-control" name="category" id="categoria" required="" >
+<?php
+$stmt = $pdo->prepare('SELECT * FROM categories');
+        $stmt->execute();
+        
+        while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+        {
+            extract($row);
+            ?>
+            <option id="categoria" value="<?php echo $categoryid; ?>"><?php echo $categoryname; ?></option>
+            <?php
+        }
+        ?>    
+        </select>                    
+    <label for="" class="control-label">Stock</label>
+    <input type="text" class="form-control" id="stock" name="stock" placeholder="" required="" >
+    </div>
+    <div class="modal-footer">
+        <div class="form-group"> <!-- Submit Button -->
+        <button type="submit" value="btnagregar" id="buttonmodal" name="accion" class="btn btn-primary">Crear</button>
+        
+        <button type="button" data-dismiss="modal" value="btncancelar" name="accion" class="btn btn-danger">Cancelar</button>
+    </form>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+
     </div>
 <table class="table table table-striped table-bordered table-hover text-center">
             <thead class="thead-dark" >
@@ -49,62 +113,5 @@
 <script src="../resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>
 <script src="../resources/popper-1.15.0/popper.min.js"></script>
 <script src="../resources/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+<script src="js/products.js"></script>
 </html>
-<script>
-$(document).ready(function(){
-
-$(document).on('click','#change',function(){
-        Swal.fire({
-  title: 'Desea cambiar el status?',
-  text:'Esto afectara la visualizacion de sus productos.',
-  type: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Si!',
-  cancelButtonText: 'No'
-}).then((result) => {
-  if (result.value) {
-    let element = $(this)[0].parentElement.parentElement;
-        let id = $(element).attr('productid');
-        $.post('producstatus.php',{id},function(response){
-            Swal.fire(
-      response,
-      '',
-      'success'
-    )
-        })
-  }
-})
-})
-
-$.ajax({
-    type: "GET",
-    url: "productslist.php",
-    success: function (response) {
-        console.log(response);
-        let template ='';
-           $(response.data).each(function(index,value){
-               template+=`
-               <tr productid="${value.productid}">
-               <td>${value.productid}</td>
-               <td>${value.productname}</td>
-                    <td>${value.description}</td>
-                    <td><img class="img-thumbnail"width="100px" src="imagenes/${value.picture}"></td>
-                    <td>${value.content}</td>
-                    <td>${value.categoryid}</td>
-                    <td>${value.price}</td>
-                    <td>${value.unitsinstock}</td>
-                    <td>${value.productstatus}</td>
-                    <td><button class="btn btn-warning"><i class="fa fa-edit" style="color :white"></i></button><button id="change" class="btn btn-primary"><i class="fa fa-sync " style ="color :white"></i></button></td>
-                   </tr> `
-                });
-                $('#products').html(template);
-        
-              
-        
-    }
-});
-
-});
-</script>
