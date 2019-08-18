@@ -32,7 +32,9 @@
     <ul class="navbar-nav ml-auto">
   <form class="form-inline my-2 my-lg-0">
         <input type="search" id="search" class="form-control mr-sm-2"
-        placeholder="Buscar...">
+        placeholder="Buscar..."
+        required pattern="[A-Za-z]"
+        title="solo letras">
       </form>
   </ul>
             </div>
@@ -48,11 +50,15 @@
     <div class="container"> 
     <form id="products-form" action="" method="post" enctype="multipart/form-data">
     <label for="" id="lbid" class="control-label">ID</label>
-    <input type="text" class="form-control" id="id" name="id"placeholder="" required="" >
+    <input type="text" class="form-control" id="id" name="id"placeholder="" required pattern="[0-9]+" 
+    title="solo numeros.">
     <label for="" class="control-label">Nombre</label>
-    <input type="text" class="form-control" id="nombre" name="nombre"placeholder="" required=""  >
+    <input type="text" class="form-control" id="nombre" name="nombre"placeholder="" 
+    required pattern="[A-Za-z]+"
+    title="solo letras.">
     <label for="" class="control-label">Descripcion</label>
-    <input type="text" class="form-control" id="descripcion" name="descripcion"placeholder="" required="" >
+    <input type="text" class="form-control" id="descripcion" name="descripcion"placeholder=""
+    required pattern="[A-Za-z0-9]+">
     <label for="imagen" class="control-label">imagen</label>
     <input type="file" accept="image/*" class="form-control" id="imagen" name="imagen" required="" placeholder="" >    
     </div>

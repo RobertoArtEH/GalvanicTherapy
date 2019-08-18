@@ -34,7 +34,9 @@
     <ul class="navbar-nav ml-auto">
   <form class="form-inline my-2 my-lg-0">
         <input type="search" id="search" class="form-control mr-sm-2"
-        placeholder="Buscar...">
+        placeholder="Buscar..."
+        required pattern="[A-Za-z]"
+        title="solo letras">
       </form>
   </ul>
 
@@ -55,19 +57,29 @@
     <div class="container"> 
     <form id="products-form" action="" method="post" enctype="multipart/form-data">
     <label for="" id="lbid" class="control-label">ID</label>
-    <input type="text" class="form-control" id="id" name="id"placeholder="" required="" >
+    <input type="text" class="form-control" id="id" name="id"placeholder="" required pattern="[0-9]+"
+    title="solo numeros">
     <label for="" class="control-label">Nombre</label>
-    <input type="text" class="form-control" id="nombre" name="nombre"placeholder="" required=""  >
+    <input type="text" class="form-control" id="nombre" name="nombre"placeholder="" 
+    required pattern="[A-Za-z]+"
+    title="solo letras">
     <label for="" class="control-label">Descripcion</label>
-    <input type="text" class="form-control" id="descripcion" name="descripcion"placeholder="" required="" >
+    <input type="text" class="form-control" id="descripcion" name="descripcion"placeholder="" 
+    required pattern="[A-Za-z0-9]+"
+    title="solo letras y numeros">
     <label for="" class="control-label">Content</label>
-    <input type="text" class="form-control" id="content" name="content"placeholder="" required="" >
+    <input type="text" class="form-control" id="content" name="content"placeholder="" 
+    required pattern="[A-Za-z0-9]+"
+    title="solo letras y numeros">
     <label for="imagen" class="control-label">imagen</label>
     <input type="file" accept="image/*" class="form-control" id="imagen" name="imagen" required="" placeholder="" >    
     <label for="" class="control-label">Precio</label>
-    <input type="text" class="form-control" id="precio" name="precio"placeholder="" required="" >
+    <input type="text" class="form-control" id="precio" name="precio"placeholder=""
+    required pattern="[0-9]{5}+"
+    title="solo numeros" >
     <label for="" class="control-label">Categoria</label>
-    <select class="form-control" name="category" id="categoria" required="" >
+    <select class="form-control" name="category" id="categoria">
+        <option value="1" disabled>Elige una categoria</option>
 <?php
 $stmt = $pdo->prepare('SELECT * FROM categories');
         $stmt->execute();
@@ -82,7 +94,9 @@ $stmt = $pdo->prepare('SELECT * FROM categories');
         ?>    
         </select>                    
     <label for="" class="control-label">Stock</label>
-    <input type="text" class="form-control" id="stock" name="stock" placeholder="" required="" >
+    <input type="text" class="form-control" id="stock" name="stock" placeholder=""
+    required pattern="[0-9]{5}+"
+    title="solo numeros" >
     </div>
     <div class="modal-footer">
         <div class="form-group"> <!-- Submit Button -->
