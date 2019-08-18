@@ -101,11 +101,12 @@ include 'orden.php';
                     break;
               }
               ?>
+            <span ><img src="img/icons/<?php echo $compra['payment_picture']?>" alt="" height="18px"> </span>
             </button>
           </div>
           <div class="mr-0">
-            <button class="btn text-right info-price" type="button" data-toggle="collapse" data-target="#collapseProducts<?php echo $compra['orderid'] ?>" aria-expanded="true" aria-controls="collapseProducts<?php echo $compra['orderid'] ?>">
-              Total: <?php echo $compra['total']; ?>
+            <button class="btn text-right info-price text-center" type="button" data-toggle="collapse" data-target="#collapseProducts<?php echo $compra['orderid'] ?>" aria-expanded="true" aria-controls="collapseProducts<?php echo $compra['orderid'] ?>">
+              Total: $ <?php echo number_format($compra['total'],2); ?>
             </button>
           </div>
         </div>
@@ -129,15 +130,15 @@ include 'orden.php';
                 <!-- Nombre y descripción -->
                 <div class="col col-sm-4 text-md-left col-md col-lg">
                   <h4 class="cart-title"><?php echo $resultProducts['productname']; ?></h4>
-                  <h6 class="cart-text">Precio: <span><?php echo $resultProducts['unitprice']; ?></span></h6>
+                  <h6 class="cart-text">Precio: $ <span><?php echo number_format($resultProducts['unitprice'],2); ?></span></h6>
                 </div>
                 <!-- Info extra - derecha -->
                 <div class="col mt-2 col-sm text-sm-center col-md-auto col-lg-auto text-md-right row">
                   <!-- Cantidad -->
                   <div class="col-auto col-sm-auto col-md-auto col-lg-auto">
                     <form method="post">
-                      <label class="product-text pr-1" for="formCantidad">Cantidad: <?php echo $resultProducts['quantity']; ?></label>
-                      <h6 class="cart-text">Total: <span>$ <?php echo $resultProducts['total']; ?></span></h6>
+                      <label class="cart-text pr-1" for="formCantidad">Cantidad: <?php echo $resultProducts['quantity']; ?></label>
+                      <h6 class="cart-text">Total: <span>$ <?php echo number_format($resultProducts['unitprice'] * $resultProducts['quantity'],2 ); ?></span></h6>
                     </form>
                   </div>
                 </div>
