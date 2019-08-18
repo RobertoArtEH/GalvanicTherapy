@@ -1,5 +1,4 @@
 <?php include('conexion.php')?>
-<?php include('barra.php')?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,25 +15,34 @@
      <!-- Font Awesome -->
 </head>
 <body>
+<?php require_once 'views/layout/header.php' ?>
 <?php require_once '../views/components/mini-banner.php' ?>
 
   <div class="container content-container">
       <h4 class="mb-4 mt-2 text-center">Productos</h4>
-      <ul class="navbar-nav ml-auto">
-  <form class="form-inline my-2 my-lg-0">
-        <input type="search" id="search" class="form-control mr-sm-2"
-        placeholder="Buscar...">
-        <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-  </ul>
+   <div>
+   </div>
 </div>
   <div class="row">
     <div class="container">
-    <h3>
+        <div class="container">
+            <div class="row">
+            <h3>
         <button id="agregar" type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">
            <i class="fa fa-plus" height="50px"> </i>Agregar
         </button>
     </h3>
+
+    <ul class="navbar-nav ml-auto">
+  <form class="form-inline my-2 my-lg-0">
+        <input type="search" id="search" class="form-control mr-sm-2"
+        placeholder="Buscar...">
+      </form>
+  </ul>
+            </div>
+       
+        </div>
+    
 
     <!-- MODAL -->
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

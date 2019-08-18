@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Categorias</title>
+    <title>Usuarios</title>
     <link rel="stylesheet" href="css/bootstrapstor.min.css"> 
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
@@ -17,14 +17,16 @@
 <body>
 <?php require_once 'views/layout/header.php' ?>
   <div class="container content-container">
-      <h4 class="mb-4 mt-2 text-center">Categorias</h4>
+      <h4 class="mb-4 mt-2 text-center">Usuarios</h4>
+      <div class="row">
       <ul class="navbar-nav ml-auto">
   <form class="form-inline my-2 my-lg-0">
         <input type="search" id="search" class="form-control mr-sm-2"
         placeholder="Buscar...">
-        <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
       </form>
   </ul>
+      </div>
+    
 </div>
 <table class="table table table-striped table-bordered table-hover text-center">
             <thead class="thead-dark" >
