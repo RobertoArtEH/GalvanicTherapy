@@ -27,7 +27,11 @@ $orders=$senten->fetchAll(PDO::FETCH_ASSOC);
     <div class="container content-container">
       <h4 class="mb-4 mt-2 text-center">Ordenes</h4>
       <div class="row">
-
+      <div class="container">
+      <div style="text-align: right;width:101.4%"> 
+      <a href="pdfs/Reporteorders.php" target="_blank"><button class="btn btn-danger"> Reporte <i class="fas fa-file-pdf fa-lg"style="color:white"></i></button></a>         
+        </div>
+      </div>
         <table class="table table table-striped table-bordered table-hover text-center">
             <form>
             <thead class="thead-dark" >

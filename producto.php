@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 include 'conexion.php';
-// include 'validarcart.php';
+include 'validarcart.php';
 include 'validar-categorias.php';
 ?>
 <!DOCTYPE html>
@@ -33,11 +33,11 @@ include 'validar-categorias.php';
         </div>
         <!-- Detalles -->
         <div class="col-lg-6 col-md-12 text-center text-lg-left">
-          <h4 id="productName" class="product-title my-3"><?php echo $producto['productname']; ?></h4>
+          <h4 class="product-title my-3"><?php echo $producto['productname']; ?></h4>
           <p class="product-text">Precio: <span>$ <?php echo number_format($producto['price'],2); ?></span></p>
           <form class="form-inline justify-content-center justify-content-lg-start">
             <label class="product-text mr-sm-2" for="formCantidad">Cantidad:</label>
-            <select id="cantidad" class="custom-select my-1 mr-sm-2" name="cantidad">
+            <select class="custom-select my-1 mr-sm-2" name="cantidad">
               <?php
                 for($i = 1; $i <= $producto['unitsinstock']; $i++){
               ?>
@@ -47,16 +47,16 @@ include 'validar-categorias.php';
               ?>
             </select>
           </form>
-          <!-- <form action="" method="post"> -->
+          <form action="" method="post">
           <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($producto['productid'],COD,KEY);?>">
           <input type="hidden" name="picture" id="picture" value="<?php echo openssl_encrypt($producto['picture'],COD,KEY);?>">
           <input type="hidden" name="nombre" id="nombre" value="<?php echo openssl_encrypt($producto['productname'],COD,KEY); ?>" >
           <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt($producto['price'],COD,KEY); ?>" >
-          <!-- <input type="hidden" name="cantidad" id="cantidad" value="<?php echo openssl_encrypt($i,COD,KEY); ?>" > -->
+          <input type="hidden" name="cantidad" id="cantidad" value="<?php echo openssl_encrypt($i,COD,KEY); ?>" >
           <?php
             if($producto['unitsinstock'] >0) {
           ?>
-          <button id="btnAdd" class="btn btn-dark btn-block my-4" name="btnAccion" value="Agregar" type="submit" >Agregar al carrito</button>
+          <button class="btn btn-dark btn-block my-4" name="btnAccion" value="Agregar" type="submit" >Agregar al carrito</button>
           <?php
             } else {
           ?>
@@ -64,7 +64,7 @@ include 'validar-categorias.php';
           <?php
             }
           ?>
-        <!-- </form> -->
+        </form>
           <p class="product-text"><?php echo $producto['description']; ?></p>
           <p class="product-text"><strong>Contenido:</strong></p>
           <ul class="list-group list-group-flush">
@@ -85,4 +85,3 @@ include 'validar-categorias.php';
     <script src="js/search.js"></script>
   </body>
 </html>
-<script src="js/product.js"></script>

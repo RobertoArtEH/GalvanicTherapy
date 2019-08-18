@@ -37,6 +37,8 @@
         placeholder="Buscar...">
       </form>
   </ul>
+
+  <a href="pdfs/InventarioProdu.php" target="_blank"><button class="btn btn-danger"> Reporte <i class="fas fa-file-pdf fa-lg"style="color:white"></i></button></a>
             </div>
        
         </div>

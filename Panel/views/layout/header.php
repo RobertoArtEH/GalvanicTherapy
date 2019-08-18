@@ -1,5 +1,6 @@
 <header>
 <script src="https://kit.fontawesome.com/a2a999c481.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <nav class="navbar navbar-expand-md navbar-light bg-light">
     <a class="navbar-brand" href="index.php">
       <img src="../img/brand/logo.png" class="logo d-inline-block align-top" alt="Galvanic Therapy">
@@ -27,7 +28,7 @@
         <a class="nav-link" href="auditoria.php">Auditoria</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Reportes</a>
+        <a class="nav-link" href="Reportes.php">Reportes</a>
       </li>
       <li class="nav-item d-block d-md-none">
         <hr>
