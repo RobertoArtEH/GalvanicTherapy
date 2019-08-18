@@ -1,21 +1,21 @@
 <?php
 include 'conexion.php';
-$id=$_GET['id'];
+$id=$_POST['id'];
 $senten = $pdo->prepare("SELECT *FROM categories WHERE categoryid='".$id."'");
 $senten->execute();
 $row=$senten->fetch(PDO::FETCH_ASSOC);
 
-    if($row['statuscategorie'] == 'activado')
+    if($row['statuscategorie'] == 'activa')
     {
-       $status='desactivado';
+       $status='desactivada';
     }
-    if($row['statuscategorie'] == 'desactivado')
+    if($row['statuscategorie'] == 'desactivada')
 
     {
-        $status='activado';
+        $status='activa';
     }
 
 $sentencia=$pdo->prepare ("UPDATE categories SET statuscategorie='".$status."' WHERE categoryid='".$id."'");
 $sentencia->execute();
-header("location:categorias.php");
+echo 'Status changed';
 ?>

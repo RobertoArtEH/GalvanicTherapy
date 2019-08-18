@@ -37,7 +37,7 @@ session_start();
         </a>
       </li>
       <li>
-        <a class="tw" href="productos.php">
+        <a class="tw" href="products.php">
           <article class="section-square section-products d-flex align-items-end">
           <div class="section-banner text-center">
               <h5 class="m-0">Productos</h5>
