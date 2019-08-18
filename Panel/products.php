@@ -16,8 +16,6 @@
 </head>
 <body>
 <?php require_once 'views/layout/header.php' ?>
-<?php require_once '../views/components/mini-banner.php' ?>
-
   <div class="container content-container">
       <h4 class="mb-4 mt-2 text-center">Productos</h4>
    <div>
