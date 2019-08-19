@@ -6,19 +6,6 @@
     </a>
     <!-- Header SM -->
     <ul class="nav">
-      <li id="searchSM" class="d-flex align-items-center">
-        <!-- Buscar -->
-        <div class="d-lg-none">
-          <div class="form-inline container">
-            <div class="form-group mb-0">
-              <input id="searchInputSM" class="search-input-sm" type="text" placeholder="Buscar...">
-            </div>
-            <a id="searchIconSM">
-              <img src="img/icons/search.svg" class="icon-sm" alt="Buscar"/>
-            </a>
-          </div>
-        </div>
-      </li>
       <li id="cartSM" class="nav-item d-flex align-items-center">
         <!-- Carrito de compras -->
         <a class="cart d-lg-none" href="cart.php">
@@ -38,14 +25,12 @@
 <!-- Elementos de menú SM -->
 <nav class="navbar container navbar-expand-lg">
   <div class="collapse navbar-collapse" id="collapse_trg">
-    <!-- Buscar -->
-    <div class="search-bar d-none d-lg-block">
-      <input id="searchInput" class="search-input" type="text" placeholder="Buscar...">
-      <a id="searchIcon" class="search-icon">
-        <img src="img/icons/search.svg" alt="Buscar"/>
-      </a>
-    </div>
     <?php if(isset($_SESSION['user'])) { ?>
+    <!-- Carrito de compras lg -->
+      <a class="cart d-none d-lg-block" href="cart.php">
+        <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
+        <span class="badge badge-dark cart-count"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']); ?></span>  
+      </a>
       <!-- Secciones -->
       <ul class="navbar-nav sections-secundary mx-lg-auto">
         <li class="nav-item active">
@@ -73,11 +58,6 @@
           <a class="nav-link bg-link" href="nuevo.php">Lo nuevo</a>
         </li>
       </ul>
-      <!-- Carrito de compras lg -->
-      <a class="cart d-none d-lg-block" href="cart.php">
-        <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
-        <span class="badge badge-dark cart-count"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']); ?></span>  
-      </a>
       <!-- Perfil LG -->
       <div class="dropdown d-none d-lg-block">
         <a href="" data-toggle="dropdown" style="text-decoration: none;">
@@ -108,6 +88,11 @@
       } else {
 
     ?>
+    <!-- Carrito de compras lg -->
+    <a class="cart d-none d-lg-block" href="cart.php">
+      <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
+      <span class="badge badge-dark cart-count-log"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>
+    </a>
     <!-- Secciones LG -->
     <ul class="navbar-nav sections mx-lg-auto">
       <li class="nav-item active">
@@ -135,11 +120,6 @@
         <a class="nav-link bg-link" href="nuevo.php">Lo nuevo</a>
       </li>
     </ul>
-    <!-- Carrito de compras lg -->
-    <a class="cart d-none d-lg-block" href="cart.php">
-      <img src="img/icons/cart.svg" height="16px" alt="Cart"/>
-      <span class="badge badge-dark cart-count-log"><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);  ?></span>
-    </a>
     <!-- Boton de log-in LG -->
     <div class="d-none d-lg-block">
       <a class="btn btn-dark" href="login.php" role="button">Iniciar sesión</a>

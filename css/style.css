@@ -468,13 +468,13 @@ footer {
   .cart-count {
     position: absolute;
     top: 35px;
-    right: 87px;
+    right: 55.3rem;
   }
   
   .cart-count-log {
     position: absolute;
     top: 35px;
-    right: 153px;
+    right: 55.4rem;
   }
 
   .categories-list {
@@ -491,24 +491,24 @@ footer {
 @media (min-width: 1200px) {
   .sections {
     position: relative;
-    left: 90px;
+    left: 20px;
   }
 
   .sections-secundary {
     position: relative;
-    left: 63px;
+    left: 0;
   }
 
   .cart-count {
     position: absolute;
     top: 35px;
-    right: 87px;
+    right: 66.6rem;
   }
 
   .cart-count-log {
     position: absolute;
     top: 35px;
-    right: 153px;
+    right: 66.6rem;
   }
 
   .categories-list {

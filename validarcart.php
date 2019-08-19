@@ -31,6 +31,14 @@ if (isset($_POST['btnAccion'])) {
     $stmtResult = $stmt -> fetch();
 
     if(!$stmtResult) {
+      echo '<script type="text/javascript">';
+      echo 'setTimeout(function () { Swal.fire({
+        type: "error",
+        title: "¡No hay productos disponibles!",
+        showConfirmButton: false,
+        timer: 2000
+      });';
+      echo '}, 1000);</script>';
       break;
     }
       
