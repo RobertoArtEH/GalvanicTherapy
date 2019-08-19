@@ -1,6 +1,7 @@
 <?php
 include 'config.php';
 include 'conexion.php';
+include 'validarcart.php';
 include 'validar-categorias.php';
 ?>
 <!DOCTYPE html>
@@ -12,6 +13,8 @@ include 'validar-categorias.php';
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="resources/bootstrap-4.3.1/css/bootstrap.min.css">
     <link rel="icon" type="image/png" href="img/brand/icon.png" />
+    <!-- Sweetalert CSS -->
+    <link rel="stylesheet" href="resources/sweetalert2/sweetalert2.min.css">
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css"/>
     <title>Galvanic Therapy</title>
@@ -73,6 +76,8 @@ include 'validar-categorias.php';
     <script src="resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>
     <script src="resources/popper-1.15.0/popper.min.js"></script>
     <script src="resources/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <!-- Sweetalert -->
+    <script src="resources/sweetalert2/sweetalert2.min.js"></script>
     <!-- Scripts -->
     <script src="js/search.js"></script>
     <script src="js/product.js"></script>

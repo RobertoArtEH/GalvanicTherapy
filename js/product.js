@@ -15,7 +15,18 @@ $('#btnAdd').click(function() {
       quantity: quantity
     },
     success: function(resp) {
-      alert(resp);
+      if(resp == 'error') {
+        Swal.fire({
+          type: 'error',
+          title: '¡No hay productos disponibles!',
+          showConfirmButton: false,
+          timer: 2000
+        });
+      }
+
+      if(resp == 'success') {
+        location.reload();
+      }
     }
   });
 });
