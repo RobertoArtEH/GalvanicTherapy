@@ -33,7 +33,7 @@
   <form class="form-inline my-2 my-lg-0">
         <input type="search" id="search" class="form-control mr-sm-2"
         placeholder="Buscar..."
-        required pattern="[A-Za-z]"
+        required
         title="solo letras">
       </form>
   </ul>

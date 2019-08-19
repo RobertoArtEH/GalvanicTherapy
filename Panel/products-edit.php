@@ -28,7 +28,7 @@ $category =$_POST['categoria'];
             $conversion=($imagen!="")?$Fecha->getTimestamp()."_".$_FILES["imagen"]["name"]:"default.jpg";
             $temporalfoto=$_FILES["imagen"]["tmp_name"];
             if($temporalfoto!=""){
-               move_uploaded_file($temporalfoto,"imagenes/".$conversion);
+               move_uploaded_file($temporalfoto,"../img/products/".$conversion);
             }
             $sentencia=$pdo->prepare ("UPDATE products SET 
         picture=:picture WHERE productid=:productid");
