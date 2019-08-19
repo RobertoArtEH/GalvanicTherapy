@@ -26,6 +26,7 @@ $('#btnAdd').click(function() {
 
       if(resp == 'success') {
         window.location.href = window.location.href;
+        location.reload();
       }
     }
   });
