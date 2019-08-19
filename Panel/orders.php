@@ -150,7 +150,7 @@ $(document).ready(function () {
             limpiar(response);
            $(response.data).each(function(index,value){
             $("#tablainfo").append('<tr></tr>');
-            $("#tablainfo").append('<td><img class="img-thumbnail"width="100px" src="imagenes/default.jpg"></td>');
+            $("#tablainfo").append('<td><img class="img-thumbnail"width="100px" src="../img/products/'+value.picture+'"></td>');
             $("#tablainfo").append('<td>' + value.productname + '</td>');
             $("#tablainfo").append('<td>' + value.description + '</td>');
             $("#tablainfo").append('<td>' + value.price + '</td>');
