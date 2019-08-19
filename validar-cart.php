@@ -24,6 +24,7 @@ if (isset($_POST)) {
 
   if($stmtResult) {
     $quantity = $_POST['quantity'];
+    echo 'success';
 
     $stmt = $conexion -> prepare('SELECT * FROM products WHERE productname = :productname');
     $stmt -> execute([':productname'=>$productName]);
@@ -34,7 +35,6 @@ if (isset($_POST)) {
     $picture = $product['picture'];
     $price = $product['price'];
 
-    echo 'success';
 
     if(!isset($_SESSION['CARRITO'])) {
       $producto = array(

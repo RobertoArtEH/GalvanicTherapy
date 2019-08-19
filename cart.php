@@ -70,7 +70,7 @@ include 'validar-categorias.php';
           </article>
         </div>
         <?php
-              if(isset($_SESSION['email']) || isset($_SESSION['username'])){
+              if(isset($_SESSION['user'])){
               ?>
         <div class="modal fade" id="modalDeposito">
           <div class="modal-dialog modal-dialog-centered modal-lg" role="document">

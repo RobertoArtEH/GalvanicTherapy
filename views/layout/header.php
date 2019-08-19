@@ -45,7 +45,7 @@
         <img src="img/icons/search.svg" alt="Buscar"/>
       </a>
     </div>
-    <?php if(isset($_SESSION['email']) || isset($_SESSION['username'])) { ?>
+    <?php if(isset($_SESSION['user'])) { ?>
       <!-- Secciones -->
       <ul class="navbar-nav sections-secundary mx-lg-auto">
         <li class="nav-item active">
