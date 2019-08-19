@@ -121,11 +121,13 @@ $('#login-btn').click(function(e) {
           $('#login-alert').html('Usuario o contraseña incorrecta.');
           $('#login-alert').removeClass('d-none');
           $('#password').focus();
+          $('#password').val('');
         }
         
         if(data == 'inactive') {
           $('#login-alert').html('Tu cuenta ha sido deshabilitada.');
           $('#login-alert').removeClass('d-none');
+          $('#password').val('');
         }
       },
       error: function() {
