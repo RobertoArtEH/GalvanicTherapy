@@ -7,10 +7,6 @@ if(isset($_POST)) {
   $password = $_POST['password'];
   $password= hash('sha512',$password );
 
-  // $Query = $conexion -> prepare('SELECT * FROM users WHERE email OR username = :access  AND pass = :password');
-  // $Query -> execute(array(':access'=>$access, ':password' =>$password));
-  // $Result = $Query -> fetch(PDO::FETCH_ASSOC);
-
   // Verificar contraseña
   $accessQuery = $conexion -> prepare('SELECT * FROM users WHERE username = :access AND pass = :password');
   $accessQuery -> execute(array(':access'=>$access, ':password' =>$password));
@@ -32,7 +28,8 @@ if(isset($_POST)) {
     if($statusResult) {
       // Rol usuario
       if($roleResult) {
-        $_SESSION['username']= $access;
+        $_SESSION['username'] = $access;
+        $_SESSION['user'] = $accessResult;
 
         echo 'user-success';
         exit();

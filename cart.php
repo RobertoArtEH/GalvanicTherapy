@@ -41,26 +41,15 @@ include 'validar-categorias.php';
             <div class="col col-sm-4 text-md-left col-md col-lg">
               <h4 class="cart-title"><?php echo $producto['NOMBRE'] ?></h4>
               <h6 class="cart-text">Precio: <span>$ <?php echo number_format($producto['PRECIO'],2); ?></span></h6>
+              <h6 class="cart-text">Cantidad: <span><?php echo number_format($producto['CANTIDAD']); ?></span></h6>
             </div>
             <!-- Info extra - derecha -->
             <div class="col mt-2 col-sm text-sm-center col-md-auto col-lg-auto text-md-right row">
               <!-- Cantidad -->
               <div class="col-auto col-sm-auto col-md-auto col-lg-auto">
                 <form class="form-inline" action="" method="post">
-                <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($producto['ID'],COD,KEY);?>">
-                <!-- <h6 class="cart-text pt-4">Subtotal: <span>$ <?php echo number_format($producto['PRECIO'] * $producto['CANTIDAD'],2 );  ?> </span></h6>         -->
-               <label class="product-text pr-1" for="formCantidad">Cantidad:</label>
-                  <select class="custom-select" name="cantidad" >
-                  <option selected><?php echo $producto['CANTIDAD'] ?></option>
-                    <?php
-                    for($i = 1; $i <= $producto['CANTIDAD']; $i++){
-                    ?>
-                  <option value='<?php echo $i ?>'><?php echo $i ?></option>
-                  <?php
-                  }
-                  ?>
-                  </select>
-                  <button class="btn btn-dark mt-3 mt-sm-auto ml-sm-2" type="submit" name="btnAccion" value="Eliminar" ><img src="img/icons/delete.svg" height="16px"></button>      
+                  <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($producto['ID'],COD,KEY);?>">
+                  <button class="btn btn-dark mt-3 mt-sm-auto ml-sm-2" type="submit" name="btnAccion" value="Eliminar" ><img src="img/icons/delete.svg" height="16px"></button>
                 </form>
               </div>
             </div>
@@ -93,12 +82,14 @@ include 'validar-categorias.php';
                 </button>
               </div>
               <div class="modal-body text-center p-4">
+                <form action="pagar.php" method="post">
                 <p>En los siguientes sitios podrás realizar tu depósito bancario:</p>
                 <?php
                   foreach($pago as $pago){
                   ?>
                 <div class="row align-items-center">
                   <div class="col">
+                    <input type="radio" name="pago" value="<?php echo $pago['id_payment_method'] ?>">
                     <img src="img/icons/<?php echo $pago['payment_picture']?>" alt="" height="30px">
                   </div>
                   <div class="col">
@@ -125,6 +116,7 @@ include 'validar-categorias.php';
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-success">Continuar</button>
+                </form>
               </div>
             </div>
           </div>
