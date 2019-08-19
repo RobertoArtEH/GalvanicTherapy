@@ -18,7 +18,7 @@ $(document).ready(function(){
             <td>${value.id}</td>
             <td>${value.first_name}</td>
                  <td>${value.last_name}</td>
-                 <td><img class="img-thumbnail"width="100px" src="imagenes/${value.imageprofile}"></td>
+                 <td><img class="img-thumbnail"width="100px" src="../img/icons/user.png"></td>
                  <td>${value.username}</td>
                  <td><div class="btn role">${value.role}</div></td>
                  <td><div class="btn status">${value.status}</div></td>
@@ -73,7 +73,7 @@ $(document).ready(function(){
                  <td>${value.id}</td>
                  <td>${value.first_name}</td>
                       <td>${value.last_name}</td>
-                      <td><img class="img-thumbnail"width="100px" src="imagenes/${value.imageprofile}"></td>
+                      <td><img class="img-thumbnail"width="100px" src="../img/icons/user.png"></td>
                       <td>${value.username}</td>
                       <td><div class="btn role">${value.role}</div></td>
                       <td><div class="btn status">${value.status}</div></td>
