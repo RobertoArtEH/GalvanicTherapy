@@ -198,7 +198,7 @@ $(document).ready(function(){
                  <td>${value.categoryid}</td>
                  <td>${value.categoryname}</td>
                  <td>${value.descriptions}</td>
-                      <td><img class="img-thumbnail"width="100px" src="imagenes/${value.picturecategorie}"></td>
+                      <td><img class="img-thumbnail"width="100px" src="../img/backgrounds/${value.picturecategorie}"></td>
                       <td><div class="btn status">${value.statuscategorie}</div></td>
                       <td><button id="edit" class="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg""><i class="fa fa-edit" style="color :white"></i></button><button id="change" class="btn btn-primary"><i class="fa fa-sync " style ="color :white"></i></button></td>
                      </tr>
