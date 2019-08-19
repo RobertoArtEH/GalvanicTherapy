@@ -8,6 +8,7 @@
     <title>Productos</title>
     <link rel="stylesheet" href="css/bootstrapstor.min.css"> 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../img/brand/icon.png" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/sweetalert2.all.js"></script>
     <link rel="stylesheet" href="css/sweetalert2.css">

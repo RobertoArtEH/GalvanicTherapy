@@ -14,7 +14,8 @@ $orders=$senten->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Orders</title>
-    <link rel="stylesheet" href="css/bootstrapstor.min.css"> 
+    <link rel="stylesheet" href="css/bootstrapstor.min.css">
+    <link rel="icon" type="image/png" href="../img/brand/icon.png" /> 
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/a2a999c481.js"></script>
 
@@ -29,7 +30,7 @@ $orders=$senten->fetchAll(PDO::FETCH_ASSOC);
       <div class="row">
       <div class="container">
       <div style="text-align: right;width:101.4%"> 
-      <a href="pdfs/Reporteorders.php" target="_blank"><button class="btn btn-danger"> Reporte <i class="fas fa-file-pdf fa-lg"style="color:white"></i></button></a>         
+      <a href="pdfs/Reporteorders.php" target="_blank"><button class="btn btn-danger mb-2"> Reporte <i class="fas fa-file-pdf fa-lg"style="color:white"></i></button></a>         
         </div>
       </div>
         <table class="table table table-striped table-bordered table-hover text-center">

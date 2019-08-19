@@ -13,6 +13,7 @@ $bitacora=$senten->fetchAll(PDO::FETCH_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bitacora</title>
     <link rel="stylesheet" href="css/bootstrapstor.min.css"> 
+    <link rel="icon" type="image/png" href="../img/brand/icon.png" />
     <link rel="stylesheet" href="../css/style.css">
      <!-- Font Awesome -->
     

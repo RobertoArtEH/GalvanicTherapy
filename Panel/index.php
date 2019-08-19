@@ -19,6 +19,7 @@ if($sesion!="admin")
   <link rel="icon" type="image/png" href="img/brand/icon.png" />
   <!-- Style CSS -->
   <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="icon" type="image/png" href="../img/brand/icon.png" />
 </head>
 <body class="bg-admin">
   <?php require_once 'views/layout/header-idx.php' ?>

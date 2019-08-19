@@ -85,7 +85,7 @@
           <img src="img/icons/arrow.svg" height="14px" alt="Flecha">
         </a>
         <div class="dropdown-menu dropdown-menu-right">
-          <span class="dropdown-item-text"><?php echo ($_SESSION['username']); ?></span>
+          <span class="dropdown-item-text"><?php echo ($_SESSION['user']['username']); ?></span>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item bg-link" href="compras.php">Mis compras</a>
           <a class="dropdown-item bg-link" href="cerrar.php">Cerrar sesión</a>
@@ -97,7 +97,7 @@
           <div class="dropdown-divider"></div>
           <a class="nav-link bg-link" data-toggle="dropdown" href="">Perfil</a>
           <div class="dropdown-menu">
-          <span class="dropdown-item-text"><?php echo ($_SESSION['username']); ?></span>
+          <span class="dropdown-item-text"><?php echo ($_SESSION['user']['username']); ?></span>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item bg-link" href="compras.php">Mis compras</a>
             <a class="dropdown-item bg-link" href="cerrar.php">Cerrar sesión</a>
