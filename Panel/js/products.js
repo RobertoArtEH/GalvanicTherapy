@@ -209,7 +209,7 @@ function ListadoProd(){
                <td>${value.productid}</td>
                <td>${value.productname}</td>
                     <td>${value.description}</td>
-                    <td><img class="img-thumbnail"width="100px" src="imagenes/${value.picture}"></td>
+                    <td><img class="img-thumbnail"width="100px" src="../img/products/${value.picture}"></td>
                     <td>${value.content}</td>
                     <td>${value.categoryid}</td>
                     <td>${value.price}</td>
