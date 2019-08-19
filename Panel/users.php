@@ -17,20 +17,28 @@
 </head>
 <body>
 <?php require_once 'views/layout/header.php' ?>
-  <div class="container content-container">
+<div class="container content-container">
       <h4 class="mb-4 mt-2 text-center">Usuarios</h4>
-      <div class="row">
-      <ul class="navbar-nav ml-auto">
+   <div>
+   </div>
+</div>
+  <div class="row">
+    <div class="container">
+        <div class="container">
+            <div class="row">
+            
+      <ul class="navbar-nav ml-auto"  >
   <form class="form-inline my-2 my-lg-0">
         <input type="search" id="search" class="form-control mr-sm-2"
         placeholder="Buscar...">
       </form>
   </ul>
-  <a href="pdfs/Inventariousers.php" target="_blank"><button class="btn btn-danger"> Reporte <i class="fas fa-file-pdf fa-lg"style="color:white"></i></button></a>
-      </div>
+<div > 
+      <a href="pdfs/Inventariousers.php" target="_blank"><button class="btn btn-danger mb-2"> Reporte <i class="fas fa-file-pdf fa-lg"style="color:white"></i></button></a>         
+        </div>
     
-</div>
 <table class="table table table-striped table-bordered table-hover text-center">
+
             <thead class="thead-dark" >
                 <tr>
                 <th>ID</th>
@@ -48,6 +56,9 @@
                         
                 </tbody>
 </table>
+</div>
+</div>
+</div>
 </body>
 <script src="../resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>
 <script src="../resources/popper-1.15.0/popper.min.js"></script>

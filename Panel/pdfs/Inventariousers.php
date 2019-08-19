@@ -25,7 +25,7 @@ class PDF extends FPDF
         global $total;
         global $total2;
         // LOGO
-        $this->Image('pingu.png',150,8,33);
+        $this->Image('logo.png',150,8,33);
         // Helvetica Bold 15
         $this->SetFont('helvetica','B',15);
         // Movernos a la derecha

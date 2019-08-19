@@ -23,7 +23,7 @@
     <div class="container">
         <div class="container">
             <div class="row">
-            <h3>
+            <h3 style="text-align: right;width:10%">
         <button id="agregar" type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">
            <i class="fa fa-plus" height="50px"> </i>Agregar
         </button>
