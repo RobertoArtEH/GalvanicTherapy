@@ -1,7 +1,7 @@
 <?php
 require('conexion.php');
 //Categorias
-    $consulta = $conexion->prepare('SELECT * FROM categories');
+    $consulta = $conexion->prepare('SELECT * FROM categories WHERE statuscategorie = "activa"');
     $consulta -> execute();
     $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
 
