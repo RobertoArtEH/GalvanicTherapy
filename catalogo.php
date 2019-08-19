@@ -62,7 +62,7 @@ else
     <div class="container content-container d-flex flex-wrap justify-content-center">
     <?php
       require('conexion.php');
-      $consulta = $conexion->prepare('SELECT * FROM products where unitsinstock >0 and categoryid ='.$_GET['categoryid']);
+      $consulta = $conexion->prepare('SELECT * FROM products where unitsinstock >0 and productstatus = "activo" and categoryid ='.$_GET['categoryid']);
       $consulta -> execute();
       $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
       foreach($resultado as $producto){
@@ -94,7 +94,7 @@ else
     ?>
     <?php   
       require('conexion.php');
-      $consulta = $conexion->prepare('SELECT * FROM products where unitsinstock <=0 and categoryid ='.$_GET['categoryid']);
+      $consulta = $conexion->prepare('SELECT * FROM products where unitsinstock <=0 and productstatus = "activo" categoryid ='.$_GET['categoryid']);
       $consulta -> execute();
       $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
       foreach($resultado as $producto) {

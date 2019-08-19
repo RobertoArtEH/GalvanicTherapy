@@ -4,7 +4,7 @@ include 'conexion.php';
 include 'validarcart.php';
 include 'validar-categorias.php';
 $consulta = $conexion->prepare('SELECT * FROM products inner join categories 
-on products.categoryid = categories.categoryid where productid ='.$_GET['productid']);
+on products.categoryid = categories.categoryid where productstatus = "activo" and productid ='.$_GET['productid']);
 $consulta -> execute();
 $resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
 foreach($resultado as $producto) {

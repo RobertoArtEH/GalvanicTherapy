@@ -1,9 +1,10 @@
 <?php
 require('conexion.php');
 //MostrarDatos
-    $stmt= $conexion->prepare('SELECT * FROM products where productid =' .$_GET['productid']);
+    $stmt= $conexion->prepare('SELECT * FROM products where productstatus = "activo" and productid =' .$_GET['productid']);
     $stmt->execute();
-    $producto = $stmt ->fetchAll();
+    $producto = $stmt ->fetchAll(PDO::FETCH_ASSOC);
+    
 
 
  ?>
