@@ -12,6 +12,27 @@ if (isset($_POST['btnAccion'])) {
   switch ($_POST['btnAccion']) {
     
     case 'Agregar':
+    $proId=openssl_decrypt($_POST['id'],COD,KEY);
+    $cant = 1;
+
+    if(isset($_SESSION['CARRITO'])) {
+      for ($i=0; $i < sizeof($_SESSION['CARRITO']) ; $i++) {
+        if($_SESSION['CARRITO'][$i]['ID'] == $proId) {
+          $cant += $_SESSION['CARRITO'][$i]['CANTIDAD'];
+          break;
+        }
+      }
+    }
+
+    $stmt = $conexion -> prepare('SELECT productid, productname, picture, price
+                                FROM products WHERE productid = :productid 
+                                AND unitsinstock >= :quantity');
+    $stmt -> execute([':productid'=>$proId, ':quantity'=>$cant]);
+    $stmtResult = $stmt -> fetch();
+
+    if(!$stmtResult) {
+      break;
+    }
       
     if (is_numeric(  openssl_decrypt($_POST['id'],COD,KEY  ))) {
         $ID=openssl_decrypt($_POST['id'],COD,KEY);

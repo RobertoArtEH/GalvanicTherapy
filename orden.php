@@ -1,8 +1,8 @@
 <?php
 require 'conexion.php';
 
- if(isset($_SESSION['username'])){
-  $username = $_SESSION['username'];
+ if(isset($_SESSION['user'])){
+  $username = $_SESSION['user']['username'];
 
   $sentencia=$conexion ->prepare('SELECT * from products  inner join orderdetails
     on products.productid = orderdetails.productid inner join orders 
