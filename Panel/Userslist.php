@@ -1,6 +1,6 @@
 <?php
 include 'conexion.php';
-$senten = $pdo->prepare("SELECT *FROM users");
+$senten = $pdo->prepare("SELECT *FROM users where role = 'user'");
 // 'SELECT * from products  inner join orderdetails
 //   on products.productid = orderdetails.productid inner join orders on orderdetails.orderid = orders.orderid inner join users on users.id = orders.usersid
 $senten->execute();
