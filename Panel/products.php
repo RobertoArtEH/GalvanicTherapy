@@ -62,7 +62,7 @@
     title="solo numeros">
     <label for="" class="control-label">Nombre</label>
     <input type="text" class="form-control" id="nombre" name="nombre"placeholder="" 
-    required pattern="[A-Za-z]+"
+    required
     title="solo letras">
     <label for="" class="control-label">Descripcion</label>
     <input type="text" class="form-control" id="descripcion" name="descripcion"placeholder="" 

@@ -3,6 +3,21 @@ include 'config.php';
 include 'conexion.php';
 include 'validarcart.php';
 include 'validar-categorias.php';
+$consulta = $conexion->prepare('SELECT * FROM categories where categoryid ='.$_GET['categoryid']);
+$consulta -> execute();
+$resultado= $consulta->fetchAll(PDO::FETCH_ASSOC);
+foreach($resultado as $producto) {
+if($producto["statuscategorie"]=="desactivada"){
+header('Location:index.php');
+}
+else
+{
+
+}
+}
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
