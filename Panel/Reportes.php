@@ -13,8 +13,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script></head>
 <body>
 <?php require_once 'views/layout/header.php' ?>
-<center><h1 class="mt-3">Reportes</h1></center>
 <div class="container mt-5">
+<h4 class="mb-4 mt-2 text-center">Órdenes</h4>
 <div class="row mt-5">
   <div class="col-3 ml-5">
 <div class="card" style="width: 18rem;">
@@ -32,7 +32,7 @@
 
 <div class="col-3 ml-5">
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="pdfs/ventasportiempo.jpg" height="210px" alt="Card image cap">
+  <img class="card-img-top" src="imagenes/reportes/orden.jpg" height="210px" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">Ventas por periodo</h5>
     <p class="card-text">Genere reporte de las ventas en determinado periodo</p>

@@ -25,14 +25,19 @@ $orders=$senten->fetchAll(PDO::FETCH_ASSOC);
 <body >
 <?php require_once 'views/layout/header.php' ?>
 <!-- <?php require_once '../views/components/mini-banner.php' ?> -->
-    <div class="container content-container">
-      <h4 class="mb-4 mt-2 text-center">Ordenes</h4>
-      <div class="row">
-      <div class="container">
+<div class="container content-container">
+      <h4 class="mb-4 mt-2 text-center">Órdenes</h4>
+   <div>
+   </div>
+</div>
+  <div class="row">
+    <div class="container">
+        <div class="container">
+            <div class="row">
       <div style="text-align: right;width:101.4%"> 
       <a href="pdfs/Reporteorders.php" target="_blank"><button class="btn btn-danger mb-2"> Reporte <i class="fas fa-file-pdf fa-lg"style="color:white"></i></button></a>         
         </div>
-      </div>
+      
         <table class="table table table-striped table-bordered table-hover text-center">
             <form>
             <thead class="thead-dark" >
@@ -98,9 +103,8 @@ $orders=$senten->fetchAll(PDO::FETCH_ASSOC);
     
          </div>
          </div>
-         </div>
-         </div>
-         </div>
+         
+         
     
 
 </body> 
