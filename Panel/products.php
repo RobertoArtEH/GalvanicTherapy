@@ -81,9 +81,10 @@
     <select class="form-control" name="category" id="categoria">
         <option value="1" disabled>Elige una categoria</option>
 <?php
-$stmt = $pdo->prepare('SELECT * FROM categories');
+$status='%activa';
+$stmt = $pdo->prepare("SELECT * FROM categories WHERE statuscategorie LIKE :statuscategorie");
+$stmt->bindParam(':statuscategorie',$status,PDO::PARAM_STR);
         $stmt->execute();
-        
         while($row=$stmt->fetch(PDO::FETCH_ASSOC))
         {
             extract($row);
