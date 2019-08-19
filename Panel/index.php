@@ -1,4 +1,12 @@
-
+<?php
+session_start();
+$variable=$_SESSION['user']; 
+$sesion =$variable["role"];
+if($sesion!="admin")
+{
+  header('location:../index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,7 +70,7 @@
         </a>
       </li>
       <li>
-        <a class="tw" href="#">
+        <a class="tw" href="Reportes.php">
           <article class="section-square section-reportes d-flex align-items-end">
           <div class="section-banner text-center">
               <h5 class="m-0">Reportes</h5>

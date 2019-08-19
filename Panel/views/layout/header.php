@@ -1,3 +1,12 @@
+<?php
+session_start();
+$variable=$_SESSION['user']; 
+$sesion =$variable["role"];
+if($sesion!="admin")
+{
+  header('location:../index.php');
+}
+?>
 
 <header>
 <script src="https://kit.fontawesome.com/a2a999c481.js"></script>
@@ -38,7 +47,7 @@
     </ul>
   </div>
 
-    <a href="#" class="nav-link d-none d-md-block">
+    <a href="cerrar.php" class="nav-link d-none d-md-block">
       <img src="../img/icons/logout.svg" height="25" class="d-inline-block align-top" alt="Salir">
     </a>
   </nav>

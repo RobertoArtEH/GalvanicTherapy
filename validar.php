@@ -35,6 +35,7 @@ if(isset($_POST)) {
         exit();
       }
       // Rol administrador
+      $_SESSION['user'] = $accessResult;
       echo 'admin-success';
       exit();
     }
