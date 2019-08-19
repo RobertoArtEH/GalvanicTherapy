@@ -91,6 +91,36 @@
                         
                 </tbody>
 </table>
+
+ <table class="table table table-striped table-bordered table-hover text-center">
+            <thead class="thead-dark" >
+                <tr>
+                <th>Categoria</th>
+                    <th>Total Productos</th>
+                    </tr>        
+                    </thead>
+                    <?php
+                $sentencia=$pdo ->prepare('CREATE VIEW ProductosXCategorias as select categories.categoryname, count(products.productid) from products inner join
+                categories on products.categoryid = categories.categoryid group by categoryname');
+                $sentencia ->execute();
+                $view = $sentencia ->fetchAll();
+                    
+                    $sentenciaview=$pdo->prepare('SELECT *FROM ProductosXCategorias');
+                $sentenciaview ->execute();
+                $view = $sentenciaview ->fetchAll();
+
+                foreach($view as $view){
+                ?>
+                    <tbody>     
+                    <tr>
+                    <td><?php echo $view['categoryname'];  ?></td> 
+                    <td><?php echo $view['count(products.productid)'];  ?></td>
+                    </tbody>
+                    <?php
+  }
+?>         
+</table>
+
 </body>
 <script src="../resources/jquery-3.4.1/jquery-3.4.1.min.js"></script>
 <script src="../resources/popper-1.15.0/popper.min.js"></script>

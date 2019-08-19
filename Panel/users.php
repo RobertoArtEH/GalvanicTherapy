@@ -25,8 +25,7 @@
   <div class="row">
     <div class="container">
         <div class="container">
-            <div class="row">
-            
+            <div class="row">        
       <ul class="navbar-nav ml-auto"  >
   <form class="form-inline my-2 my-lg-0">
         <input type="search" id="search" class="form-control mr-sm-2"
@@ -36,9 +35,29 @@
 <div > 
       <a href="pdfs/Inventariousers.php" target="_blank"><button class="btn btn-danger mb-2"> Reporte <i class="fas fa-file-pdf fa-lg"style="color:white"></i></button></a>         
         </div>
-    
-<table class="table table table-striped table-bordered table-hover text-center">
+        <table class="table table table-striped table-bordered table-hover text-center">
+            <thead class="thead-dark" >
+                <tr>
+                <th>Usuarios</th>
+                <?php
+                $sentencia=$pdo ->prepare("CREATE VIEW UsuariosRegistrados as select count(users.id) from users where users.role = 'user'");
+                $sentencia ->execute();
+                $view = $sentencia ->fetchAll();
+                    
+                    $sentenciaview=$pdo->prepare('SELECT *FROM UsuariosRegistrados');
+                $sentenciaview ->execute();
+                $view = $sentenciaview ->fetchAll();
 
+                foreach($view as $view){
+                ?>
+                    <td><?php echo $view['count(users.id)'];?></td>
+                    <?php
+                        }
+                        ?>
+                    </tr>        
+                    </thead>
+                    </table>    
+<table class="table table table-striped table-bordered table-hover text-center">
             <thead class="thead-dark" >
                 <tr>
                 <th>ID</th>
